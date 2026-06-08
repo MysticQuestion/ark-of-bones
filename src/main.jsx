@@ -1,163 +1,279 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { BookOpen, ShoppingBag, Trophy, Users, ScrollText, Flame } from 'lucide-react';
 import './styles.css';
 
-const siteBase = 'https://www.arkofbones.com';
-const bookUrl = 'https://www.lulu.com/shop/anthony-covington/ark-of-bones-origins-evolution-and-cultural-legacy-of-dominoes-spades-euchre-and-booray/paperback/product-zm72q7d.html?page=1&pageSize=4&q=ark+of+bones';
+const shopBase = 'https://www.arkofbones.com';
+const dmfLabel = 'Domino MF';
 
-const socialLinks = [
-  ['Facebook', 'https://www.facebook.com/profile.php?id=61572983318608'],
-  ['Instagram', 'https://www.instagram.com/ark.of.bones/'],
-  ['TikTok', 'https://www.tiktok.com/@arkofbones'],
-  ['YouTube', 'https://www.youtube.com/@Ark_of_Bones']
+const games = [
+  {
+    name: 'Dominoes',
+    summary: 'The foundation: matching tiles, reading the board, managing tempo, and scoring through disciplined placement.',
+    players: '2–4 players, usually singles or partners',
+    objective: 'Empty your hand first or hold the lowest pip count when the round blocks.',
+    setup: [
+      'Place all dominoes facedown and shuffle them into the boneyard.',
+      'Each player draws the agreed hand size. With a double-six set, 2 players commonly draw 7 tiles each; 4 players commonly draw 5–7 depending on house rules.',
+      'The player with the highest double usually opens. If no one has a double, use the highest tile or redraw by agreement.'
+    ],
+    howToPlay: [
+      'Play proceeds clockwise unless your house rule says otherwise.',
+      'A legal play connects a tile to an open end with the same pip value.',
+      'Doubles are usually placed crosswise and may create a strategic branch point depending on variant.',
+      'If you cannot play, draw from the boneyard if drawing is allowed; otherwise pass.',
+      'The round ends when one player dominoes, or when the board is blocked and no one can make a legal play.'
+    ],
+    scoring: [
+      'In simple block dominoes, the winner scores the total remaining pips in opposing hands, or the lowest hand wins a blocked round.',
+      'In point variants, scores may be awarded when open ends total a multiple such as 5.',
+      'Set a target score before the match, commonly 100, 150, or 250.'
+    ],
+    strategy: [
+      'Track suits that have already appeared so you know which numbers are scarce.',
+      'Control board ends rather than simply dumping high tiles.',
+      'Do not expose your only safe exit unless it materially improves your position.',
+      'In partners, read your partner’s passes and protect their likely numbers.'
+    ]
+  },
+  {
+    name: 'Big Six Bones',
+    summary: 'Classic, loud, and beloved, Big Six Bones is an American domino game built for quick rounds, big plays, and double-six pressure.',
+    players: 'Best with 2–4 players or partner teams',
+    objective: 'Win rounds through legal tile play, board control, and clean scoring under the agreed Big Six house rules.',
+    setup: [
+      'Use a double-six domino set unless the event host specifies another set.',
+      'Shuffle facedown and draw hands according to the table format.',
+      'Agree on the scoring target, drawing rules, blocking rules, and whether talk is limited before the first tile is played.'
+    ],
+    howToPlay: [
+      'Open with the designated starter tile under house rules, often the highest double.',
+      'Players connect matching ends and attempt to force opponents into passes or inefficient plays.',
+      'A player unable to move must draw or pass according to the rule set announced before play.',
+      'The round ends when a player goes out or the board locks.',
+      'Tournament play should use a visible scorekeeper and consistent penalties for illegal plays, exposed tiles, or missed turns.'
+    ],
+    scoring: [
+      'Use the official event score target or house target before play begins.',
+      'A player or team that goes out usually collects the pips remaining in opposing hands.',
+      'On a blocked board, lowest pip count takes the round; ties should be replayed or split according to the host rule.'
+    ],
+    strategy: [
+      'Keep pressure on numbers opponents have already passed on.',
+      'Preserve doubles until they either open the board or trap a player with poor distribution.',
+      'Do not mistake speed for dominance; a fast hand can still lose control if it opens both opponent suits.',
+      'Respect game etiquette: clean calls, no angle-shooting, no hidden tiles, no fake confusion.'
+    ]
+  },
+  {
+    name: 'Spades',
+    summary: 'A contract-taking card game built on bidding accuracy, partner trust, and controlled aggression.',
+    players: '4 players in two partnerships',
+    objective: 'Bid how many tricks your team will win, then meet or exceed that contract without accumulating excessive bags.',
+    setup: [
+      'Use a standard 52-card deck. Spades are always trump.',
+      'Deal all cards so each player receives 13.',
+      'Each player bids a number of tricks. Partners’ bids combine into one team contract.'
+    ],
+    howToPlay: [
+      'The player left of the dealer leads first. Players must follow suit if able.',
+      'If unable to follow suit, a player may play any card, including a spade.',
+      'Spades cannot be led until broken unless a player has only spades.',
+      'Highest card in the led suit wins unless a spade is played; highest spade wins the trick.',
+      'The trick winner leads the next trick.'
+    ],
+    scoring: [
+      'A team that makes its bid scores 10 points per bid trick plus 1 point for each overtrick.',
+      'Overtricks are bags; commonly, 10 bags create a 100-point penalty.',
+      'A failed contract loses 10 points per bid trick.',
+      'Nil bids usually score +100 if successful and -100 if failed, subject to house rules.'
+    ],
+    strategy: [
+      'Bid your hand, not your ego.',
+      'Protect your partner’s nil before chasing extra tricks.',
+      'Count spades and track high cards in every suit.',
+      'Avoid reckless bags when your team is near the bag penalty.'
+    ]
+  },
+  {
+    name: 'Euchre',
+    summary: 'A compact trump game where five-card hands create sharp decisions and fast reversals.',
+    players: '4 players in two partnerships',
+    objective: 'Win at least three of five tricks after trump is established.',
+    setup: [
+      'Use a 24-card deck: 9, 10, J, Q, K, A in each suit.',
+      'Deal five cards to each player. Turn one card face up as the proposed trump suit.',
+      'Players decide whether to order up the turned suit or pass. If all pass, a second naming round begins.'
+    ],
+    howToPlay: [
+      'The suit named as trump outranks all others.',
+      'The jack of trump is the right bower, highest card in the game.',
+      'The jack of the same color suit is the left bower, second highest, and counts as trump.',
+      'Players must follow suit if able. Highest card in suit wins unless trump is played.',
+      'The team that names trump must take at least three tricks.'
+    ],
+    scoring: [
+      'Making three or four tricks earns 1 point.',
+      'Taking all five earns 2 points, or 4 if playing alone under common rules.',
+      'If the makers fail, the defenders score 2 points.',
+      'Games commonly go to 10 points.'
+    ],
+    strategy: [
+      'Trump strength matters more than general high cards.',
+      'Know when to order thin because position and partner strength can compensate.',
+      'Lead trump when your team needs control; avoid draining your partner when defense is fragile.',
+      'Track bowers constantly. Misreading the left bower loses games.'
+    ]
+  },
+  {
+    name: 'Booray',
+    summary: 'A trick-taking card game from Louisiana play culture, marked by risk, forfeiture, and hand judgment.',
+    players: '3–7 players',
+    objective: 'Win the most tricks in a hand while avoiding a zero-trick result after choosing to stay in.',
+    setup: [
+      'Use a standard 52-card deck.',
+      'Deal five cards to each player and reveal or determine trump according to the house rule.',
+      'Players decide whether to stay in or fold after seeing their hands.'
+    ],
+    howToPlay: [
+      'A player who stays in competes for the hand and must win at least one trick.',
+      'Players must follow suit if able and must play trump under common Louisiana rules when void, though house rules vary.',
+      'The highest card of the led suit wins unless trump is played; highest trump wins.',
+      'The player taking the most tricks wins the hand.',
+      'A player who stays in and takes no tricks goes bourré under common rules.'
+    ],
+    scoring: [
+      'The hand goes to the player with the most tricks.',
+      'Ties may split or carry forward depending on house rules.',
+      'Going bourré creates the signature penalty under the agreed rule set.'
+    ],
+    strategy: [
+      'Do not stay in because a hand looks attractive; stay in because it can take at least one trick and plausibly compete.',
+      'Trump control is decisive. Weak off-suit high cards are often liabilities.',
+      'Respect position and score context. The same hand can be correct or reckless depending on exposure.',
+      'Clarify house rules before play starts.'
+    ]
+  },
+  {
+    name: 'Tonk',
+    summary: 'A fast rummy-family card game based on sets, runs, knocking, and reading opponents’ unfinished hands.',
+    players: '2–4 players commonly',
+    objective: 'Create melds, reduce deadwood, and win by tonking, going out, or knocking with the lowest count.',
+    setup: [
+      'Use a standard 52-card deck. Deal five cards to each player in the common version.',
+      'Place the remaining deck facedown as the stock and turn one card face up as the discard pile.',
+      'Agree on automatic tonk rules before play, commonly 49 or 50 points in the opening hand.'
+    ],
+    howToPlay: [
+      'On your turn, draw from the stock or discard pile.',
+      'Lay down valid melds: three or four of a kind, or suited runs of three or more cards.',
+      'You may add cards to your own or others’ melds when house rules allow spreading.',
+      'Discard to end your turn.',
+      'A player wins by emptying their hand, showing an opening tonk, or knocking when they believe they have the lowest count.'
+    ],
+    scoring: [
+      'Card values vary by house rule; face cards commonly count 10, aces 1 or 11 by agreement.',
+      'A successful tonk or going out wins the agreed round value from each opponent.',
+      'A failed knock can award the round to the player with the lower hand, often at an increased penalty.'
+    ],
+    strategy: [
+      'Watch discards to identify what opponents are building.',
+      'Do not feed a visible run unless the tempo demands it.',
+      'Knock only when the game texture supports the risk.',
+      'Clarify house scoring before the first hand.'
+    ]
+  },
+  {
+    name: 'Poker',
+    summary: 'A family of card games built on hand rankings, position, probability, and controlled deception.',
+    players: '2–10 depending on variant',
+    objective: 'Win the hand by holding the best hand at showdown or making opponents fold before showdown.',
+    setup: [
+      'Choose the variant before play: Texas Hold’em, Five-Card Draw, Seven-Card Stud, or another house format.',
+      'Set the house rules, limits, turn order, and re-entry rules before the first deal.',
+      'Use one standard 52-card deck and a clear dealer button or dealer rotation.'
+    ],
+    howToPlay: [
+      'Cards are dealt according to the selected variant.',
+      'Players act in order, choosing to check, continue, raise, or fold as allowed by the house rules.',
+      'Rounds continue until all remaining players have matched the current action or folded.',
+      'At showdown, the best ranked hand wins unless everyone but one player folded earlier.',
+      'Standard rankings from high to low: royal flush, straight flush, four of a kind, full house, flush, straight, three of a kind, two pair, one pair, high card.'
+    ],
+    scoring: [
+      'Poker usually uses chips rather than cumulative score.',
+      'Tournament play ends when one player holds all chips or when prizes are awarded by finishing position.',
+      'Open games allow players to join or leave according to the agreed rules.'
+    ],
+    strategy: [
+      'Position is power: later action gives more information.',
+      'Play fewer weak hands, especially out of position.',
+      'Act for a reason: value, protection, pressure, or information denial.',
+      'Discipline matters more than a brilliant single hand.'
+    ]
+  }
 ];
 
 const products = [
   {
     name: 'Ark of Bones - Embroidered Sweatshirt',
-    category: 'Merch',
+    type: 'Merch',
     price: '$90.00',
-    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/9d5984b4-40fc-4481-b388-49dbc00bc6ea/11.png',
     description: 'Elevate your casual wardrobe with the Ark of Bones sweatshirt. Made from a soft cotton and polyester blend, this unisex sweatshirt features a standard collar and a relaxed fit for maximum comfort. The iconic Ark of Bones logo is embroidered on the front, adding a premium, long-lasting touch to a classic staple.',
-    details: [
-      'Type: Sweatshirt',
-      'Brand: Vantage Varsity',
-      'Gender: Unisex',
-      'Collar Type: Standard collar',
-      'Height: 26.5 in',
-      'Width: 18.5 in',
-      'Weight: 1.3 lbs',
-      'Material: Cotton and polyester blend',
-      'Embroidered front logo'
-    ],
-    note: 'A versatile, durable essential — perfect for layering, lounging, or showing off your Ark of Bones pride.'
+    href: `${shopBase}/merch`,
+    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/9d5984b4-40fc-4481-b388-49dbc00bc6ea/11.png'
   },
   {
     name: 'Big Six Bones - Long Sleeve Crew Neck',
-    category: 'Big Six Bones Merch',
+    type: 'Big Six Bones Merch',
     price: '$40.00',
-    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/49624525-9541-4009-afcd-7fc9ae785f0a/13.png',
     description: 'Stay comfortable and showcase your Ark of Bones pride with this classic long sleeve T-shirt. Made from 100% cotton, this shirt features a crew neck, long sleeves, and a relaxed unisex fit. The Big Six Bones logo is printed on the front, while the Ark of Bones logo is featured on the back, giving a bold, head-turning look.',
-    details: [
-      'Type: Long Sleeve T-Shirt',
-      'Brand: Port & Company',
-      'Gender: Men / Unisex',
-      'Material: 100% Cotton'
-    ]
+    href: `${shopBase}/merch`,
+    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/49624525-9541-4009-afcd-7fc9ae785f0a/13.png'
   },
   {
-    name: 'Domino Mother Fucker - Graphic Tee',
-    category: 'Domino Mother Fucker Merch',
+    name: `${dmfLabel} - Graphic Tee`,
+    type: `${dmfLabel} Merch`,
     price: '$25.00',
-    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/8b08d37a-9290-48fa-96ae-cf535cc8e608/8.png',
     description: 'Soft, breathable 100% cotton tee with a crew neck and tear-away label for a clean, comfortable fit. A durable everyday essential featuring a bold printed design.',
-    details: [
-      'Unisex fit',
-      'Taped neck and shoulders',
-      'Printed front design',
-      'Machine washable'
-    ]
+    href: `${shopBase}/merch`,
+    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/8b08d37a-9290-48fa-96ae-cf535cc8e608/8.png'
   },
   {
     name: 'Big Six Bones - Short Sleeved Tee',
-    category: 'Big Six Bones Merch',
+    type: 'Big Six Bones Merch',
     price: '$25.00',
-    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/7ee6ab93-5e51-40df-a118-7873f7686555/Add%2Ba%2Bheading%2B%283%2Bx%2B5%2Bin%29%2B%282000%2Bx%2B2000%2Bpx%29%2B%282%29.png',
     description: 'Soft, breathable 100% cotton tee with a crew neck and tear-away label for a clean, comfortable fit. A durable everyday essential featuring a bold printed design.',
-    details: [
-      'Unisex fit',
-      'Taped neck and shoulders',
-      'Printed front design',
-      'Machine washable'
-    ]
+    href: `${shopBase}/merch`,
+    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/7ee6ab93-5e51-40df-a118-7873f7686555/Add%2Ba%2Bheading%2B%283%2Bx%2B5%2Bin%29%2B%282000%2Bx%2B2000%2Bpx%29%2B%282%29.png'
   },
   {
-    name: 'Domino Mother Fucker - Embroidered Beanie',
-    category: 'Domino Mother Fucker Merch',
+    name: `${dmfLabel} - Embroidered Beanie`,
+    type: `${dmfLabel} Merch`,
     price: '$32.00',
-    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/ab6fe276-cfd5-4f82-833c-769e7e82245f/download.png',
     description: 'Stay warm in style with the DMF embroidered beanie. Made from 100% acrylic with a soft, insulated 3M™ Thinsulate™ lining, this cuffed beanie combines comfort and function. The front features logo in detailed embroidery for a clean, elevated finish.',
-    details: [
-      'Exterior: 100% acrylic',
-      'Internal lining: 3M™ Thinsulate™, insulated',
-      'Embroidered front logo',
-      'Cuffed design',
-      'One size fits most'
-    ],
-    note: 'An essential piece for streetwear, merch, or casual style — loud, bold, and unapologetically DMF.'
+    href: `${shopBase}/merch`,
+    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/ab6fe276-cfd5-4f82-833c-769e7e82245f/download.png'
   },
   {
     name: 'Ark of Bones - Beanie',
-    category: 'Merch',
+    type: 'Merch',
     price: '$32.00',
-    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/6b49d4b7-231a-4d22-858a-0972410377ea/preview.jpeg',
     description: 'Stay warm in style with the Ark of Bones embroidered beanie. Made from 100% acrylic with a soft, insulated 3M™ Thinsulate™ lining, this cuffed beanie combines comfort and function. The front features the Ark of Bones logo in detailed embroidery for a clean, elevated finish.',
-    details: [
-      'Exterior: 100% acrylic',
-      'Internal lining: 3M™ Thinsulate™, insulated',
-      'Embroidered front logo',
-      'Cuffed design',
-      'One size fits most'
-    ],
-    note: 'An easy everyday essential that pairs perfectly with any outfit — understated, warm, and unmistakably Ark of Bones.'
+    href: `${shopBase}/merch`,
+    image: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/6b49d4b7-231a-4d22-858a-0972410377ea/preview.jpeg'
   }
 ];
 
-const faqs = [
-  ['What is the Ark of Bones?', 'Not just a table. A whole cultural broadcast studio where domino legends are born and trash talk is archived for future generations. Think ESPN meets cookout'],
-  ['What makes it different from a regular domino table?', 'Cameras under each player. Mics for that juicy table talk. LED glow. Cup holders for spirits and soda. This table got more features than your ex got excuses.'],
-  ['Why\'s it called "Ark of Bones"?', 'Because it carries the truth. Just like the Ark of the Covenant carried law, this Ark carries laughs, legacy, and the last domino you should\'ve never played.'],
-  ['Got payment plans?', 'Yes. Financing that won\'t leave your wallet wheezing. \'Cause everybody deserves a seat at the table.'],
-  ['Can I customize mine?', 'Choose your colors, engrave your nickname, add custom lighting, logos, or even a phrase like: \'Don\'t Talk Across the Table, Fool.\''],
-  ['How do I order one?', 'Slide into our DMs or go to arkofbones.com. Drop a deposit, and we\'ll get to building. Serious inquiries only-this ain\'t Craigslist.'],
-  ['How long until I get it?', 'Around 4-6 weeks. We don\'t rush greatness-this ain\'t no microwave pizza table.'],
-  ['Is the table handmade or custom made?', 'Each Ark of Bones table is handcrafted like a grandma\'s quilt-built with precision, care, and pride. Every screw got a story.'],
-  ['Do y\'all ship across the U.S.?', 'From ATL to L.A.-if your address got a zip code, we got you.'],
-  ['Can I play Spades or other games on it?', 'Yes indeed. Spades, Tonk, Booray, Poker, or even just use it to eat wings while y\'all argue about who really won last time.'],
-  ['Can I move it around?', 'It\'s portable with a squad, but not lightweight. Built for big moments, not bachelor pads with wobbly floors.'],
-  ['Can I take it outside?', 'Yes sir. Cookouts, family reunions, parking lots-just don\'t leave it in the rain unless you name it Noah.'],
-  ['Can I see one before I buy?', 'Catch us at vendor events, private demos, or pop-ups. Bring your eyes. And maybe your bones.'],
-  ['Will it make me better at dominoes?', 'No. But you gon\' look cold-blooded. And sometimes, that\'s enough.']
-];
+function ProductImage({ product }) {
+  if (product.image) {
+    return <img src={product.image} alt={product.name} loading="lazy" />;
+  }
 
-const videoTitles = [
-  'Sunday Nights with AOB',
-  'AOB Game Night',
-  'What is Ark of Bones?',
-  'How Ark of Bones Works',
-  'Game Night'
-];
-
-function ContactBlock() {
   return (
-    <section className="contact-block" id="contact">
-      <h2>Contact Us:</h2>
-      <p><a href="mailto:info@arkofbones.com">info@arkofbones.com</a></p>
-      <p><a href="tel:+19515990214">(951)599--0214 (office)</a></p>
-      <h3>Follow Us:</h3>
-      <div className="socials">
-        {socialLinks.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
-      </div>
-    </section>
-  );
-}
-
-function ProductCard({ product }) {
-  return (
-    <article className="product-card">
-      <img src={product.image} alt={product.name} loading="lazy" />
-      <div className="product-body">
-        <p className="eyebrow">{product.category}</p>
-        <h3>{product.name}</h3>
-        <p>{product.description}</p>
-        <ul>
-          {product.details.map(detail => <li key={detail}>{detail}</li>)}
-        </ul>
-        {product.note ? <p>{product.note}</p> : null}
-        <strong>{product.price}</strong>
-        <a className="button secondary" href={`${siteBase}/merch`}>Merch</a>
-      </div>
-    </article>
+    <div className="product-fallback" aria-label={`${product.name} product image pending`}>
+      <span>{product.name}</span>
+    </div>
   );
 }
 
@@ -168,186 +284,110 @@ function App() {
         <nav className="nav" aria-label="Main navigation">
           <a href="#home" className="brand">Ark of Bones</a>
           <div>
-            <a href="#ark-of-bones">Ark of Bones</a>
-            <a href="#domino-mother-fucker">Domino Mother Fucker</a>
-            <a href="#big-six-bones">Big Six Bones</a>
-            <a href="#events">Events</a>
-            <a href="#watch">Watch</a>
-            <a href="#merch">Merch</a>
-            <a href={bookUrl}>Books</a>
+            <a href="#education">Learn</a>
+            <a href="#games">Games</a>
+            <a href="#shop">Shop</a>
             <a href="#contact">Contact</a>
+            <a href="https://www.arkofbones.com/merch">Store</a>
           </div>
         </nav>
         <section className="hero-grid">
           <div>
-            <h1>Redefining the Game.Dominating the World.</h1>
-            <p>For over 900 years, dominoes have brought people together—across cultures, continents, and communities. From its origins in ancient China to the tables of the Caribbean, the porches of the American South, and cafés throughout Europe and Latin America, the game has always lived where people gather. In barbershops, community centers, backyards, and street corners, dominoes has thrived as a shared language of competition, tradition, and connection.</p>
-            <p>Ark of Bones is the umbrella for multiple domino communities and platforms, including Domino MF and Big Six Bones. Each represents a different expression of the same culture—live and recorded play, events, competition, and the stories that surround the game.</p>
-            <p>Whether you’re here to watch, follow events, or engage with the broader domino community, this space exists to honor the history of the game while supporting the people who keep it alive today.</p>
-            <p>Pull up a seat, follow the action, and be part of the culture.</p>
+            <p className="eyebrow">Domino culture • Official merch • Game-night literacy</p>
+            <h1>Redefining the Game. Dominating the World.</h1>
+            <p className="lede">For over 900 years, dominoes have brought people together—across cultures, continents, and communities. Ark of Bones honors the history of the game while supporting the people who keep it alive today.</p>
             <div className="actions">
-              <a className="button primary" href="#contact">Contact Us</a>
-              <a className="button secondary" href="#ark-of-bones">Learn More</a>
+              <a className="button primary" href="#education"><BookOpen size={18}/> Start learning</a>
+              <a className="button secondary" href="https://www.arkofbones.com/merch"><ShoppingBag size={18}/> Shop official merch</a>
             </div>
           </div>
+          <aside className="hero-card">
+            <Trophy size={34}/>
+            <h2>Game-ready education</h2>
+            <p>Rules, setup, scoring, etiquette, and strategy for Dominoes, Big Six Bones, Spades, Euchre, Booray, Tonk, and Poker.</p>
+          </aside>
         </section>
       </header>
 
-      <section className="section split" id="ark-of-bones">
-        <div>
-          <p className="eyebrow">Ark of Bones</p>
-          <h2>Friends, Family, and Fun ReDiscovered</h2>
-          <h3>Elevate the Game</h3>
-          <p>Ark of Bones isn’t just a place to play—it’s a reimagining of how domino culture is experienced. Rooted in centuries of tradition and shaped by modern storytelling, Ark of Bones exists to honor the strategy, competition, and community that surround the game.</p>
-          <p>Through live play, recorded matches, events, and shared moments, Ark of Bones connects players and fans across generations and geographies. It’s a space where the game is respected, the culture is preserved, and the experience continues to evolve.</p>
-          <p>Whether you’re a lifelong player or just learning the rhythm of the tiles, Ark of Bones is about more than the table—it’s about the people around it.</p>
-          <p>A tribute to the past. A bridge to the future. Built for the culture.</p>
-          <h3>Honor the Culture</h3>
-          <p>Make your event unforgettable with the ultimate domino experience. Whether it’s a big celebration or an intimate gathering, our high-tech table sets the perfect mood. Connect multiple screens, stream live games, and bring friends and family together—no matter where they are.</p>
-          <h3>Elevate the Fun.</h3>
-          <a className="button primary" href="#contact">Contact Us</a>
-        </div>
-        <img src="https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg" alt="Handcrafted Ark of Bones domino table at popular tournament" loading="lazy" />
-      </section>
-
-      <section className="section split alternate" id="about">
-        <img src="https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/1741547436771-12219F2375LS9PLQXXZV/ark%2Bof%2Bbones%2Bwood%2Blogo%2Bon%2Ban%2Boffice%2Bwall.jpg" alt="The Ark of Bones custom made wood logo" loading="lazy" />
-        <div>
-          <h2>It’s More Than a Game. It’s a Legacy</h2>
-          <p>The Ark of Bones isn't just a domino table—it's a symbol of history, culture, and competition. Inspired by the sacred meaning of “Ark” across Judaism, Christianity, and Islam, it carries the spirit of preservation, protection, and generational wisdom.</p>
-          <p>Just as ancient arks safeguarded sacred treasures, The Ark of Bones protects the legacy of dominoes—a game of skill, strategy, and community. In this arena, "bones" are more than game pieces—they're stories, rivalries, and tradition.</p>
-          <p>Whether you're trading laughter or laying down fierce moves, The Ark transforms every match into a moment worth remembering. It’s not just a table—it’s a tribute, a battleground, and a gathering place. The game of bones has never had a home quite like this.</p>
-          <a className="button primary" href="#contact">Join the Movement</a>
+      <section className="section intro" id="education">
+        <p className="eyebrow">Education hub</p>
+        <h2>How to play each Ark of Bones game</h2>
+        <p>Use this as a player primer, tournament handout, SEO landing section, and cultural onboarding system. Each guide is written to reduce confusion before competition begins.</p>
+        <div className="stats">
+          <span><Users/> 7 games covered</span>
+          <span><ScrollText/> Setup, rules, scoring</span>
+          <span><Flame/> Strategy and etiquette</span>
         </div>
       </section>
 
-      <section className="section" id="domino-mother-fucker">
-        <p className="eyebrow">Domino Mother Fucker</p>
-        <h2>Domino Mother Fucker</h2>
-        <p>Ark of Bones continues to connect, create, and play — with Domino Mother Fucker leading the charge.</p>
-        <p>When the last bone hits and the world tilts for a second, call it like it happened: Domino Mother Fucker. For the winners who slam the table, the friends who laugh, and the rivals who can’t help but clap this phrase is the unofficial anthem of every comeback, blowout, and perfect play. Stick it on a tee, drop it in the chat, and never apologize for a victory.</p>
-        <div className="actions">
-          <a className="button primary" href="#merch">Merch</a>
-          <a className="button secondary" href="#watch">Watch</a>
-          <a className="button secondary" href="#events">Events</a>
-        </div>
+      <section className="game-list" id="games">
+        {games.map((game) => (
+          <article className="game-card" key={game.name}>
+            <div className="game-head">
+              <div>
+                <p className="eyebrow">{game.players}</p>
+                <h3>{game.name}</h3>
+              </div>
+              <a href={`#${game.name.toLowerCase().replaceAll(' ', '-')}`}>Guide</a>
+            </div>
+            <p className="summary">{game.summary}</p>
+            <div className="rule-grid" id={game.name.toLowerCase().replaceAll(' ', '-')}>
+              <div><h4>Objective</h4><p>{game.objective}</p></div>
+              <div><h4>Setup</h4><ul>{game.setup.map(item => <li key={item}>{item}</li>)}</ul></div>
+              <div><h4>How play works</h4><ul>{game.howToPlay.map(item => <li key={item}>{item}</li>)}</ul></div>
+              <div><h4>Scoring</h4><ul>{game.scoring.map(item => <li key={item}>{item}</li>)}</ul></div>
+              <div className="wide"><h4>Game strategy</h4><ul>{game.strategy.map(item => <li key={item}>{item}</li>)}</ul></div>
+            </div>
+          </article>
+        ))}
       </section>
 
-      <section className="section" id="big-six-bones">
-        <p className="eyebrow">Big Six Bones</p>
-        <h2>BIG SIX BONES</h2>
-        <p>Ark of Bones keeps the games rolling — presenting Big Six Bones.</p>
-        <p>Classic, loud, and beloved,  that’s Big Six Bones the American domino game that turns living rooms into arenas. Whether you’re playing family-style at Sunday dinner or going toe-to-toe in a backyard showdown, Big Six Bones brings the rules everyone knows and the drama everyone loves. Tap in for quick rounds, big plays, and that perfect double-six flex, this is dominoes done right.</p>
-        <div className="actions">
-          <a className="button primary" href="#events">Events</a>
-          <a className="button secondary" href="#watch">Watch</a>
-          <a className="button secondary" href="#merch">Merch</a>
+      <section className="section shop" id="shop">
+        <div className="shop-head">
+          <div>
+            <p className="eyebrow">Official products</p>
+            <h2>Confirmed merch available through Ark of Bones</h2>
+            <p>Only the current Ark of Bones merch catalog is represented here.</p>
+          </div>
+          <a className="button primary" href="https://www.arkofbones.com/merch"><ShoppingBag size={18}/> View full store</a>
         </div>
-      </section>
-
-      <section className="section" id="events">
-        <p className="eyebrow">Events</p>
-        <h2>Upcoming Events</h2>
-        <div className="event-grid">
-          <article className="event-card">
-            <span>Jan</span>
-            <strong>1</strong>
-            <h3>Join Us Live</h3>
-            <p>Thursday, January 1, 2026</p>
-            <p>4:30 PM 5:30 PM</p>
-            <p>Information coming soon</p>
-            <a className="button secondary" href={`${siteBase}/events`}>View Event →</a>
-          </article>
-          <article className="event-card">
-            <h3>Events</h3>
-            <p>Date: 02.01.26</p>
-            <p>Ark of Bones Production Studio, Inland Empire, CA</p>
-            <a className="button secondary" href={`${siteBase}/events-1`}>RSVP</a>
-          </article>
-          <article className="event-card">
-            <h3>Events</h3>
-            <p>Date: 02.22.26</p>
-            <p>Ark of Bones Production Studio, Inland Empire, CA</p>
-            <a className="button secondary" href={`${siteBase}/events-2`}>RSVP</a>
-          </article>
-        </div>
-      </section>
-
-      <section className="section" id="watch">
-        <p className="eyebrow">Watch</p>
-        <h2>Watch Live</h2>
-        <p>Tune in Every Sunday for 6p - 9p to watch live domino action! Catch every play, every win, and every moment.</p>
-        <a className="button primary" href={`${siteBase}/videos-2`}>Join Us</a>
-        <div className="watch-grid">
-          <article>
-            <h3>Player & Game Stats</h3>
-            <table>
-              <thead><tr><th>Player</th><th>Wins</th><th>Losses</th><th>Points</th></tr></thead>
-              <tbody>
-                <tr><td>Alice</td><td>8</td><td>4</td><td>32</td></tr>
-                <tr><td>Bob</td><td>5</td><td>5</td><td>20</td></tr>
-                <tr><td>Carlos</td><td>6</td><td>3</td><td>25</td></tr>
-              </tbody>
-            </table>
-          </article>
-          <article>
-            <h3>Video Archive</h3>
-            <ul>
-              {videoTitles.map(title => <li key={title}>{title}</li>)}
-            </ul>
-          </article>
-          <article>
-            <h3>Big Six Bones Fucker Watch</h3>
-            <p>Your front-row seat to every game.</p>
-            <h4>COMING SOON</h4>
-          </article>
-        </div>
-      </section>
-
-      <section className="section" id="qa">
-        <p className="eyebrow">Q&A</p>
-        <h2>Have Questions? We Have Answers!</h2>
-        <div className="faq-list">
-          {faqs.map(([question, answer]) => (
-            <article key={question}>
-              <h3>{question}</h3>
-              <p>{answer}</p>
+        <div className="products">
+          {products.map((product) => (
+            <article className="product-card" key={product.name}>
+              <ProductImage product={product} />
+              <div className="product-body">
+                <p className="eyebrow">{product.type}</p>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <strong>{product.price}</strong>
+                <a className="button secondary" href={product.href}>Shop item</a>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section" id="merch">
-        <p className="eyebrow">Store</p>
-        <h2>Shop the Collection</h2>
-        <h3>Merch</h3>
-        <div className="filters">
-          <span>All</span>
-          <span>Domino Mother Fucker Merch</span>
-          <span>Big Six Bones Merch</span>
-        </div>
-        <div className="products">
-          {products.map(product => <ProductCard key={product.name} product={product} />)}
+      <section className="section intro" id="contact">
+        <p className="eyebrow">Contact</p>
+        <h2>Let’s Connect. Let’s Play.</h2>
+        <p>Have questions or want to follow Ark of Bones? Use the official contact information below.</p>
+        <div className="stats">
+          <span><a href="mailto:info@arkofbones.com">info@arkofbones.com</a></span>
+          <span><a href="tel:+19515990214">(951)599--0214</a></span>
         </div>
       </section>
 
-      <section className="section split" id="books">
+      <footer>
+        <strong>Ark of Bones</strong>
+        <p>Premium domino culture, game-night education, and official merch.</p>
         <div>
-          <p className="eyebrow">Books</p>
-          <h2>Books</h2>
-          <a className="button primary" href={bookUrl}>Books</a>
+          <a href="#education">Education</a>
+          <a href="#shop">Products</a>
+          <a href="https://www.arkofbones.com">Live site</a>
+          <a href="https://www.instagram.com/ark.of.bones/">Instagram</a>
+          <a href="https://www.youtube.com/@Ark_of_Bones">YouTube</a>
         </div>
-      </section>
-
-      <section className="section split alternate" id="contact-page">
-        <img src="https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg" alt="Ark of bones domino table in action" loading="lazy" />
-        <div>
-          <h2>Let’s Connect. Let’s Play.</h2>
-          <p>Have questions or ready to bring the Ark of Bones to your next event? Reach out today and let’s make it happen!</p>
-        </div>
-      </section>
-
-      <ContactBlock />
+      </footer>
     </main>
   );
 }
