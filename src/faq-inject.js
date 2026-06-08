@@ -1,7 +1,7 @@
 const faqs = [
   {
     question: 'What is Ark of Bones?',
-    answer: 'Ark of Bones is a domino culture platform centered on game-night literacy, community, competitive play, official merch, and the history of dominoes and related table games.'
+    answer: 'Ark of Bones is a domino culture platform centered on game-night literacy, community, competitive play, official merch, and the history of dominoes and related games.'
   },
   {
     question: 'What games are covered on the app?',
@@ -16,8 +16,8 @@ const faqs = [
     answer: 'Use the Shop section or the Store button. The app links to the confirmed Ark of Bones merch catalog only.'
   },
   {
-    question: 'Does this app offer custom products or table builds?',
-    answer: 'No. This app only represents confirmed merch, education, contact information, and official Ark of Bones links. It does not advertise custom table orders, payment plans, or made-to-order furniture.'
+    question: 'What does the app promote?',
+    answer: 'The app promotes confirmed merch, education, events, media, community, contact information, and official Ark of Bones links only.'
   },
   {
     question: 'How do I contact Ark of Bones?',
