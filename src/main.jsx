@@ -37,13 +37,13 @@ const games = [
   },
   {
     name: 'Big Six Bones',
-    summary: 'Ark of Bones’ signature culture game: fast table pressure, domino literacy, table talk, and competitive social rhythm.',
+    summary: 'Ark of Bones’ signature culture game: fast pressure, domino literacy, table talk, and competitive social rhythm.',
     players: 'Best with 2–4 players or partner teams',
     objective: 'Win rounds through legal tile play, board control, and clean scoring under the agreed Big Six house rules.',
     setup: [
       'Use a double-six domino set unless the event host specifies another set.',
       'Shuffle facedown and draw hands according to the table format.',
-      'Agree on the scoring target, drawing rules, blocking rules, and whether table talk is limited before the first tile is played.'
+      'Agree on the scoring target, drawing rules, blocking rules, and whether talk is limited before the first tile is played.'
     ],
     howToPlay: [
       'Open with the designated starter tile under house rules, often the highest double.',
@@ -61,7 +61,7 @@ const games = [
       'Keep pressure on numbers opponents have already passed on.',
       'Preserve doubles until they either open the board or trap a player with poor distribution.',
       'Do not mistake speed for dominance; a fast hand can still lose control if it opens both opponent suits.',
-      'Respect table etiquette: clean calls, no angle-shooting, no hidden tiles, no fake confusion.'
+      'Respect game etiquette: clean calls, no angle-shooting, no hidden tiles, no fake confusion.'
     ]
   },
   {
@@ -126,7 +126,7 @@ const games = [
   },
   {
     name: 'Booray',
-    summary: 'A trick-taking gambling game from Louisiana table culture, marked by risk, forfeiture, and hand judgment.',
+    summary: 'A trick-taking gambling game from Louisiana play culture, marked by risk, forfeiture, and hand judgment.',
     players: '3–7 players',
     objective: 'Win the most tricks in a hand, or avoid being forced to match the pot after taking no tricks.',
     setup: [
@@ -150,7 +150,7 @@ const games = [
       'Do not stay in because a hand looks attractive; stay in because it can take at least one trick and plausibly compete.',
       'Trump control is decisive. Weak off-suit high cards are often liabilities.',
       'Respect position and pot size. The same hand can be correct or reckless depending on exposure.',
-      'Clarify house rules before money hits the table.'
+      'Clarify house rules before money hits the game.'
     ]
   },
   {
@@ -178,7 +178,7 @@ const games = [
     strategy: [
       'Watch discards to identify what opponents are building.',
       'Do not feed a visible run unless the tempo demands it.',
-      'Knock only when the table texture supports the risk.',
+      'Knock only when the game texture supports the risk.',
       'Clarify payout rules because Tonk becomes chaotic when money rules are assumed rather than stated.'
     ]
   },
@@ -202,7 +202,7 @@ const games = [
     scoring: [
       'Poker usually uses chips rather than cumulative score.',
       'Tournament play ends when one player holds all chips or when prizes are awarded by finishing position.',
-      'Cash games allow players to join or leave according to table rules.'
+      'Cash games allow players to join or leave according to game rules.'
     ],
     strategy: [
       'Position is power: later action gives more information.',
@@ -217,21 +217,21 @@ const products = [
   {
     name: 'Ark of Bones Embroidered Sweatshirt',
     type: 'Premium sweatshirt',
-    description: 'Core brand layer for competitive game nights, pop-ups, and winter table culture.',
+    description: 'Core brand layer for competitive game nights, pop-ups, and winter play culture.',
     href: `${shopBase}/shop`,
     image: ''
   },
   {
     name: 'Big Six Bones Long Sleeve',
     type: 'Long sleeve shirt',
-    description: 'Signature Big Six identity piece for players who want the table to know the code.',
+    description: 'Signature Big Six identity piece for players who want the room to know the code.',
     href: `${shopBase}/shop`,
     image: ''
   },
   {
     name: 'Domino Mother Fucker Graphic Tee',
     type: 'Graphic tee',
-    description: 'Loud, funny, competitive tablewear built for personality, not politeness.',
+    description: 'Loud, funny, competitive game-night apparel built for personality, not politeness.',
     href: `${shopBase}/shop`,
     image: ''
   },
@@ -245,7 +245,7 @@ const products = [
   {
     name: 'Domino Mother Fucker Embroidered Beanie',
     type: 'Embroidered beanie',
-    description: 'Cold-weather table talk with a direct competitive edge.',
+    description: 'Cold-weather competitive energy with a direct domino edge.',
     href: `${shopBase}/shop`,
     image: ''
   },
@@ -286,9 +286,9 @@ function App() {
         </nav>
         <section className="hero-grid">
           <div>
-            <p className="eyebrow">Domino culture • Premium table goods • Game-night literacy</p>
-            <h1>Learn the games. Respect the table. Bring better bones.</h1>
-            <p className="lede">Ark of Bones now has a practical education section for every game offered through the platform, paired with live commerce paths for official merch and accessories.</p>
+            <p className="eyebrow">Domino culture • Official merch • Game-night literacy</p>
+            <h1>Learn the games. Respect the play. Bring better bones.</h1>
+            <p className="lede">Ark of Bones now has a practical education section for every game offered through the platform, paired with live commerce paths for confirmed merch and accessories.</p>
             <div className="actions">
               <a className="button primary" href="#education"><BookOpen size={18}/> Start learning</a>
               <a className="button secondary" href="https://arkofbones.com/shop"><ShoppingBag size={18}/> Shop official goods</a>
@@ -296,7 +296,7 @@ function App() {
           </div>
           <aside className="hero-card">
             <Trophy size={34}/>
-            <h2>Table-ready education</h2>
+            <h2>Game-ready education</h2>
             <p>Rules, setup, scoring, etiquette, and strategy for Dominoes, Big Six Bones, Spades, Euchre, Booray, Tonk, and Poker.</p>
           </aside>
         </section>
@@ -305,7 +305,7 @@ function App() {
       <section className="section intro" id="education">
         <p className="eyebrow">Education hub</p>
         <h2>How to play each Ark of Bones game</h2>
-        <p>Use this as a player primer, tournament handout, SEO landing section, and cultural onboarding system. Each guide is written to reduce confusion at the table before competition begins.</p>
+        <p>Use this as a player primer, tournament handout, SEO landing section, and cultural onboarding system. Each guide is written to reduce confusion before competition begins.</p>
         <div className="stats">
           <span><Users/> 7 games covered</span>
           <span><ScrollText/> Setup, rules, scoring</span>
@@ -329,7 +329,7 @@ function App() {
               <div><h4>Setup</h4><ul>{game.setup.map(item => <li key={item}>{item}</li>)}</ul></div>
               <div><h4>How play works</h4><ul>{game.howToPlay.map(item => <li key={item}>{item}</li>)}</ul></div>
               <div><h4>Scoring</h4><ul>{game.scoring.map(item => <li key={item}>{item}</li>)}</ul></div>
-              <div className="wide"><h4>Table strategy</h4><ul>{game.strategy.map(item => <li key={item}>{item}</li>)}</ul></div>
+              <div className="wide"><h4>Game strategy</h4><ul>{game.strategy.map(item => <li key={item}>{item}</li>)}</ul></div>
             </div>
           </article>
         ))}
@@ -339,8 +339,8 @@ function App() {
         <div className="shop-head">
           <div>
             <p className="eyebrow">Official products</p>
-            <h2>Merch and accessories available through Ark of Bones</h2>
-            <p>The buttons now route shoppers to the active Ark of Bones storefront. The product data layer is structured so exact product-image URLs can be inserted without redesigning the page.</p>
+            <h2>Confirmed merch and accessories available through Ark of Bones</h2>
+            <p>The buttons now route shoppers to the active Ark of Bones storefront. This section does not claim custom domino tables or made-to-order furniture unless that offering is formally confirmed.</p>
           </div>
           <a className="button primary" href="https://arkofbones.com/shop"><ShoppingBag size={18}/> View full store</a>
         </div>
@@ -361,7 +361,7 @@ function App() {
 
       <footer>
         <strong>Ark of Bones</strong>
-        <p>Premium domino culture, competitive game-night education, and official table goods.</p>
+        <p>Premium domino culture, competitive game-night education, and official merch.</p>
         <div>
           <a href="#education">Education</a>
           <a href="#shop">Products</a>
