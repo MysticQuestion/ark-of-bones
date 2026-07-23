@@ -36,6 +36,28 @@ jobs:
 
       - name: Configure staging safeguards
         run: |
+          routes=(
+            events
+            watch
+            tables
+            shop
+            brands
+            brands/domino-mother-fucker
+            brands/big-six-bones
+            about
+            contact
+            learn
+            faq
+            domino-mother-fucker
+            big-six-bones
+            videos-2
+            merch
+            merch-3
+          )
+          for route in "${routes[@]}"; do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
           cp dist/index.html dist/404.html
           printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt
 
