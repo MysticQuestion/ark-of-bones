@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { ASSETS, BRAND, SITE_URL } from '../config/brand';
 
 export default function SEO({ title, description, path = '/', image = ASSETS.social, schema }) {
+  const isStagingBuild = import.meta.env.BASE_URL !== '/';
   const pageTitle = title === BRAND.name ? `${BRAND.name} | ${BRAND.proposition}` : `${title} | ${BRAND.name}`;
   const canonical = new URL(path, SITE_URL).toString();
   const socialImage = new URL(image, SITE_URL).toString();
@@ -28,6 +29,7 @@ export default function SEO({ title, description, path = '/', image = ASSETS.soc
     <Helmet>
       <title>{pageTitle}</title>
       <meta name="description" content={description} />
+      {isStagingBuild ? <meta name="robots" content="noindex, nofollow" /> : null}
       <link rel="canonical" href={canonical} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={BRAND.name} />
