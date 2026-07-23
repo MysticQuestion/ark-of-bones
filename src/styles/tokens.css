@@ -1,0 +1,25 @@
+:root {
+  color-scheme: dark;
+  --black: #080706;
+  --ink: #11100e;
+  --charcoal: #1a1916;
+  --charcoal-soft: #24211d;
+  --bone: #f3efe7;
+  --paper: #d7d0c4;
+  --muted: #aaa296;
+  --gold: #c9a45d;
+  --gold-light: #e2c986;
+  --bronze: #896d40;
+  --wood: #4b3021;
+  --red: #8c312a;
+  --red-deep: #4d1714;
+  --felt: #17483a;
+  --felt-deep: #0c2a22;
+  --line: rgba(243, 239, 231, 0.18);
+  --line-dark: rgba(17, 16, 14, 0.2);
+  --shadow: 0 22px 56px rgba(0, 0, 0, 0.26);
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Manrope", Arial, sans-serif;
+  --header-height: 78px;
+  --page-padding: max(1.25rem, calc((100vw - 1440px) / 2));
+}
