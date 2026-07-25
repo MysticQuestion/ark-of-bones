@@ -2,7 +2,7 @@
 
 The Vite + React staging application for **Ark of Bones - The Home of Domino Entertainment**.
 
-The site presents Ark of Bones as the parent entertainment company, with Domino Mother Fucker and Big Six Bones organized as subsidiary brands. Events, media, venue partnerships, merchandise, education, and business inquiries each have a dedicated route.
+The site presents Ark of Bones as the parent entertainment company, with Domino Mother Fucker and Big Six Bones organized as subsidiary brands. Events, media, venue partnerships, merchandise, education, and business inquiries each have a dedicated route. It also consolidates the original staging presentation and the complete merchandise deck into this one public review build.
 
 ## Local Development
 
@@ -28,7 +28,7 @@ The compiled site is written to `dist/`. `vercel.json` and `public/_redirects` p
 - `/events` - verified event listings and archive
 - `/watch` - broadcasts and media archive
 - `/tables` - table and venue partnerships
-- `/shop` - verified merchandise catalog
+- `/shop` - six verified store listings plus 53 individually presented merchandise concepts
 - `/brands` - brand portfolio
 - `/brands/domino-mother-fucker` - subsidiary brand page
 - `/brands/big-six-bones` - subsidiary brand page
@@ -49,6 +49,8 @@ The official subsidiary spelling and trademark treatment are controlled only in 
 
 - Events and videos intentionally show honest empty states until verified records are supplied.
 - The inquiry form validates entries and opens a pre-addressed email because no form backend is configured.
+- The Shop route clearly separates six verified, priced store listings from 53 merchandise presentation concepts.
+- Concept cards do not link to checkout and are labeled as pending pricing, production, sizing, and availability approval.
 - Merchandise links use the verified official collection URL; individual product checkout URLs should only be added when confirmed.
 - Social sharing, robots, sitemap, canonical metadata, and route-specific metadata are included.
 - No payment processing, event registration, video player, CMS, analytics, or CRM integration is configured in this repository.

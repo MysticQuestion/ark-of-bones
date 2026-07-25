@@ -15,7 +15,7 @@ const pathways = [
   { title: 'Play', label: 'Events', description: 'Find confirmed dates, tournament information, and ways to participate.', to: '/events', icon: CalendarDays },
   { title: 'Watch', label: 'Live and archived media', description: 'Follow broadcasts, recorded matches, interviews, and cultural stories.', to: '/watch', icon: Tv },
   { title: 'Partner', label: 'Tables and venues', description: 'Build an Ark of Bones experience for your venue, event, or activation.', to: '/tables', icon: Handshake },
-  { title: 'Shop', label: 'Official merchandise', description: 'Explore Ark of Bones and subsidiary-brand products.', to: '/shop', icon: ShoppingBag },
+  { title: 'Shop', label: 'Store and concept catalog', description: 'Shop verified products and review all 53 merchandise presentation concepts.', to: '/shop', icon: ShoppingBag },
 ];
 
 export default function HomePage() {

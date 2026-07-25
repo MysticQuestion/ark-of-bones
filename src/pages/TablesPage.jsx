@@ -22,6 +22,24 @@ const process = [
   ['04', 'Bring it to the room', 'The approved experience moves into event or venue execution.'],
 ];
 
+const planningAreas = [
+  ['Table presentation', 'Playing surface, approved branding, room placement, and player experience.'],
+  ['Media capture', 'Camera positions, audio planning, lighting, and recording workflow where confirmed.'],
+  ['Audience connection', 'Screen output, live viewing, and streaming possibilities based on venue infrastructure.'],
+  ['Partner alignment', 'Venue, sponsor, event, and production responsibilities documented before execution.'],
+];
+
+const confirmationChecklist = [
+  'Table dimensions and playing surface',
+  'Camera and audio requirements',
+  'Lighting and display connections',
+  'Power and internet requirements',
+  'Setup and breakdown plan',
+  'Transport or installation responsibilities',
+  'Production timing and availability',
+  'Approved branding and media use',
+];
+
 export default function TablesPage() {
   return (
     <>
@@ -38,6 +56,32 @@ export default function TablesPage() {
       <section className="image-story">
         <div className="image-story-media"><img src={ASSETS.players} alt="Players focused on a domino game around a green table" width="1800" height="1200" loading="lazy" /></div>
         <div className="image-story-copy"><p className="eyebrow">Built for participation</p><h2>More than furniture. A reason to gather.</h2><p>The experience can support tournaments, celebrations, hospitality spaces, festivals, activations, and community programming. The exact format is shaped around each venue and its production needs.</p></div>
+      </section>
+      <section className="content-band table-planning">
+        <SectionHeader
+          eyebrow="The system around the table"
+          title="Plan the experience as one connected production"
+          description="The original staging concept is organized here as planning areas, not unverified product tiers or technical promises."
+        />
+        <div className="table-planning-grid">
+          {planningAreas.map(([title, body], index) => (
+            <article key={title}>
+              <span>0{index + 1}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="confirmation-panel">
+          <div>
+            <p className="eyebrow">Confirmed during discovery</p>
+            <h3>Technical and commercial details stay inquiry-led.</h3>
+            <p>Ark of Bones does not publish unsupported pricing, inventory, manufacturing timelines, or fixed specifications. The team confirms the relevant details for each opportunity.</p>
+          </div>
+          <ul>
+            {confirmationChecklist.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </div>
       </section>
       <section className="content-band content-band--wood">
         <SectionHeader eyebrow="Where it fits" title="A flexible entertainment format" description="Every use begins with the audience and venue, not with unsupported promises about inventory or specifications." />

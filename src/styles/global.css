@@ -130,7 +130,7 @@ ul {
   color: var(--gold-light);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
 }
@@ -145,7 +145,7 @@ ul {
   font-weight: 800;
   gap: 0.6rem;
   justify-content: center;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   min-height: 48px;
   padding: 0.8rem 1.05rem;
   text-align: center;
@@ -200,7 +200,7 @@ ul {
   font-size: 0.78rem;
   font-weight: 800;
   gap: 0.45rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 

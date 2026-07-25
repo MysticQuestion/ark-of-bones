@@ -55,7 +55,13 @@ export default function MobileNavigation({ open, onClose }) {
         </div>
         <nav aria-label="Mobile navigation">
           {primaryNavigation.map((item, index) => (
-            <NavLink ref={index === 0 ? firstLink : null} key={item.to} to={item.to} onClick={onClose}>
+            <NavLink
+              ref={index === 0 ? firstLink : null}
+              key={item.to}
+              to={item.to}
+              end={item.to === '/'}
+              onClick={onClose}
+            >
               {item.label}
             </NavLink>
           ))}
