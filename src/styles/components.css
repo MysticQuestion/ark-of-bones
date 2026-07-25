@@ -288,13 +288,14 @@
 
 .hero-logo-shine {
   animation: hero-logo-shine 5.8s ease-in-out 1.5s infinite;
-  background: linear-gradient(105deg, transparent 40%, rgba(255, 240, 184, 0.75) 50%, transparent 60%);
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 240, 184, 0.68) 50%, transparent 60%) no-repeat;
+  background-position: -180% 0;
+  background-size: 250% 100%;
   inset: 0;
   -webkit-mask: var(--hero-logo-image) center / contain no-repeat;
   mask: var(--hero-logo-image) center / contain no-repeat;
   pointer-events: none;
   position: absolute;
-  transform: translateX(-115%);
 }
 
 .hero-declaration {
@@ -382,19 +383,19 @@
 
 @keyframes hero-logo-shine {
   0%,
-  68%,
-  100% {
+  68% {
+    background-position: -180% 0;
     opacity: 0;
-    transform: translateX(-115%);
   }
 
   76% {
     opacity: 0.8;
   }
 
-  88% {
+  88%,
+  100% {
+    background-position: 180% 0;
     opacity: 0;
-    transform: translateX(115%);
   }
 }
 
