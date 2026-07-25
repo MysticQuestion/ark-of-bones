@@ -2,15 +2,15 @@ import { BRAND, SITE_URL, SUBSIDIARY_BRANDS } from '../config/brand';
 
 export const STORE_URL = `${SITE_URL}/merch`;
 
-const conceptImages = import.meta.glob('../assets/shop/product-*.jpg', {
+const galleryImages = import.meta.glob('../assets/shop/product-*.jpg', {
   eager: true,
   import: 'default',
   query: '?url',
 });
 
-const conceptImage = (number) => {
+const galleryImage = (number) => {
   const filename = `product-${String(number).padStart(2, '0')}.jpg`;
-  return conceptImages[`../assets/shop/${filename}`];
+  return galleryImages[`../assets/shop/${filename}`];
 };
 
 const brandNames = {
@@ -75,7 +75,7 @@ export const officialProducts = [
     brandKey: SUBSIDIARY_BRANDS.dominoMotherFucker.key,
     price: '$32.00',
     description:
-      'A cuffed acrylic beanie with insulated lining and an embroidered subsidiary-brand mark.',
+      'A cuffed acrylic beanie with insulated lining and an embroidered Domino Mother Fucker mark.',
     href: STORE_URL,
     image:
       'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/ab6fe276-cfd5-4f82-833c-769e7e82245f/download.png?format=1000w',
@@ -94,7 +94,7 @@ export const officialProducts = [
   },
 ];
 
-const conceptDepartments = [
+const galleryDepartmentData = [
   {
     id: 'tees-polos-tanks',
     name: 'Tees, Polos and Tanks',
@@ -194,7 +194,7 @@ const conceptDepartments = [
 
 let catalogNumber = 0;
 
-export const catalogDepartments = conceptDepartments.map((department) => ({
+export const galleryDepartments = galleryDepartmentData.map((department) => ({
   ...department,
   products: department.products.map((product) => {
     catalogNumber += 1;
@@ -202,22 +202,21 @@ export const catalogDepartments = conceptDepartments.map((department) => ({
 
     return {
       ...product,
-      id: `concept-${number}-${product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`,
+      id: `gallery-${number}-${product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`,
       brand: brandNames[product.brandKey],
       department: department.name,
       departmentId: department.id,
       catalogNumber: number,
-      image: conceptImage(product.image),
-      price: 'Price pending',
-      status: 'Presentation concept',
-      kind: 'concept',
+      image: galleryImage(product.image),
+      price: 'Ask for details',
+      kind: 'gallery',
     };
   }),
 }));
 
-export const catalogConcepts = catalogDepartments.flatMap((department) => department.products);
+export const galleryProducts = galleryDepartments.flatMap((department) => department.products);
 
-// Existing brand pages consume `products`; keep it limited to verified store listings.
+// Brand pages show products that can be purchased online.
 export const products = officialProducts;
 
 export const productFilters = [
@@ -231,8 +230,8 @@ export const productFilters = [
 ];
 
 export const departmentFilters = [
-  { label: 'All departments', value: 'all' },
-  ...catalogDepartments.map((department) => ({
+  { label: 'All categories', value: 'all' },
+  ...galleryDepartments.map((department) => ({
     label: department.name,
     value: department.id,
   })),

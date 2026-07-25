@@ -6,8 +6,8 @@ import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import { ASSETS, SUBSIDIARY_BRANDS } from '../config/brand';
 import {
-  catalogConcepts,
-  catalogDepartments,
+  galleryDepartments,
+  galleryProducts,
   departmentFilters,
   officialProducts,
   productFilters,
@@ -20,7 +20,7 @@ export default function ShopPage() {
   const [departmentFilter, setDepartmentFilter] = useState('all');
 
   const visibleProducts = useMemo(() => {
-    const source = collection === 'official' ? officialProducts : catalogConcepts;
+    const source = collection === 'official' ? officialProducts : galleryProducts;
 
     return source.filter((product) => {
       const brandMatches = brandFilter === 'all' || product.brandKey === brandFilter;
@@ -57,34 +57,34 @@ export default function ShopPage() {
     <>
       <SEO
         title="Shop"
-        description={`Explore verified Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} merchandise plus the complete presentation concept catalog.`}
+        description={`Shop Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} apparel, headwear, drinkware, and accessories.`}
         path="/shop"
         schema={productSchema}
       />
       <PageHero
-        eyebrow="Official store and merchandise catalog"
+        eyebrow="Official merchandise"
         title="Wear the brand. Carry the culture."
-        description="Shop currently listed merchandise or review every concept from the Ark of Bones merchandise presentation."
+        description="Shop available styles and explore the full Ark of Bones collection."
         image={ASSETS.event}
         compact
       />
 
-      <section className="shop-status-band" aria-label="Merchandise catalog status">
-        <div><strong>{officialProducts.length}</strong><span>Verified store listings</span></div>
-        <div><strong>{catalogConcepts.length}</strong><span>Individual concepts</span></div>
-        <div><strong>{catalogDepartments.length}</strong><span>Concept departments</span></div>
-        <div><strong>External</strong><span>Official checkout</span></div>
+      <section className="shop-status-band" aria-label="Merchandise collection overview">
+        <div><strong>{officialProducts.length}</strong><span>Available online</span></div>
+        <div><strong>{galleryProducts.length}</strong><span>Collection pieces</span></div>
+        <div><strong>{galleryDepartments.length}</strong><span>Product categories</span></div>
+        <div><strong>Ark Store</strong><span>Shop and checkout</span></div>
       </section>
 
       <section className="content-band shop-page">
         <div className="shop-toolbar">
           <SectionHeader
             eyebrow="Choose a collection"
-            title={collection === 'official' ? 'Available through the official store' : 'Complete presentation concept catalog'}
+            title={collection === 'official' ? 'Available now' : 'Explore the full collection'}
             description={
               collection === 'official'
-                ? 'These six products have verified public prices. Each link opens the official Ark of Bones store.'
-                : 'All 53 pieces from the supplied merchandise presentation are shown individually. Working names, pricing, sizes, production, and availability still require team approval.'
+                ? 'Open the Ark of Bones store for current prices and checkout.'
+                : 'Browse apparel, headwear, drinkware, and accessories. Ask us about any piece that catches your eye.'
             }
           />
           {collection === 'official' ? (
@@ -102,16 +102,16 @@ export default function ShopPage() {
             onClick={() => switchCollection('official')}
           >
             <ShoppingBag aria-hidden="true" />
-            <span>Official store<strong>{officialProducts.length} verified products</strong></span>
+            <span>Shop online<strong>{officialProducts.length} products with prices</strong></span>
           </button>
           <button
             type="button"
-            className={collection === 'concepts' ? 'is-active' : ''}
-            aria-pressed={collection === 'concepts'}
-            onClick={() => switchCollection('concepts')}
+            className={collection === 'gallery' ? 'is-active' : ''}
+            aria-pressed={collection === 'gallery'}
+            onClick={() => switchCollection('gallery')}
           >
             <Layers3 aria-hidden="true" />
-            <span>Concept catalog<strong>{catalogConcepts.length} individual pieces</strong></span>
+            <span>Full collection<strong>{galleryProducts.length} pieces across six categories</strong></span>
           </button>
         </div>
 
@@ -129,9 +129,9 @@ export default function ShopPage() {
               </button>
             ))}
           </div>
-          {collection === 'concepts' ? (
+          {collection === 'gallery' ? (
             <label className="department-filter">
-              <span>Department</span>
+              <span>Category</span>
               <select value={departmentFilter} onChange={(event) => setDepartmentFilter(event.target.value)}>
                 {departmentFilters.map((item) => (
                   <option key={item.value} value={item.value}>{item.label}</option>
@@ -141,22 +141,22 @@ export default function ShopPage() {
           ) : null}
         </div>
 
-        <div className={`shop-disclosure${collection === 'concepts' ? ' shop-disclosure--concept' : ''}`}>
+        <div className={`shop-disclosure${collection === 'gallery' ? ' shop-disclosure--gallery' : ''}`}>
           <CheckCircle2 aria-hidden="true" />
           <p>
             {collection === 'official'
-              ? 'Prices shown apply only to the six verified public store listings. Checkout occurs on the official external store.'
-              : 'Concept cards are review items, not product listings. No order can be placed and no payment is collected for these concepts.'}
+              ? 'Prices and checkout are handled by the Ark of Bones store.'
+              : 'Interested in a collection piece? Use its inquiry button to ask about availability, sizing, and ordering.'}
           </p>
         </div>
 
         <div className="shop-results-heading" aria-live="polite">
           <strong>{visibleProducts.length}</strong>
-          <span>{collection === 'official' ? 'verified products shown' : 'presentation concepts shown'}</span>
+          <span>{collection === 'official' ? 'products shown' : 'collection pieces shown'}</span>
         </div>
 
         {visibleProducts.length ? (
-          <div className={`product-grid${collection === 'concepts' ? ' product-grid--concepts' : ''}`}>
+          <div className={`product-grid${collection === 'gallery' ? ' product-grid--gallery' : ''}`}>
             {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
           </div>
         ) : (

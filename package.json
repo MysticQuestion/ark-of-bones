@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
+    "postbuild": "node scripts/audit-public-copy.mjs dist",
+    "copy:audit": "node scripts/audit-public-copy.mjs dist",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {

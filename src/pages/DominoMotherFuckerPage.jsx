@@ -22,15 +22,15 @@ export default function DominoMotherFuckerPage() {
 
   return (
     <>
-      <SEO title={name} description={`${name} is the expressive culture, media, storytelling, and merchandise subsidiary within Ark of Bones.`} path={brand.path} />
-      <PageHero eyebrow="An Ark of Bones subsidiary" title={name} description="The expressive cultural identity associated with victory, attitude, humor, storytelling, media, and merchandise." image={ASSETS.event} theme="red">
+      <SEO title={name} description={`${name} brings victory, attitude, humor, storytelling, media, and merchandise to Ark of Bones.`} path={brand.path} />
+      <PageHero eyebrow="An Ark of Bones brand" title={name} description="Victory, attitude, humor, storytelling, media, and merchandise born around the table." image={ASSETS.event} theme="red">
         <Link className="button button--light" to="/brands">View the brand family</Link>
       </PageHero>
-      <section className="brand-narrative"><p className="eyebrow">The point of view</p><h2>Domino culture with the volume turned up.</h2><p>{name} carries the expressive side of the table: the sayings, humor, confidence, fashion, and stories that live around the game. It operates as a subsidiary identity within Ark of Bones, not as a competing parent brand.</p></section>
-      <section className="content-band"><SectionHeader eyebrow="Associated events" title="At the table" />{brandEvents.length ? <div className="event-list">{brandEvents.map((event) => <EventCard key={event.id} event={event} />)}</div> : <EmptyState title="No brand-specific event is currently listed" description="Confirmed dates will appear here when they are publicly available." actionLabel="View all events" actionTo="/events" />}</section>
-      <section className="content-band content-band--quiet"><SectionHeader eyebrow="Associated media" title="Watch the voice of the brand" />{brandVideos.length ? <div className="video-grid">{brandVideos.map((video) => <VideoCard key={video.id} video={video} />)}</div> : <EmptyState title="No brand-specific video is currently listed" description="Use the Watch page and official channels for published Ark of Bones media." actionLabel="Open Watch" actionTo="/watch" />}</section>
+      <section className="brand-narrative"><p className="eyebrow">The point of view</p><h2>Domino culture with the volume turned up.</h2><p>{name} carries the sayings, humor, confidence, fashion, and stories that live around the game.</p></section>
+      <section className="content-band"><SectionHeader eyebrow="Events" title="At the table" />{brandEvents.length ? <div className="event-list">{brandEvents.map((event) => <EventCard key={event.id} event={event} />)}</div> : <EmptyState title="Bring the attitude to your next gathering" description="Ask about an Ark of Bones event for your venue, audience, or community." actionLabel="Host an event" actionTo="/contact?inquiry=Host%20an%20Event" />}</section>
+      <section className="content-band content-band--quiet"><SectionHeader eyebrow="Watch" title="Stories with a point of view" />{brandVideos.length ? <div className="video-grid">{brandVideos.map((video) => <VideoCard key={video.id} video={video} />)}</div> : <EmptyState title="Watch the world around the table" description="Find match footage, clips, interviews, and Ark of Bones stories." actionLabel="Open Watch" actionTo="/watch" />}</section>
       <section className="content-band"><SectionHeader eyebrow="Merchandise" title={`Wear ${name}`} /><div className="product-grid product-grid--compact">{brandProducts.map((product) => <ProductCard key={product.id} product={product} />)}</div></section>
-      <section className="parent-brand-return"><div><p className="eyebrow">Part of Ark of Bones</p><h2>One cultural lane inside the home of domino entertainment.</h2></div><Link className="button button--gold" to="/about">About Ark of Bones<ArrowRight aria-hidden="true" /></Link></section>
+      <section className="parent-brand-return"><div><p className="eyebrow">Part of Ark of Bones</p><h2>The expressive voice inside the home of domino entertainment.</h2></div><Link className="button button--gold" to="/about">About Ark of Bones<ArrowRight aria-hidden="true" /></Link></section>
     </>
   );
 }

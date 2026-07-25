@@ -18,13 +18,13 @@ const experienceFormats = [
   {
     title: 'Casino and Venue Activations',
     note: 'Domino programming for hospitality and entertainment environments.',
-    detail: 'Planning can cover tournament formats, screen output, audience flow, and approved sponsor moments.',
+    detail: 'Bring together tournament play, screens, audience energy, and sponsor moments that fit the room.',
     icon: Building2,
   },
   {
     title: 'Corporate and Cultural Programs',
     note: 'Team events, community programs, and premium brand experiences.',
-    detail: 'Each inquiry is qualified around the audience, venue, production needs, and media opportunities.',
+    detail: 'Shape the gathering around your audience, venue, and goals for the day.',
     icon: BriefcaseBusiness,
   },
 ];
@@ -32,29 +32,27 @@ const experienceFormats = [
 export default function EventsPage() {
   return (
     <>
-      <SEO title="Events" description="Find verified Ark of Bones domino events, tournaments, participation details, and venue information." path="/events" />
-      <PageHero eyebrow="Play in person" title="Events" description="Confirmed dates, venues, host brands, formats, and participation information for the Ark of Bones community." image={ASSETS.event} />
+      <SEO title="Events" description="Find Ark of Bones domino events, tournaments, participation details, and venue information." path="/events" />
+      <PageHero eyebrow="Play in person" title="Events" description="Find where Ark of Bones is playing next, or bring the table to your city." image={ASSETS.event} />
       <section className="content-band">
-        <SectionHeader eyebrow="Upcoming" title="Next at the table" description="Only confirmed public dates are listed as upcoming events." />
+        <SectionHeader eyebrow="Upcoming" title="Next at the table" description="Find dates, venues, formats, and ways to join." />
         {events.upcoming.length ? (
           <div className="event-list">{events.upcoming.map((event) => <EventCard key={event.id} event={event} />)}</div>
         ) : (
-          <EmptyState title="No public event is scheduled at the moment" description="Follow Ark of Bones for the next announcement, or begin a conversation about hosting an event in your city." actionLabel="Host an event" actionTo="/contact?inquiry=Host%20an%20Event" />
+          <EmptyState title="No event is scheduled at the moment" description="Follow Ark of Bones for the next announcement, or bring an event to your city." actionLabel="Host an event" actionTo="/contact?inquiry=Host%20an%20Event" />
         )}
       </section>
-      <section className="content-band content-band--quiet">
-        <SectionHeader eyebrow="Archive" title="Past events" description="Completed events appear here when public details and recaps are available." />
-        {events.past.length ? (
+      {events.past.length ? (
+        <section className="content-band content-band--quiet">
+          <SectionHeader eyebrow="Past events" title="From tables we have shared" description="Highlights and recaps from Ark of Bones gatherings." />
           <div className="event-list">{events.past.map((event) => <EventCard key={event.id} event={event} />)}</div>
-        ) : (
-          <EmptyState title="The public event archive is currently empty" description="Follow the official channels for published recaps and future event announcements." />
-        )}
-      </section>
+        </section>
+      ) : null}
       <section className="content-band event-formats">
         <SectionHeader
           eyebrow="Event experiences"
           title="Bring the Ark to rooms where people gather"
-          description="Every format begins with a direct planning conversation. No availability, venue, or production commitment is implied until the team confirms it."
+          description="Tell us about your crowd, your space, and the kind of gathering you want to create."
         />
         <div className="event-format-grid">
           {experienceFormats.map(({ title, note, detail, icon: Icon }) => (

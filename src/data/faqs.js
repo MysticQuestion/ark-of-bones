@@ -17,61 +17,61 @@ export const faqs = [
     category: 'Ark of Bones',
     question: 'What is Ark of Bones?',
     answer:
-      'Ark of Bones is the parent entertainment company connecting live play, filmed competition, table experiences, cultural storytelling, merchandise, and community through dominoes.',
+      'Ark of Bones is the home of domino entertainment: live play, filmed competition, table experiences, cultural storytelling, merchandise, and community.',
   },
   {
     category: 'Events',
     question: 'Where can I find upcoming events?',
     answer:
-      'Verified public dates are published on the Events page. When no event is listed, follow the official social channels for the next announcement.',
+      'Visit the Events page for upcoming dates and ways to join. Follow Ark of Bones on social media for new announcements.',
   },
   {
     category: 'Events',
     question: 'Can Ark of Bones produce an event at my venue?',
     answer:
-      'Use the Contact page and select Host an Event. Share the city, venue, audience, and event goals so the team can evaluate the opportunity.',
+      'Yes. Use the Contact page and select Host an Event. Share your city, venue, audience, and event goals to start the conversation.',
   },
   {
     category: 'Watch',
     question: 'Where can I watch Ark of Bones?',
     answer:
-      'The Watch page gathers verified broadcast and video links. The official YouTube, Instagram, TikTok, and Facebook channels are also linked there.',
+      'Visit the Watch page or follow Ark of Bones on YouTube, Instagram, TikTok, and Facebook.',
   },
   {
     category: 'Watch',
     question: 'Is a live game scheduled now?',
     answer:
-      'The Watch page shows the current live status. If no verified broadcast is scheduled, it directs viewers to official channels without displaying a broken player.',
+      'The Watch page shows when Ark of Bones is live and connects you to recent matches and clips between broadcasts.',
   },
   {
     category: 'Tables and Venue Partnerships',
     question: 'What is the Ark of Bones table experience?',
     answer:
-      'It is an entertainment-centered domino setup designed to support live play, audience engagement, connected screens, and live streaming where the venue and production plan allow.',
+      'It brings live play, audience engagement, connected screens, and streaming possibilities together around the table.',
   },
   {
     category: 'Tables and Venue Partnerships',
-    question: 'Are table prices or delivery timelines published?',
+    question: 'How do I get table pricing and details?',
     answer:
-      'No. Contact Ark of Bones for a venue or event conversation. Pricing, availability, and technical requirements are not published on this site.',
+      'Start a Tables / Venue Partnership inquiry and tell us about your space, city, audience, and event goals.',
   },
   {
     category: 'Shop',
     question: 'Where does merchandise checkout happen?',
     answer:
-      'Product cards lead to the official Ark of Bones merchandise collection. Checkout occurs on the official external store.',
+      'Products with online pricing link directly to the Ark of Bones store for checkout.',
   },
   {
     category: 'Brands',
     question: `How does ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} relate to Ark of Bones?`,
     answer:
-      'It is a subsidiary cultural, media, and merchandise identity within the Ark of Bones brand family.',
+      `It is the expressive Ark of Bones brand for attitude, humor, storytelling, media, and merchandise around the game.`,
   },
   {
     category: 'Brands',
     question: 'What is Big Six Bones?',
     answer:
-      'Big Six Bones is the competitive, game-centered subsidiary identity associated with American domino play, events, education, and community competition.',
+      'Big Six Bones is the competitive Ark of Bones brand for American domino play, events, education, and community competition.',
   },
   {
     category: 'Game Guides',

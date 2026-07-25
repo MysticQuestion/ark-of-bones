@@ -12,10 +12,10 @@ import { events } from '../data/events';
 import { featuredVideo } from '../data/videos';
 
 const pathways = [
-  { title: 'Play', label: 'Events', description: 'Confirmed events. Real venues. Clear details.', to: '/events', icon: CalendarDays },
-  { title: 'Watch', label: 'Live and archived media', description: 'Matches, interviews, and stories from around the table.', to: '/watch', icon: Tv },
+  { title: 'Play', label: 'Events', description: 'Find the next place to play, watch, and gather.', to: '/events', icon: CalendarDays },
+  { title: 'Watch', label: 'Live and on-demand media', description: 'Matches, interviews, and stories from around the table.', to: '/watch', icon: Tv },
   { title: 'Partner', label: 'Tables and venues', description: 'Build a live domino experience for your venue or crowd.', to: '/tables', icon: Handshake },
-  { title: 'Shop', label: 'Official merchandise', description: 'Official releases and the complete merchandise concept catalog.', to: '/shop', icon: ShoppingBag },
+  { title: 'Shop', label: 'Official merchandise', description: 'Apparel, headwear, drinkware, and accessories from the Ark.', to: '/shop', icon: ShoppingBag },
 ];
 
 export default function HomePage() {
@@ -95,9 +95,9 @@ export default function HomePage() {
       </section>
 
       <section className="content-band content-band--wood">
-        <SectionHeader eyebrow="Events" title="Meet at the table" description="Confirmed dates appear here first, with clear venue, city, host brand, and participation details." />
+        <SectionHeader eyebrow="Events" title="Meet at the table" description="Find dates, venues, host brands, and ways to join the next gathering." />
         {events.upcoming.length ? null : (
-          <EmptyState title="No public event is currently scheduled" description="New dates will be published when venue and event information are confirmed." actionLabel="Ask about hosting an event" actionTo="/contact?inquiry=Host%20an%20Event" />
+          <EmptyState title="Ready for the next table" description="Follow Ark of Bones for event announcements, or bring the experience to your city." actionLabel="Host an event" actionTo="/contact?inquiry=Host%20an%20Event" />
         )}
       </section>
 
@@ -106,11 +106,11 @@ export default function HomePage() {
           <p className="eyebrow">Watch</p>
           <h2>The table is also a stage.</h2>
           <p>Ark of Bones media brings viewers closer to the strategy, personalities, sound, and culture surrounding competitive play.</p>
-          <Link className="button button--outline" to="/watch">Open the Watch archive<ArrowRight aria-hidden="true" /></Link>
+          <Link className="button button--outline" to="/watch">Watch Ark of Bones<ArrowRight aria-hidden="true" /></Link>
         </div>
         <div className="media-preview-frame">
           {featuredVideo ? null : (
-            <EmptyState title="The next feature is being selected" description="Visit the official channels for currently published match footage, clips, and community stories." actionLabel="Visit YouTube" actionTo={CONTACT.social.youtube} external />
+            <EmptyState title="The game continues on YouTube" description="Watch match footage, clips, and stories from around the table." actionLabel="Watch on YouTube" actionTo={CONTACT.social.youtube} external />
           )}
         </div>
       </section>

@@ -17,9 +17,11 @@ const emptyForm = {
 export default function InquiryForm() {
   const [searchParams] = useSearchParams();
   const requestedType = searchParams.get('inquiry');
+  const requestedItem = searchParams.get('item');
   const [form, setForm] = useState(() => ({
     ...emptyForm,
     inquiryType: INQUIRY_TYPES.includes(requestedType) ? requestedType : emptyForm.inquiryType,
+    message: requestedItem ? `I'm interested in the ${requestedItem}.` : emptyForm.message,
   }));
   const [status, setStatus] = useState('');
 
@@ -28,6 +30,15 @@ export default function InquiryForm() {
       setForm((current) => ({ ...current, inquiryType: requestedType }));
     }
   }, [requestedType]);
+
+  useEffect(() => {
+    if (requestedItem) {
+      setForm((current) => ({
+        ...current,
+        message: current.message || `I'm interested in the ${requestedItem}.`,
+      }));
+    }
+  }, [requestedItem]);
 
   const update = (event) => {
     const { name, type, checked, value } = event.target;
@@ -77,8 +88,8 @@ export default function InquiryForm() {
         <input name="consent" type="checkbox" checked={form.consent} onChange={update} required />
         <span>I agree that Ark of Bones may use these details to respond to this inquiry.</span>
       </label>
-      <p className="form-note">This form uses your email application. No message is stored or submitted by this website.</p>
-      <button className="button button--gold" type="submit"><Mail aria-hidden="true" />Prepare email inquiry</button>
+      <p className="form-note">Selecting the button below opens a ready-to-send message in your email app.</p>
+      <button className="button button--gold" type="submit"><Mail aria-hidden="true" />Open email message</button>
       <div className="form-status" aria-live="polite">{status}</div>
     </form>
   );

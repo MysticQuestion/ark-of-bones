@@ -7,7 +7,7 @@ export const brands = [
     category: 'Culture, media and merchandise',
     proposition: 'Victory with a point of view.',
     description:
-      'The expressive cultural identity within Ark of Bones, built around attitude, humor, storytelling, media, and merchandise connected to the table.',
+      'Attitude, humor, storytelling, media, and merchandise connected to the table.',
     image: ASSETS.event,
     tone: 'red',
   },
@@ -17,7 +17,7 @@ export const brands = [
     category: 'Competition, events and education',
     proposition: 'Fast rounds. Big plays. Community competition.',
     description:
-      'The competitive, game-centered identity within Ark of Bones, focused on American domino play, events, education, and tournament-ready energy.',
+      'American domino play, events, education, and tournament energy from Ark of Bones.',
     image: ASSETS.players,
     tone: 'gold',
   },

@@ -9,10 +9,10 @@ export default function ContactPage() {
   return (
     <>
       <SEO title="Contact" description="Contact Ark of Bones for events, player participation, venue partnerships, tables, sponsorships, media, merchandise, and brand collaboration." path="/contact" />
-      <PageHero eyebrow="Bookings, partnerships, and questions" title="Contact Ark of Bones" description="Choose the inquiry type that matches the opportunity and give the team enough context to respond effectively." image={ASSETS.event} compact />
+      <PageHero eyebrow="Bookings, partnerships, and questions" title="Contact Ark of Bones" description="Events, venues, sponsorships, media, merchandise, or partnerships: start here." image={ASSETS.event} compact />
       <section className="contact-layout">
         <aside className="contact-details">
-          <p className="eyebrow">Verified contact</p>
+          <p className="eyebrow">Reach us</p>
           <h2>Let’s connect. Let’s play.</h2>
           <a href={`mailto:${CONTACT.email}`}><Mail aria-hidden="true" /><span>Email<strong>{CONTACT.email}</strong></span></a>
           <a href={CONTACT.phoneHref}><Phone aria-hidden="true" /><span>Telephone<strong>{CONTACT.phoneDisplay}</strong></span></a>
@@ -24,7 +24,7 @@ export default function ContactPage() {
             <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="Ark of Bones on YouTube">YT</a>
           </div>
         </aside>
-        <div className="contact-form-wrap"><p className="eyebrow">Prepare an inquiry</p><h2>Tell us what you’re building.</h2><InquiryForm /></div>
+        <div className="contact-form-wrap"><p className="eyebrow">Start the conversation</p><h2>Tell us what you have in mind.</h2><InquiryForm /></div>
       </section>
     </>
   );
