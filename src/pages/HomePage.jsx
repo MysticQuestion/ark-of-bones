@@ -12,10 +12,10 @@ import { events } from '../data/events';
 import { featuredVideo } from '../data/videos';
 
 const pathways = [
-  { title: 'Play', label: 'Events', description: 'Find confirmed dates, tournament information, and ways to participate.', to: '/events', icon: CalendarDays },
-  { title: 'Watch', label: 'Live and archived media', description: 'Follow broadcasts, recorded matches, interviews, and cultural stories.', to: '/watch', icon: Tv },
-  { title: 'Partner', label: 'Tables and venues', description: 'Build an Ark of Bones experience for your venue, event, or activation.', to: '/tables', icon: Handshake },
-  { title: 'Shop', label: 'Store and concept catalog', description: 'Shop verified products and review all 53 merchandise presentation concepts.', to: '/shop', icon: ShoppingBag },
+  { title: 'Play', label: 'Events', description: 'Confirmed events. Real venues. Clear details.', to: '/events', icon: CalendarDays },
+  { title: 'Watch', label: 'Live and archived media', description: 'Matches, interviews, and stories from around the table.', to: '/watch', icon: Tv },
+  { title: 'Partner', label: 'Tables and venues', description: 'Build a live domino experience for your venue or crowd.', to: '/tables', icon: Handshake },
+  { title: 'Shop', label: 'Official merchandise', description: 'Official releases and the complete merchandise concept catalog.', to: '/shop', icon: ShoppingBag },
 ];
 
 export default function HomePage() {
@@ -41,18 +41,37 @@ export default function HomePage() {
   return (
     <>
       <SEO title={BRAND.name} description={BRAND.description} path="/" schema={schema} />
-      <section className="home-hero" style={{ '--home-hero-image': `url("${ASSETS.hero}")` }}>
-        <div className="home-hero-content">
-          <p className="eyebrow">Entertainment · Competition · Culture</p>
-          <h1>Ark of Bones</h1>
-          <p className="home-proposition">{BRAND.proposition}</p>
-          <p className="home-description">{BRAND.description}</p>
+      <section
+        className="home-hero home-hero--logo"
+        style={{
+          '--home-hero-image': `url("${ASSETS.hero}")`,
+          '--hero-logo-image': `url("${ASSETS.heroLogo}")`,
+        }}
+      >
+        <div className="home-hero-content home-hero-content--center">
+          <p className="hero-brand-line">{BRAND.proposition}</p>
+          <h1 className="sr-only">Ark of Bones</h1>
+          <div className="hero-logo-stage" aria-hidden="true">
+            <img
+              className="hero-logo"
+              src={ASSETS.heroLogoSmall}
+              srcSet={`${ASSETS.heroLogoSmall} 1440w, ${ASSETS.heroLogo} 4096w`}
+              sizes="(max-width: 720px) 88vw, 480px"
+              alt=""
+              width="4096"
+              height="3026"
+              fetchPriority="high"
+            />
+            <span className="hero-logo-shine" />
+          </div>
+          <p className="hero-declaration">Dominoes belong on the main stage.</p>
+          <p className="home-description">Live competition. Connected tables. Original media. Official merchandise.</p>
           <div className="hero-actions">
             <Link className="button button--gold" to="/events">Find an event<ArrowRight aria-hidden="true" /></Link>
             <Link className="button button--light" to="/watch"><Play aria-hidden="true" />Watch now</Link>
-            <Link className="button button--outline" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Bring Ark of Bones to your venue</Link>
+            <Link className="button button--outline" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Bring the Ark to your venue</Link>
           </div>
-          <Link className="home-shop-link" to="/shop">Shop official merchandise <ArrowRight aria-hidden="true" /></Link>
+          <Link className="home-shop-link" to="/shop">Shop the collection <ArrowRight aria-hidden="true" /></Link>
         </div>
         <div className="home-hero-index" aria-label="Ark of Bones areas of focus">
           <span>Live play</span><span>Filmed competition</span><span>Signature tables</span><span>Community</span>
@@ -60,7 +79,7 @@ export default function HomePage() {
       </section>
 
       <section className="content-band pathway-band" aria-labelledby="pathways-title">
-        <SectionHeader id="pathways-title" eyebrow="Start here" title="Four ways into Ark of Bones" description="The central destination for players, viewers, venues, partners, and supporters of domino culture." />
+        <SectionHeader id="pathways-title" eyebrow="Start here" title="Choose your seat at the table" description="Play, watch, build an experience, or carry the brand." />
         <div className="pathway-grid">
           {pathways.map(({ icon: Icon, ...pathway }, index) => (
             <Link className="pathway-card" to={pathway.to} key={pathway.title}>
@@ -107,7 +126,7 @@ export default function HomePage() {
       </section>
 
       <section className="content-band brand-family-preview">
-        <SectionHeader eyebrow="Brand family" title="One parent company. Distinct cultural lanes." description="Each subsidiary has a defined purpose while remaining visibly connected to Ark of Bones." />
+        <SectionHeader eyebrow="Brand family" title="One house. Two unmistakable voices." description="Domino Mother Fucker carries the attitude. Big Six Bones carries the competition. Both belong to Ark of Bones." />
         <div className="brand-grid">{brands.map((brand) => <BrandCard key={brand.key} brand={brand} />)}</div>
       </section>
 
@@ -132,7 +151,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTASection eyebrow="Partnerships" title="Bring the culture, competition, and camera-ready energy to your audience." description="Start a conversation about venues, events, sponsorships, media, or brand collaboration." label="Start a partnership inquiry" to="/contact?inquiry=Sponsorship" secondaryLabel="Explore tables" secondaryTo="/tables" />
+      <CTASection eyebrow="Partnerships" title="Put real domino competition in front of your crowd." description="Talk with Ark of Bones about venues, live events, sponsorship, media, or a collaboration built around the table." label="Start a partnership inquiry" to="/contact?inquiry=Sponsorship" secondaryLabel="Explore tables" secondaryTo="/tables" />
     </>
   );
 }
