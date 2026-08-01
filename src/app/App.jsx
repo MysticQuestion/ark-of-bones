@@ -1,5 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import DominoLoader from '../components/DominoLoader';
+import PageErrorBoundary from '../components/PageErrorBoundary';
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
 import AppRoutes from './routes';
@@ -19,6 +21,18 @@ function RouteFocus() {
   return null;
 }
 
+function RouteContent() {
+  const location = useLocation();
+
+  return (
+    <PageErrorBoundary key={location.pathname}>
+      <Suspense fallback={<DominoLoader />}>
+        <AppRoutes />
+      </Suspense>
+    </PageErrorBoundary>
+  );
+}
+
 export default function App() {
   return (
     <div className="site-shell">
@@ -26,7 +40,7 @@ export default function App() {
       <SiteHeader />
       <RouteFocus />
       <main id="main-content" className="page-shell" tabIndex="-1">
-        <AppRoutes />
+        <RouteContent />
       </main>
       <SiteFooter />
     </div>

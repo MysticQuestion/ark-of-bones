@@ -1,17 +1,19 @@
+import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import AboutPage from '../pages/AboutPage';
-import BigSixBonesPage from '../pages/BigSixBonesPage';
-import BrandsPage from '../pages/BrandsPage';
-import ContactPage from '../pages/ContactPage';
-import DominoMotherFuckerPage from '../pages/DominoMotherFuckerPage';
-import EventsPage from '../pages/EventsPage';
-import FAQPage from '../pages/FAQPage';
-import HomePage from '../pages/HomePage';
-import LearnPage from '../pages/LearnPage';
-import NotFoundPage from '../pages/NotFoundPage';
-import ShopPage from '../pages/ShopPage';
-import TablesPage from '../pages/TablesPage';
-import WatchPage from '../pages/WatchPage';
+
+const AboutPage = lazy(() => import('../pages/AboutPage'));
+const BigSixBonesPage = lazy(() => import('../pages/BigSixBonesPage'));
+const BrandsPage = lazy(() => import('../pages/BrandsPage'));
+const ContactPage = lazy(() => import('../pages/ContactPage'));
+const DominoMotherFuckerPage = lazy(() => import('../pages/DominoMotherFuckerPage'));
+const EventsPage = lazy(() => import('../pages/EventsPage'));
+const FAQPage = lazy(() => import('../pages/FAQPage'));
+const HomePage = lazy(() => import('../pages/HomePage'));
+const LearnPage = lazy(() => import('../pages/LearnPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
+const ShopPage = lazy(() => import('../pages/ShopPage'));
+const TablesPage = lazy(() => import('../pages/TablesPage'));
+const WatchPage = lazy(() => import('../pages/WatchPage'));
 
 export default function AppRoutes() {
   return (

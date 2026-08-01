@@ -2,6 +2,7 @@ import { ArrowRight, Building2, MonitorPlay, Users, Workflow } from 'lucide-reac
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 import PageHero from '../components/PageHero';
+import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import { ASSETS } from '../config/brand';
@@ -44,24 +45,24 @@ export default function TablesPage() {
   return (
     <>
       <SEO title="Tables" description="Explore Ark of Bones domino table experiences and venue partnerships for live play, screens, streaming, events, and audience engagement." path="/tables" />
-      <PageHero eyebrow="Tables and venue partnerships" title="The table is the center of the experience." description="Ark of Bones helps venues and event organizers turn domino play into a visible, social, audience-ready program." image={ASSETS.hero}>
-        <Link className="button button--gold" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Bring Ark of Bones to your venue<ArrowRight aria-hidden="true" /></Link>
+      <PageHero eyebrow="Tables and venue partnerships" title="Give every seat a view of the game." description="Ark of Bones shapes domino play for venues that want focused competition, visible action, and stronger audience engagement." image={ASSETS.hero}>
+        <Link className="button button--gold" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Plan a venue experience<ArrowRight aria-hidden="true" /></Link>
       </PageHero>
       <section className="feature-ledger">
-        <article><Users aria-hidden="true" /><span>Live play</span><p>Center the players while giving the room a reason to gather.</p></article>
+        <article><Users aria-hidden="true" /><span>Live play</span><p>Protect player focus while keeping the competition visible.</p></article>
         <article><MonitorPlay aria-hidden="true" /><span>Screen connection</span><p>Extend table action to multiple screens where the venue plan supports it.</p></article>
         <article><Workflow aria-hidden="true" /><span>Streaming potential</span><p>Bring live-game streaming and remote viewing into venues equipped to support it.</p></article>
         <article><Building2 aria-hidden="true" /><span>Venue value</span><p>Create repeatable cultural programming around competition and community.</p></article>
       </section>
       <section className="image-story">
-        <div className="image-story-media"><img src={ASSETS.players} alt="Players focused on a domino game around a green table" width="1800" height="1200" loading="lazy" /></div>
-        <div className="image-story-copy"><p className="eyebrow">Built for participation</p><h2>More than furniture. A reason to gather.</h2><p>Bring tournaments, celebrations, hospitality, festivals, activations, and community programs to life around the table.</p></div>
+        <div className="image-story-media"><SafeImage src={ASSETS.players} alt="Players focused on a domino game around a green table" fallbackAlt="Competitive domino play; Ark of Bones mark shown" width="1800" height="1200" loading="lazy" /></div>
+        <div className="image-story-copy"><p className="eyebrow">Built for participation</p><h2>More than furniture. A live format.</h2><p>Tournaments, celebrations, hospitality programs, festivals, activations, and community events can all begin from the same focal point.</p></div>
       </section>
       <section className="content-band table-planning">
         <SectionHeader
-          eyebrow="The experience around the table"
-          title="Every detail serves the room"
-          description="The playing surface, sightlines, sound, screens, and guest flow all work together."
+          eyebrow="Production design"
+          title="Every detail serves the action"
+          description="The playing surface, sightlines, sound, screens, and guest flow work as one system."
         />
         <div className="table-planning-grid">
           {planningAreas.map(([title, body], index) => (
@@ -75,8 +76,8 @@ export default function TablesPage() {
         <div className="confirmation-panel">
           <div>
             <p className="eyebrow">Your venue</p>
-            <h3>Every room calls for a different setup.</h3>
-            <p>Tell us about your space, your audience, and your goals. We will shape the table, media, and event experience around what fits.</p>
+            <h3>The setup follows the space.</h3>
+            <p>Venue dimensions, audience needs, technical access, and the program format determine the right configuration.</p>
           </div>
           <ul>
             {confirmationChecklist.map((item) => <li key={item}>{item}</li>)}
@@ -84,14 +85,14 @@ export default function TablesPage() {
         </div>
       </section>
       <section className="content-band content-band--wood">
-        <SectionHeader eyebrow="Where it fits" title="A flexible entertainment format" description="From an intimate game night to a room full of spectators, the experience starts with the people gathering around it." />
+        <SectionHeader eyebrow="Applications" title="One format, many settings" description="An intimate game night and a spectator event require different production, but both can keep dominoes at the center." />
         <div className="use-grid">{uses.map((use) => <div key={use}><span aria-hidden="true" />{use}</div>)}</div>
       </section>
       <section className="content-band">
         <SectionHeader eyebrow="How it comes together" title="From first conversation to game day" />
         <div className="process-grid">{process.map(([number, title, body]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
       </section>
-      <CTASection eyebrow="Start with the venue" title="Bring Ark of Bones to your venue." description="Tell us about your space, audience, city, and event goals." label="Start a tables and venue inquiry" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership" secondaryLabel="Ask about an event" secondaryTo="/contact?inquiry=Host%20an%20Event" />
+      <CTASection eyebrow="Venue inquiries" title="Build the right configuration for the room." description="Share the location, audience, timing, technical access, and intended format." label="Request a venue conversation" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership" secondaryLabel="Plan a hosted event" secondaryTo="/contact?inquiry=Host%20an%20Event" />
     </>
   );
 }

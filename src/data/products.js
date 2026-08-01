@@ -1,6 +1,8 @@
-import { BRAND, SITE_URL, SUBSIDIARY_BRANDS } from '../config/brand';
+import { BRAND, SUBSIDIARY_BRANDS } from '../config/brand';
 
-export const STORE_URL = `${SITE_URL}/merch`;
+export const STORE_URL = 'https://bugle-marigold-6r8e.squarespace.com/merch';
+
+const productPage = (slug) => `${STORE_URL}/p/${slug}`;
 
 const galleryImages = import.meta.glob('../assets/shop/product-*.jpg', {
   eager: true,
@@ -26,9 +28,12 @@ export const officialProducts = [
     brand: BRAND.name,
     brandKey: 'ark-of-bones',
     price: '$90.00',
+    category: 'Sweatshirt',
     description:
-      'A soft cotton-polyester unisex sweatshirt with a relaxed fit and an embroidered Ark of Bones logo.',
-    href: STORE_URL,
+      'A relaxed unisex sweatshirt in a soft cotton-polyester blend, finished with an embroidered Ark of Bones logo.',
+    specs: ['Cotton-polyester blend', 'Relaxed unisex fit', 'Embroidered front logo'],
+    href: productPage('ark-of-bones-embroidered-sweatshirt'),
+    ctaLabel: 'Choose size and buy',
     image:
       'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/9d5984b4-40fc-4481-b388-49dbc00bc6ea/11.png?format=1000w',
   },
@@ -38,9 +43,12 @@ export const officialProducts = [
     brand: SUBSIDIARY_BRANDS.bigSixBones.name,
     brandKey: SUBSIDIARY_BRANDS.bigSixBones.key,
     price: '$40.00',
+    category: 'Long-sleeve tee',
     description:
       'A 100% cotton long-sleeve crew neck with Big Six Bones on the front and Ark of Bones on the back.',
-    href: STORE_URL,
+    specs: ['100% cotton', 'Relaxed unisex fit', 'Printed front and back'],
+    href: productPage('long-sleeve-crew-neck'),
+    ctaLabel: 'Choose size and buy',
     image:
       'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/49624525-9541-4009-afcd-7fc9ae785f0a/13.png?format=1000w',
   },
@@ -50,9 +58,12 @@ export const officialProducts = [
     brand: SUBSIDIARY_BRANDS.dominoMotherFucker.name,
     brandKey: SUBSIDIARY_BRANDS.dominoMotherFucker.key,
     price: '$25.00',
+    category: 'Graphic tee',
     description:
       'A breathable 100% cotton crew-neck tee with a bold printed design and clean everyday fit.',
-    href: STORE_URL,
+    specs: ['100% cotton', 'Unisex fit', 'Tear-away label'],
+    href: productPage('kkcizt5w74u864q22c2w175tajc3l9-g8wb7'),
+    ctaLabel: 'Choose size and buy',
     image:
       'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/8b08d37a-9290-48fa-96ae-cf535cc8e608/8.png?format=1000w',
   },
@@ -62,9 +73,12 @@ export const officialProducts = [
     brand: SUBSIDIARY_BRANDS.bigSixBones.name,
     brandKey: SUBSIDIARY_BRANDS.bigSixBones.key,
     price: '$25.00',
+    category: 'Graphic tee',
     description:
       'A breathable 100% cotton short-sleeve tee featuring the Big Six Bones identity.',
-    href: STORE_URL,
+    specs: ['100% cotton', 'Unisex fit', 'Tear-away label'],
+    href: productPage('kkcizt5w74u864q22c2w175tajc3l9'),
+    ctaLabel: 'Choose size and buy',
     image:
       'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/7ee6ab93-5e51-40df-a118-7873f7686555/Add%2Ba%2Bheading%2B%283%2Bx%2B5%2Bin%29%2B%282000%2Bx%2B2000%2Bpx%29%2B%282%29.png?format=1000w',
   },
@@ -74,9 +88,12 @@ export const officialProducts = [
     brand: SUBSIDIARY_BRANDS.dominoMotherFucker.name,
     brandKey: SUBSIDIARY_BRANDS.dominoMotherFucker.key,
     price: '$32.00',
+    category: 'Beanie',
     description:
-      'A cuffed acrylic beanie with insulated lining and an embroidered Domino Mother Fucker mark.',
-    href: STORE_URL,
+      'A cuffed acrylic beanie with insulated 3M Thinsulate lining and an embroidered Domino Mother Fucker mark.',
+    specs: ['100% acrylic exterior', '3M Thinsulate lining', 'One size fits most'],
+    href: productPage('ark-of-bones-beanie-p3kd2'),
+    ctaLabel: 'View product',
     image:
       'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/ab6fe276-cfd5-4f82-833c-769e7e82245f/download.png?format=1000w',
   },
@@ -86,9 +103,12 @@ export const officialProducts = [
     brand: BRAND.name,
     brandKey: 'ark-of-bones',
     price: '$32.00',
+    category: 'Beanie',
     description:
-      'A cuffed acrylic beanie with insulated lining and embroidered Ark of Bones branding.',
-    href: STORE_URL,
+      'A cuffed acrylic beanie with insulated 3M Thinsulate lining and embroidered Ark of Bones branding.',
+    specs: ['100% acrylic exterior', '3M Thinsulate lining', 'One size fits most'],
+    href: productPage('ark-of-bones-beanie'),
+    ctaLabel: 'View product',
     image:
       'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/6b49d4b7-231a-4d22-858a-0972410377ea/preview.jpeg?format=1000w',
   },
@@ -208,7 +228,8 @@ export const galleryDepartments = galleryDepartmentData.map((department) => ({
       departmentId: department.id,
       catalogNumber: number,
       image: galleryImage(product.image),
-      price: 'Ask for details',
+      price: null,
+      status: 'Design archive',
       kind: 'gallery',
     };
   }),

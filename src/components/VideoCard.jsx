@@ -1,10 +1,11 @@
 import { ExternalLink, Play } from 'lucide-react';
+import SafeImage from './SafeImage';
 
 export default function VideoCard({ video }) {
   return (
     <article className="video-card">
       <div className="video-card-image">
-        <img src={video.thumbnail} alt={video.thumbnailAlt || ''} width="1280" height="720" loading="lazy" />
+        <SafeImage src={video.thumbnail} alt={video.thumbnailAlt || ''} fallbackAlt={`${video.title}; Ark of Bones mark shown`} width="1280" height="720" loading="lazy" />
         <Play aria-hidden="true" />
       </div>
       <div className="video-card-body">

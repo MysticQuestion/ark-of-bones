@@ -33,13 +33,13 @@ export default function EventsPage() {
   return (
     <>
       <SEO title="Events" description="Find Ark of Bones domino events, tournaments, participation details, and venue information." path="/events" />
-      <PageHero eyebrow="Play in person" title="Events" description="Find where Ark of Bones is playing next, or bring the table to your city." image={ASSETS.event} />
+      <PageHero eyebrow="Play in person" title="Events" description="Confirmed dates, participation details, and hosted formats for players, spectators, and venues." image={ASSETS.event} />
       <section className="content-band">
-        <SectionHeader eyebrow="Upcoming" title="Next at the table" description="Find dates, venues, formats, and ways to join." />
+        <SectionHeader eyebrow="Schedule" title="Confirmed upcoming dates" description="Each listing includes the venue, city, format, host brand, and participation route." />
         {events.upcoming.length ? (
           <div className="event-list">{events.upcoming.map((event) => <EventCard key={event.id} event={event} />)}</div>
         ) : (
-          <EmptyState title="No event is scheduled at the moment" description="Follow Ark of Bones for the next announcement, or bring an event to your city." actionLabel="Host an event" actionTo="/contact?inquiry=Host%20an%20Event" />
+          <EmptyState title="No public date is on the calendar" description="Event announcements publish here as soon as the details are confirmed." actionLabel="Discuss hosting" actionTo="/contact?inquiry=Host%20an%20Event" />
         )}
       </section>
       {events.past.length ? (
@@ -51,8 +51,8 @@ export default function EventsPage() {
       <section className="content-band event-formats">
         <SectionHeader
           eyebrow="Event experiences"
-          title="Bring the Ark to rooms where people gather"
-          description="Tell us about your crowd, your space, and the kind of gathering you want to create."
+          title="Choose the format that fits the occasion"
+          description="Private celebrations, hospitality activations, and cultural programs each call for a distinct format."
         />
         <div className="event-format-grid">
           {experienceFormats.map(({ title, note, detail, icon: Icon }) => (
@@ -65,7 +65,7 @@ export default function EventsPage() {
           ))}
         </div>
       </section>
-      <CTASection eyebrow="For venues and hosts" title="Create a domino experience people will remember." description="Tell us about your venue, audience, city, and event goals." label="Discuss hosting an event" to="/contact?inquiry=Host%20an%20Event" secondaryLabel="Explore table experiences" secondaryTo="/tables" />
+      <CTASection eyebrow="For venues and hosts" title="Put a date, room, and audience around the game." description="Share the occasion, location, expected guests, and event objectives." label="Request an event conversation" to="/contact?inquiry=Host%20an%20Event" secondaryLabel="Review venue production" secondaryTo="/tables" />
     </>
   );
 }

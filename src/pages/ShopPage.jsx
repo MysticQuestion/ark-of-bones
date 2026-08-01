@@ -1,10 +1,11 @@
 import { CheckCircle2, ExternalLink, Layers3, ShoppingBag } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
-import { ASSETS, SUBSIDIARY_BRANDS } from '../config/brand';
+import { SUBSIDIARY_BRANDS } from '../config/brand';
 import {
   galleryDepartments,
   galleryProducts,
@@ -15,9 +16,17 @@ import {
 } from '../data/products';
 
 export default function ShopPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedBrand = searchParams.get('brand');
+  const initialBrand = productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all';
   const [collection, setCollection] = useState('official');
-  const [brandFilter, setBrandFilter] = useState('all');
+  const [brandFilter, setBrandFilter] = useState(initialBrand);
   const [departmentFilter, setDepartmentFilter] = useState('all');
+
+  useEffect(() => {
+    const nextBrand = productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all';
+    setBrandFilter(nextBrand);
+  }, [requestedBrand]);
 
   const visibleProducts = useMemo(() => {
     const source = collection === 'official' ? officialProducts : galleryProducts;
@@ -53,6 +62,14 @@ export default function ShopPage() {
     setDepartmentFilter('all');
   };
 
+  const changeBrand = (nextBrand) => {
+    setBrandFilter(nextBrand);
+    const nextParams = new URLSearchParams(searchParams);
+    if (nextBrand === 'all') nextParams.delete('brand');
+    else nextParams.set('brand', nextBrand);
+    setSearchParams(nextParams, { replace: true });
+  };
+
   return (
     <>
       <SEO
@@ -63,33 +80,33 @@ export default function ShopPage() {
       />
       <PageHero
         eyebrow="Official merchandise"
-        title="Wear the brand. Carry the culture."
-        description="Shop available styles and explore the full Ark of Bones collection."
-        image={ASSETS.event}
+        title="The official Ark of Bones shop."
+        description="Buy published products through their exact store pages, then explore the wider merchandise design archive."
+        image={officialProducts[0].image}
         compact
       />
 
       <section className="shop-status-band" aria-label="Merchandise collection overview">
-        <div><strong>{officialProducts.length}</strong><span>Available online</span></div>
-        <div><strong>{galleryProducts.length}</strong><span>Collection pieces</span></div>
-        <div><strong>{galleryDepartments.length}</strong><span>Product categories</span></div>
-        <div><strong>Ark Store</strong><span>Shop and checkout</span></div>
+        <div><strong>{officialProducts.length}</strong><span>Published products</span></div>
+        <div><strong>{galleryProducts.length}</strong><span>Archived designs</span></div>
+        <div><strong>3</strong><span>Brand collections</span></div>
+        <div><strong>Secure</strong><span>Squarespace checkout</span></div>
       </section>
 
       <section className="content-band shop-page">
         <div className="shop-toolbar">
           <SectionHeader
-            eyebrow="Choose a collection"
-            title={collection === 'official' ? 'Available now' : 'Explore the full collection'}
+            eyebrow={collection === 'official' ? 'Buy online' : 'Design archive'}
+            title={collection === 'official' ? 'Six products. Six direct store links.' : 'A broader view of the merchandise system.'}
             description={
               collection === 'official'
-                ? 'Open the Ark of Bones store for current prices and checkout.'
-                : 'Browse apparel, headwear, drinkware, and accessories. Ask us about any piece that catches your eye.'
+                ? 'Every purchase button opens the matching product page for options and checkout.'
+                : 'Browse apparel, headwear, drinkware, and accessories, then request current details on a specific design.'
             }
           />
           {collection === 'official' ? (
             <a className="button button--gold" href={STORE_URL} target="_blank" rel="noopener noreferrer">
-              Open official store<ExternalLink aria-hidden="true" />
+              Browse the complete shop<ExternalLink aria-hidden="true" />
             </a>
           ) : null}
         </div>
@@ -102,7 +119,7 @@ export default function ShopPage() {
             onClick={() => switchCollection('official')}
           >
             <ShoppingBag aria-hidden="true" />
-            <span>Shop online<strong>{officialProducts.length} products with prices</strong></span>
+            <span>Available to buy<strong>{officialProducts.length} published product pages</strong></span>
           </button>
           <button
             type="button"
@@ -111,7 +128,7 @@ export default function ShopPage() {
             onClick={() => switchCollection('gallery')}
           >
             <Layers3 aria-hidden="true" />
-            <span>Full collection<strong>{galleryProducts.length} pieces across six categories</strong></span>
+            <span>Design archive<strong>{galleryProducts.length} designs across six categories</strong></span>
           </button>
         </div>
 
@@ -123,7 +140,7 @@ export default function ShopPage() {
                 type="button"
                 className={brandFilter === item.value ? 'is-active' : ''}
                 aria-pressed={brandFilter === item.value}
-                onClick={() => setBrandFilter(item.value)}
+                onClick={() => changeBrand(item.value)}
               >
                 {item.label}
               </button>
@@ -145,14 +162,14 @@ export default function ShopPage() {
           <CheckCircle2 aria-hidden="true" />
           <p>
             {collection === 'official'
-              ? 'Prices and checkout are handled by the Ark of Bones store.'
-              : 'Interested in a collection piece? Use its inquiry button to ask about availability, sizing, and ordering.'}
+              ? 'Published prices and product options are confirmed on the linked Ark of Bones shop pages. Checkout is completed securely through Squarespace.'
+              : 'Archive designs are shown for collection discovery. Request details to confirm production, price, sizing, and availability.'}
           </p>
         </div>
 
         <div className="shop-results-heading" aria-live="polite">
           <strong>{visibleProducts.length}</strong>
-          <span>{collection === 'official' ? 'products shown' : 'collection pieces shown'}</span>
+          <span>{collection === 'official' ? 'buyable products shown' : 'archive designs shown'}</span>
         </div>
 
         {visibleProducts.length ? (
@@ -162,7 +179,7 @@ export default function ShopPage() {
         ) : (
           <div className="shop-empty" role="status">
             <h3>No products match these filters.</h3>
-            <button type="button" onClick={() => { setBrandFilter('all'); setDepartmentFilter('all'); }}>
+            <button type="button" onClick={() => { changeBrand('all'); setDepartmentFilter('all'); }}>
               Reset filters
             </button>
           </div>

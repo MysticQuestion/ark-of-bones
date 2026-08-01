@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react';
 import { ChevronDown, Printer, Search } from 'lucide-react';
+import CampaignBand from '../components/CampaignBand';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import { ASSETS } from '../config/brand';
 import { games } from '../data/games';
+import { campaigns } from '../data/promotions';
 
 const sections = [
   ['Objective', 'objective'],
@@ -49,6 +51,7 @@ export default function LearnPage() {
         ))}
         {!visibleGames.length ? <p className="no-results" role="status">No game guide matches “{query}”.</p> : null}
       </section>
+      <CampaignBand campaign={campaigns.learnBigSix} />
     </>
   );
 }

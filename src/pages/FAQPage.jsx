@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import { ASSETS } from '../config/brand';
@@ -18,7 +19,15 @@ export default function FAQPage() {
           {['All', ...faqCategories].map((item) => <button key={item} type="button" className={category === item ? 'is-active' : ''} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
         </div>
         <div className="faq-list">
-          {visibleFaqs.map((faq) => <details key={faq.question}><summary><span><small>{faq.category}</small>{faq.question}</span><ChevronDown aria-hidden="true" /></summary><p>{faq.answer}</p></details>)}
+          {visibleFaqs.map((faq) => (
+            <details key={faq.question}>
+              <summary><span><small>{faq.category}</small>{faq.question}</span><ChevronDown aria-hidden="true" /></summary>
+              <div className="faq-answer">
+                <p>{faq.answer}</p>
+                <Link className="text-link" to={faq.link.to}>{faq.link.label}<ArrowRight aria-hidden="true" /></Link>
+              </div>
+            </details>
+          ))}
         </div>
       </section>
     </>

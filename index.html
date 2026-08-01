@@ -9,9 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="icon" href="https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/273fa447-0add-4ecb-b99a-a0ce8d893111/Ark+Of+Bones+Domino+LOGO+GOLD.png?format=100w" />
+    <style>
+      html,body{background:#080706;margin:0}.boot-loader{align-items:center;background:#080706;display:flex;inset:0;justify-content:center;position:fixed;z-index:999}.boot-dominoes{display:flex;gap:12px;perspective:900px;transform:rotate(-7deg)}.boot-domino{animation:boot-fall 1.35s cubic-bezier(.2,.72,.28,1) infinite;background:linear-gradient(145deg,#302c26,#070605 62%);border:1px solid #c9a45d;border-radius:4px;box-shadow:0 18px 32px #0008,inset 1px 1px 1px #fff2;display:block;height:82px;position:relative;transform-origin:85% 92%;width:40px}.boot-domino:before{background:#d4ad57;border-radius:50%;box-shadow:20px 0 #d4ad57,10px 14px #d4ad57,0 42px #d4ad57,20px 42px #d4ad57,0 58px #d4ad57,20px 58px #d4ad57;content:"";height:5px;left:7px;position:absolute;top:9px;width:5px}.boot-domino:after{background:linear-gradient(90deg,transparent,#c9a45d,transparent);content:"";height:1px;left:5px;position:absolute;right:5px;top:40px}.boot-domino:nth-child(2){animation-delay:.1s}.boot-domino:nth-child(3){animation-delay:.2s}.boot-domino:nth-child(4){animation-delay:.3s}.boot-domino:nth-child(5){animation-delay:.4s}.boot-domino:nth-child(6){animation-delay:.5s}@keyframes boot-fall{0%,18%,100%{transform:rotate(0)}65%,82%{transform:rotate(70deg) translate(7px,3px)}}@media(prefers-reduced-motion:reduce){.boot-domino{animation:none}}
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-loader" role="status" aria-label="Loading page">
+        <div class="boot-dominoes" aria-hidden="true"><span class="boot-domino"></span><span class="boot-domino"></span><span class="boot-domino"></span><span class="boot-domino"></span><span class="boot-domino"></span><span class="boot-domino"></span></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
