@@ -1,6 +1,44 @@
 import { ExternalLink, PlayCircle } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function FounderVideo({ video }) {
+  const videoRef = useRef(null);
+  const [playbackError, setPlaybackError] = useState(false);
+
+  useEffect(() => {
+    const player = videoRef.current;
+    let hls;
+    let active = true;
+
+    if (!player || !video.hostedUrl) return undefined;
+
+    import('hls.js').then(({ default: Hls }) => {
+      if (!active) return;
+
+      if (Hls.isSupported()) {
+        hls = new Hls({ enableWorker: true });
+        hls.loadSource(video.hostedUrl);
+        hls.attachMedia(player);
+        hls.on(Hls.Events.ERROR, (_event, data) => {
+          if (data.fatal) setPlaybackError(true);
+        });
+        return;
+      }
+
+      if (player.canPlayType('application/vnd.apple.mpegurl')) {
+        player.src = video.hostedUrl;
+        return;
+      }
+
+      setPlaybackError(true);
+    }).catch(() => setPlaybackError(true));
+
+    return () => {
+      active = false;
+      hls?.destroy();
+    };
+  }, [video.hostedUrl]);
+
   return (
     <section className="founder-video" aria-labelledby="founder-video-title">
       <div className="founder-video-copy">
@@ -13,14 +51,15 @@ export default function FounderVideo({ video }) {
       </div>
       <div className="founder-video-player">
         <div className="founder-video-frame">
-          <iframe
-            src={`${video.embedUrl}?rel=0`}
-            title={`${video.title} - Tony Covington`}
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
+          <video
+            ref={videoRef}
+            controls
+            playsInline
+            preload="metadata"
+            poster={video.poster}
+            aria-label={`${video.title} - Tony Covington`}
           />
+          {playbackError ? <div className="founder-video-fallback" role="status">Playback is unavailable here. Open the official video on YouTube.</div> : null}
         </div>
         <div className="founder-video-caption">
           <PlayCircle aria-hidden="true" />

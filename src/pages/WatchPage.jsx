@@ -16,10 +16,11 @@ export default function WatchPage() {
     '@type': 'VideoObject',
     name: video.title,
     description: video.description,
-    thumbnailUrl: video.thumbnail,
-    contentUrl: video.href,
-    embedUrl: video.embedUrl,
+    thumbnailUrl: video.poster || video.thumbnail,
+    contentUrl: video.hostedUrl || video.href,
+    ...(!video.hostedUrl && video.embedUrl ? { embedUrl: video.embedUrl } : {}),
     ...(video.uploadDate ? { uploadDate: video.uploadDate } : {}),
+    ...(video.durationSeconds ? { duration: `PT${video.durationSeconds}S` } : {}),
   }));
 
   return (
@@ -32,7 +33,6 @@ export default function WatchPage() {
           <EmptyState title="Watch what is already in play" description="Start with the founder introduction, then explore official introductions and table features from the archive." actionLabel="Open YouTube" actionTo={mediaChannels[0].href} external />
         ) : null}
       </section>
-      <FounderVideo video={founderVideo} />
       {featuredVideo ? (
         <section className="content-band content-band--wood">
           <SectionHeader eyebrow="Featured program" title="From the Ark" />
@@ -45,6 +45,7 @@ export default function WatchPage() {
         <div className="category-strip" aria-label="Ark of Bones media series">{videoCategories.map((category) => <span key={category}>{category}</span>)}</div>
       </section>
       <CampaignBand campaign={campaigns.watchShop} reverse />
+      <FounderVideo video={founderVideo} />
       <section className="channel-band">
         <SectionHeader eyebrow="Official channels" title="Follow the next release" description="Find long-form video, short clips, event announcements, and brand stories across the official network." />
         <div className="channel-grid">{mediaChannels.map((channel) => <a key={channel.label} href={channel.href} target="_blank" rel="noopener noreferrer"><span>{channel.label}</span><ExternalLink aria-hidden="true" /></a>)}</div>

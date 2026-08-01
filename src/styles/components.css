@@ -1228,12 +1228,26 @@
   border: 1px solid rgba(17, 16, 14, 0.26);
   box-shadow: var(--shadow);
   overflow: hidden;
+  position: relative;
 }
 
-.founder-video-frame iframe {
+.founder-video-frame video {
   border: 0;
+  display: block;
   height: 100%;
+  object-fit: contain;
   width: 100%;
+}
+
+.founder-video-fallback {
+  align-content: center;
+  background: rgba(8, 7, 6, 0.9);
+  color: var(--bone);
+  display: grid;
+  inset: 0;
+  padding: 2rem;
+  position: absolute;
+  text-align: center;
 }
 
 .founder-video-caption {

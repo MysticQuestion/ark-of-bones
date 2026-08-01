@@ -26,6 +26,9 @@ export const founderVideo = {
     'Video',
     '2025-04-16',
   ),
+  hostedUrl: 'https://video.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/a5ec0f7d-45b9-459a-a071-2f562c7d6486/playlist.m3u8',
+  poster: 'https://video.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/a5ec0f7d-45b9-459a-a071-2f562c7d6486/thumbnail',
+  durationSeconds: 61,
 };
 
 export const featuredVideo = youtubeVideo(
