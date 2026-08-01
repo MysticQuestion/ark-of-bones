@@ -125,7 +125,7 @@ export default function HomePage() {
       </section>
 
       <section className="image-story image-story--reverse">
-        <div className="image-story-media"><SafeImage src={ASSETS.event} alt="Ark of Bones domino table experience at a live gathering" fallbackAlt="Ark of Bones table experience; Ark of Bones mark shown" width="1600" height="1200" loading="lazy" /></div>
+        <div className="image-story-media"><SafeImage src={ASSETS.table} alt="Handcrafted Ark of Bones domino table at a tournament" fallbackAlt="Ark of Bones table experience; Ark of Bones mark shown" width="1600" height="1200" loading="lazy" /></div>
         <div className="image-story-copy">
           <p className="eyebrow">Tables and venues</p>
           <h2>The room follows the action.</h2>

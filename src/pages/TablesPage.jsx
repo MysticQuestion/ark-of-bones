@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, MonitorPlay, Users, Workflow } from 'lucide-react';
+import { ArrowRight, Building2, Camera, CupSoda, Lightbulb, Mic2, MonitorPlay, Users, Workflow } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 import PageHero from '../components/PageHero';
@@ -41,6 +41,13 @@ const confirmationChecklist = [
   'Branding, photography, and media',
 ];
 
+const experienceFeatures = [
+  ['Player-view cameras', 'The table concept uses dedicated camera views to make play legible beyond the four seats.', Camera],
+  ['Table sound', 'Microphones bring conversation, reactions, and the character of the game into the program.', Mic2],
+  ['Integrated atmosphere', 'LED lighting helps define the playing surface and its presence in the room.', Lightbulb],
+  ['Hospitality details', 'Cup holders support the social rhythm of game nights, events, and venue programming.', CupSoda],
+];
+
 export default function TablesPage() {
   return (
     <>
@@ -53,6 +60,14 @@ export default function TablesPage() {
         <article><MonitorPlay aria-hidden="true" /><span>Screen connection</span><p>Extend table action to multiple screens where the venue plan supports it.</p></article>
         <article><Workflow aria-hidden="true" /><span>Streaming potential</span><p>Bring live-game streaming and remote viewing into venues equipped to support it.</p></article>
         <article><Building2 aria-hidden="true" /><span>Venue value</span><p>Create repeatable cultural programming around competition and community.</p></article>
+      </section>
+      <section className="content-band table-feature-system">
+        <SectionHeader eyebrow="The original Ark concept" title="The table is designed as the studio floor" description="Cameras, sound, lighting, screens, and player-facing details turn a game into an experience an audience can follow." />
+        <div className="table-feature-grid">
+          {experienceFeatures.map(([title, body, Icon]) => (
+            <article key={title}><Icon aria-hidden="true" /><h3>{title}</h3><p>{body}</p></article>
+          ))}
+        </div>
       </section>
       <section className="image-story">
         <div className="image-story-media"><SafeImage src={ASSETS.players} alt="Players focused on a domino game around a green table" fallbackAlt="Competitive domino play; Ark of Bones mark shown" width="1800" height="1200" loading="lazy" /></div>

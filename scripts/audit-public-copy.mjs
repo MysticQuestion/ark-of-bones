@@ -50,9 +50,15 @@ const files = (await collectFiles(root)).filter((file) => ['.html', '.js'].inclu
 const findings = [];
 
 for (const file of files) {
-  const content = (await readFile(file, 'utf8')).toLowerCase();
+  const rawContent = await readFile(file, 'utf8');
+  const content = rawContent.toLowerCase();
   for (const phrase of bannedPhrases) {
     if (content.includes(phrase)) findings.push(`${file}: "${phrase}"`);
+  }
+
+  const brandedEmails = rawContent.match(/[\w.+-]+@arkofbones\.com/gi) || [];
+  if (brandedEmails.some((email) => email.toLowerCase() !== 'info@arkofbones.com')) {
+    findings.push(`${file}: non-public Ark of Bones email address`);
   }
 }
 

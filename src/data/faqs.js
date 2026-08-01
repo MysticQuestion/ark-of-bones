@@ -66,8 +66,22 @@ export const faqs = [
     category: 'Shop',
     question: 'Where does merchandise checkout happen?',
     answer:
-      'Products with online pricing link directly to the Ark of Bones store for checkout.',
+      'Each published product links to its matching page in the official Ark of Bones Squarespace store. Product options, cart review, shipping, taxes, payment, and order confirmation are handled there.',
     link: { label: 'Shop published products', to: '/shop' },
+  },
+  {
+    category: 'Shop',
+    question: 'What happens after I place an order?',
+    answer:
+      'Squarespace sends the buyer an order confirmation and receipt while authorized Ark of Bones store managers receive the details needed to prepare the purchase. A fulfillment email follows when the order is released for delivery.',
+    link: { label: 'Review the complete order journey', to: '/shop#commerce-journey-title' },
+  },
+  {
+    category: 'Shop',
+    question: 'How do I track a merchandise order?',
+    answer:
+      'Use the order-status link in the confirmation email. When carrier tracking is supplied during fulfillment, it is included in the fulfillment email.',
+    link: { label: 'Contact merchandise support', to: '/contact?inquiry=Merchandise' },
   },
   {
     category: 'Brands',

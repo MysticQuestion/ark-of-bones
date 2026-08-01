@@ -22,7 +22,7 @@ export default function DominoMotherFuckerPage() {
       <PageHero eyebrow="The cultural label from Ark of Bones" title={name} description="The expressive identity for victory, attitude, humor, storytelling, media, and merchandise." image={ASSETS.event} theme="red">
         <Link className="button button--light" to="/brands">See the complete brand family</Link>
       </PageHero>
-      <section className="brand-narrative"><p className="eyebrow">The point of view</p><h2>The last word belongs to the winner.</h2><p>{name} turns the sayings, humor, confidence, fashion, and stories surrounding the game into a distinct cultural signal.</p></section>
+      <section className="brand-narrative"><p className="eyebrow">The point of view</p><h2>The last word belongs to the winner.</h2><p>{name} turns the sayings, humor, confidence, fashion, and stories surrounding the game into a distinct cultural signal: an unofficial anthem for the comeback, the blowout, and the perfect final play.</p></section>
       <BrandActionRail label="Move through the brand" actions={actions} />
       <CampaignBand campaign={campaigns.dmfBrand} reverse />
       <section className="parent-brand-return"><div><p className="eyebrow">Within the Ark</p><h2>Attitude is one part of a larger entertainment platform.</h2></div><Link className="button button--gold" to="/about">See the company behind the brand<ArrowRight aria-hidden="true" /></Link></section>

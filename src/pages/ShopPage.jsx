@@ -1,11 +1,13 @@
 import { CheckCircle2, ExternalLink, Layers3, ShoppingBag } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import CommerceJourney from '../components/CommerceJourney';
 import ProductCard from '../components/ProductCard';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import { SUBSIDIARY_BRANDS } from '../config/brand';
+import { orderStages } from '../data/commerce';
 import {
   galleryDepartments,
   galleryProducts,
@@ -185,6 +187,7 @@ export default function ShopPage() {
           </div>
         )}
       </section>
+      <CommerceJourney stages={orderStages} />
     </>
   );
 }

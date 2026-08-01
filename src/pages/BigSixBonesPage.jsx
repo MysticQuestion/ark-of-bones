@@ -22,7 +22,7 @@ export default function BigSixBonesPage() {
       <PageHero eyebrow="The competition label from Ark of Bones" title={name} description="Fast rounds, visible pressure, American domino tradition, and community competition." image={ASSETS.players} theme="gold">
         <Link className="button button--light" to="/learn#big-six-bones">Read the game guide</Link>
       </PageHero>
-      <section className="brand-narrative"><p className="eyebrow">The competitive identity</p><h2>Short rounds. Immediate stakes. No hiding.</h2><p>{name} concentrates quick play, clear scoring, education, and community competition into one game-centered brand.</p></section>
+      <section className="brand-narrative"><p className="eyebrow">The competitive identity</p><h2>Short rounds. Immediate stakes. No hiding.</h2><p>{name} concentrates quick play, clear scoring, education, and community competition into one game-centered brand, carrying familiar American domino energy from living rooms and backyards into organized entertainment.</p></section>
       <BrandActionRail label="Take the next position" actions={actions} />
       <CampaignBand campaign={campaigns.bigSixBrand} />
       <section className="parent-brand-return"><div><p className="eyebrow">The competitive branch</p><h2>Competition is one lane inside a broader cultural company.</h2></div><Link className="button button--gold" to="/brands">Compare the brand identities<ArrowRight aria-hidden="true" /></Link></section>
