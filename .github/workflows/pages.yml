@@ -1,9 +1,9 @@
-name: Deploy staging preview
+name: Deploy Ark of Bones production
 
 on:
   push:
     branches:
-      - codex/staging-digital-headquarters
+      - main
   workflow_dispatch:
 
 permissions:
@@ -12,14 +12,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: ark-of-bones-staging
+  group: ark-of-bones-production
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out staging branch
+      - name: Check out production branch
         uses: actions/checkout@v7
 
       - name: Set up Node.js
@@ -31,10 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build staging site
-        run: npm run build -- --base=/ark-of-bones/
+      - name: Build production site
+        run: npm run build
 
-      - name: Configure staging safeguards
+      - name: Configure GitHub Pages routes
         run: |
           routes=(
             events
@@ -50,21 +50,43 @@ jobs:
             faq
             domino-mother-fucker
             big-six-bones
+            home-live-soon
+            events-1
+            events-2
+            events/event-one-dkrkk
+            watch-1
+            watch-2
             videos-2
+            videos-2/watch-archives
+            videos-2/v/sunday-nights-with-aob
+            videos-2/v/aob-game-night
+            videos-2/v/anywhere
+            videos-2/v/who-is-aob
+            videos-2/v/game-night
             merch
+            merch-1
+            merch-2
             merch-3
+            merch/big-six-bones-merch
+            merch/domino-mother-fucker-merch
+            merch/p/ark-of-bones-embroidered-sweatshirt
+            merch/p/long-sleeve-crew-neck
+            merch/p/kkcizt5w74u864q22c2w175tajc3l9-g8wb7
+            merch/p/kkcizt5w74u864q22c2w175tajc3l9
+            merch/p/ark-of-bones-beanie-p3kd2
+            merch/p/ark-of-bones-beanie
           )
           for route in "${routes[@]}"; do
             mkdir -p "dist/$route"
             cp dist/index.html "dist/$route/index.html"
           done
           cp dist/index.html dist/404.html
-          printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt
+          printf 'www.arkofbones.com\n' > dist/CNAME
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
 
-      - name: Upload staging artifact
+      - name: Upload production artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
@@ -76,6 +98,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy staging preview
+      - name: Deploy production site
         id: deployment
         uses: actions/deploy-pages@v5
