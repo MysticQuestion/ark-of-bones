@@ -571,6 +571,88 @@
   max-width: 640px;
 }
 
+
+.founder-video {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  padding: 5rem var(--page-padding);
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 12% 20%, rgba(201, 164, 93, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(17, 16, 14, 0.92), rgba(8, 7, 6, 0.98));
+}
+
+.founder-video-copy {
+  align-content: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.founder-video-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  max-width: 12ch;
+}
+
+.founder-video-copy p {
+  color: var(--paper);
+  max-width: 42ch;
+}
+
+.founder-video-player {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.founder-video-frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.founder-video-frame iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.founder-video-caption {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.founder-video-caption svg {
+  color: var(--gold);
+  height: 1.15rem;
+  width: 1.15rem;
+}
+
+.founder-video-caption span {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.founder-video-caption strong {
+  color: var(--bone);
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .brand-grid,
 .video-grid,
 .product-grid {
@@ -2036,6 +2118,7 @@
   .menu-button { display: inline-flex; }
   .home-hero { min-height: calc(88svh - var(--header-height)); }
   .home-hero-index { grid-template-columns: repeat(2, 1fr); }
+  .founder-video,
   .media-preview,
   .image-story,
   .about-story,
@@ -2050,6 +2133,7 @@
   .channel-grid { grid-template-columns: repeat(2, 1fr); }
   .confirmation-panel { grid-template-columns: 1fr; }
   .event-format-grid { grid-template-columns: 1fr; }
+  .founder-video,
   .campaign-band,
   .campaign-band--reverse { grid-template-columns: 1fr; }
   .campaign-band--reverse .campaign-band-media { order: 0; }

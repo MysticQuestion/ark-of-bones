@@ -1,8 +1,8 @@
 # Ark of Bones Digital Headquarters
 
-The Vite + React staging application for **Ark of Bones - The Home of Domino Entertainment**.
+The Vite + React production application for **Ark of Bones — The Home of Domino Entertainment**.
 
-The site presents Ark of Bones as the parent entertainment company, with Domino Mother Fucker and Big Six Bones organized as subsidiary brands. Events, media, venue partnerships, merchandise, education, and business inquiries each have a dedicated route. It also consolidates the original staging presentation and the complete merchandise deck into this one public review build.
+This is the modern digital headquarters that replaces the original Squarespace brochure site. It presents Ark of Bones as the parent entertainment company, with Domino Mother Fucker and Big Six Bones as subsidiary brands. Events, media, venue partnerships, merchandise, education, and business inquiries each have a dedicated route under one direct, minimal visual system.
 
 ## Local Development
 
@@ -62,5 +62,23 @@ Use the standard Vite settings:
 - Build command: `npm run build`
 - Output directory: `dist`
 - Node package install: `npm install` or `npm ci`
+- SPA fallback: `vercel.json` and `public/_redirects`
 
-Before production launch, confirm the canonical domain, deploy target, inquiry form provider, privacy requirements, current event schedule, verified video IDs, product-specific checkout URLs, and any legally approved trademark styling.
+### Production (canonical domain)
+
+- **Canonical URL:** `https://www.arkofbones.com`
+- **Production host:** Vercel project `ark-of-bones`
+- **Staging preview:** GitHub Pages from `codex/staging-digital-headquarters` at `https://mysticquestion.github.io/ark-of-bones/` (noindex)
+- **Git branch:** `main` is production source of truth
+
+### Domain cutover from Squarespace
+
+`arkofbones.com` currently uses Squarespace DNS and hosts the legacy brochure site. The React headquarters cannot run inside Squarespace page templates — the domain must point at Vercel.
+
+1. Keep merch checkout on the Squarespace Commerce store (or map to `shop.arkofbones.com` later).
+2. Attach `arkofbones.com` and `www.arkofbones.com` on the Vercel project.
+3. In Squarespace Domains → DNS, replace only the website A/CNAME records with Vercel’s values. **Do not remove Google Workspace MX records.**
+4. After DNS propagates, verify routes, OG tags, and shop deep links.
+5. Unpublish the Squarespace marketing site (or leave it disconnected) so it no longer competes with the new headquarters.
+
+Before launch checklist: inquiry form provider, privacy policy, current event schedule, product checkout URLs, and trademark styling.
