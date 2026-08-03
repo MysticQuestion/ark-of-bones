@@ -10,6 +10,7 @@ export const primaryNavigation = [
 ];
 
 export const resourceNavigation = [
+  { label: 'Partnerships', to: '/partnerships' },
   { label: 'Learn', to: '/learn' },
   { label: 'FAQ', to: '/faq' },
 ];
