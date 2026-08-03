@@ -13,6 +13,7 @@ const FAQPage = lazy(() => import('../pages/FAQPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LearnPage = lazy(() => import('../pages/LearnPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
+const PartnershipsPage = lazy(() => import('../pages/PartnershipsPage'));
 const ShopPage = lazy(() => import('../pages/ShopPage'));
 const TablesPage = lazy(() => import('../pages/TablesPage'));
 const WatchPage = lazy(() => import('../pages/WatchPage'));
@@ -29,6 +30,7 @@ export default function AppRoutes() {
       <Route path="/brands/domino-mother-fucker" element={<DominoMotherFuckerPage />} />
       <Route path="/brands/big-six-bones" element={<BigSixBonesPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/partnerships" element={<PartnershipsPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/learn" element={<LearnPage />} />
       <Route path="/faq" element={<FAQPage />} />
