@@ -6,6 +6,7 @@ import App from './app/App';
 import './styles/tokens.css';
 import './styles/global.css';
 import './styles/components.css';
+import './styles/partnerships.css';
 
 const routerBase = import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL;
 
