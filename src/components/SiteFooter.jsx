@@ -1,7 +1,27 @@
 import { Link } from 'react-router-dom';
 import { BRAND } from '../config/brand';
 import { CONTACT } from '../config/contact';
-import { primaryNavigation, resourceNavigation } from '../config/navigation';
+
+const exploreLinks = [
+  ['Events', '/events'],
+  ['Watch', '/watch'],
+  ['Official Play', '/official-play'],
+  ['Tables', '/tables'],
+  ['Shop', '/shop'],
+];
+
+const companyLinks = [
+  ['About', '/about'],
+  ['Around the Table', '/around-the-table'],
+  ['Brands', '/brands'],
+  ['Work With Us', '/contact'],
+];
+
+const resourceLinks = [
+  ['Learn', '/learn'],
+  ['FAQ', '/faq'],
+  ['Design Archive', '/shop/archive'],
+];
 
 export default function SiteFooter() {
   return (
@@ -9,7 +29,7 @@ export default function SiteFooter() {
       <div className="footer-main">
         <div className="footer-positioning">
           <Link to="/" className="footer-brand">{BRAND.name}</Link>
-          <p>{BRAND.proposition}</p>
+          <p>Live competition, official play, media, and community.</p>
           <p className="footer-contact">
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a><br />
             <a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a>
@@ -18,15 +38,15 @@ export default function SiteFooter() {
         <div className="footer-links" aria-label="Footer navigation">
           <div>
             <strong>Explore</strong>
-            {primaryNavigation.slice(1, 5).map((item) => <Link key={item.to} to={item.to}>{item.label}</Link>)}
+            {exploreLinks.map(([label, to]) => <Link key={to} to={to}>{label}</Link>)}
           </div>
           <div>
             <strong>Company</strong>
-            {primaryNavigation.slice(5).map((item) => <Link key={item.to} to={item.to}>{item.label}</Link>)}
+            {companyLinks.map(([label, to]) => <Link key={to} to={to}>{label}</Link>)}
           </div>
           <div>
             <strong>Resources</strong>
-            {resourceNavigation.map((item) => <Link key={item.to} to={item.to}>{item.label}</Link>)}
+            {resourceLinks.map(([label, to]) => <Link key={to} to={to}>{label}</Link>)}
           </div>
         </div>
       </div>
