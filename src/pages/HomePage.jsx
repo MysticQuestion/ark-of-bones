@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, Handshake, Play, ShoppingBag } from 'lucide-react';
+import { ArrowRight, CalendarDays, Home, Play, ShoppingBag, Table2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 import SafeImage from '../components/SafeImage';
@@ -18,11 +18,11 @@ const pathways = [
     icon: CalendarDays,
   },
   {
-    title: 'Host',
-    label: 'Venues and partners',
-    description: 'Build a domino program for a venue, organization, campus, or community.',
-    to: '/contact?inquiry=Tables%20%2F%20Venue%20Partnership',
-    icon: Handshake,
+    title: 'Build',
+    label: 'Private + venue tables',
+    description: 'Explore handcrafted, media-ready domino tables for homes, venues, and programs.',
+    to: '/tables',
+    icon: Table2,
   },
   {
     title: 'Shop',
@@ -55,7 +55,12 @@ export default function HomePage() {
 
   return (
     <>
-      <SEO title={BRAND.name} description={BRAND.description} path="/" schema={schema} />
+      <SEO
+        title={BRAND.name}
+        description="Ark of Bones creates handcrafted professional domino tables, live competition, official-play systems, original media, merchandise, and cultural programming."
+        path="/"
+        schema={schema}
+      />
 
       <section
         className="home-hero home-hero--logo"
@@ -80,12 +85,14 @@ export default function HomePage() {
             />
           </div>
           <p className="hero-declaration">Domino entertainment built for competition, audiences, and culture.</p>
-          <p className="home-description">Live play. Official competition systems. Original media.</p>
+          <p className="home-description">Handcrafted tables. Live play. Official competition systems. Original media.</p>
           <div className="hero-actions">
             <Link className="button button--gold" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">
-              Bring Ark of Bones to your venue<ArrowRight aria-hidden="true" />
+              Plan a venue experience<ArrowRight aria-hidden="true" />
             </Link>
-            <Link className="button button--light" to="/watch"><Play aria-hidden="true" />Watch</Link>
+            <Link className="button button--light" to="/contact?inquiry=Private%20%2F%20Home%20Table">
+              Design a private table<Home aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
@@ -93,9 +100,9 @@ export default function HomePage() {
       <section className="content-band media-preview">
         <div className="media-preview-copy">
           <p className="eyebrow">See it in action</p>
-          <h2>The game explains itself best on screen.</h2>
-          <p>Watch competition, personalities, instruction, and the table experience without another layer of sales copy.</p>
-          <Link className="button button--outline" to="/watch">Open the watch hub<ArrowRight aria-hidden="true" /></Link>
+          <h2>The game explains the product better than a spec sheet alone.</h2>
+          <p>Watch competition, personalities, instruction, and the table experience, then explore the build that makes those views possible.</p>
+          <Link className="button button--outline" to="/watch"><Play aria-hidden="true" />Open the watch hub</Link>
         </div>
         <div className="media-preview-frame">
           {featuredVideo ? <VideoCard video={featuredVideo} /> : null}
@@ -106,8 +113,8 @@ export default function HomePage() {
         <div className="image-story-media">
           <SafeImage
             src={ASSETS.table}
-            alt="Ark of Bones domino table prepared for live play"
-            fallbackAlt="Ark of Bones table experience"
+            alt="Ark of Bones professional domino table prepared for live play"
+            fallbackAlt="Ark of Bones professional domino table"
             width="1600"
             height="1200"
             loading="lazy"
@@ -115,9 +122,9 @@ export default function HomePage() {
         </div>
         <div className="image-story-copy">
           <p className="eyebrow">The signature experience</p>
-          <h2>The table is the field of play, not the whole business.</h2>
-          <p>Cameras, sound, screens, and guest sightlines make the game visible. The larger system adds rules, rankings, sanctioned events, and repeatable competition.</p>
-          <Link className="button button--dark" to="/official-play">See the official-play system<ArrowRight aria-hidden="true" /></Link>
+          <h2>The table is the studio floor, not the whole business.</h2>
+          <p>Cameras, sound, lighting, screens, and custom finishes make the game visible. The larger system adds rules, rankings, sanctioned events, media, and repeatable competition.</p>
+          <Link className="button button--dark" to="/tables">Explore the table<ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
 

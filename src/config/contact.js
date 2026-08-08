@@ -13,6 +13,7 @@ export const CONTACT = {
 export const INQUIRY_TYPES = [
   'General Question',
   'General Partnership',
+  'Private / Home Table',
   'Events / Player Participation',
   'Host an Event',
   'Official Play / Sanctioning',

@@ -1,0 +1,27 @@
+.mobile-build-bar {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .mobile-build-bar {
+    background: rgba(8, 7, 6, 0.96);
+    border-top: 1px solid var(--line);
+    bottom: 0;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    left: 0;
+    padding: 0.65rem max(0.75rem, env(safe-area-inset-left)) calc(0.65rem + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-right));
+    position: fixed;
+    right: 0;
+    z-index: 95;
+  }
+
+  .mobile-build-bar .button {
+    font-size: 0.68rem;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.7rem 0.65rem;
+    text-align: center;
+  }
+}
