@@ -1,48 +1,28 @@
-import { CheckCircle2, ExternalLink, Layers3, ShoppingBag } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import CommerceJourney from '../components/CommerceJourney';
+import { Link, useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import { SUBSIDIARY_BRANDS } from '../config/brand';
-import { orderStages } from '../data/commerce';
-import {
-  galleryDepartments,
-  galleryProducts,
-  departmentFilters,
-  officialProducts,
-  productFilters,
-  STORE_URL,
-} from '../data/products';
+import { officialProducts, productFilters, STORE_URL } from '../data/products';
 
 export default function ShopPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedBrand = searchParams.get('brand');
   const initialBrand = productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all';
-  const [collection, setCollection] = useState('official');
   const [brandFilter, setBrandFilter] = useState(initialBrand);
-  const [departmentFilter, setDepartmentFilter] = useState('all');
 
   useEffect(() => {
     const nextBrand = productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all';
     setBrandFilter(nextBrand);
   }, [requestedBrand]);
 
-  const visibleProducts = useMemo(() => {
-    const source = collection === 'official' ? officialProducts : galleryProducts;
-
-    return source.filter((product) => {
-      const brandMatches = brandFilter === 'all' || product.brandKey === brandFilter;
-      const departmentMatches =
-        collection === 'official'
-        || departmentFilter === 'all'
-        || product.departmentId === departmentFilter;
-
-      return brandMatches && departmentMatches;
-    });
-  }, [brandFilter, collection, departmentFilter]);
+  const visibleProducts = useMemo(
+    () => officialProducts.filter((product) => brandFilter === 'all' || product.brandKey === brandFilter),
+    [brandFilter],
+  );
 
   const productSchema = officialProducts.map((product) => ({
     '@context': 'https://schema.org',
@@ -59,11 +39,6 @@ export default function ShopPage() {
     },
   }));
 
-  const switchCollection = (nextCollection) => {
-    setCollection(nextCollection);
-    setDepartmentFilter('all');
-  };
-
   const changeBrand = (nextBrand) => {
     setBrandFilter(nextBrand);
     const nextParams = new URLSearchParams(searchParams);
@@ -76,62 +51,24 @@ export default function ShopPage() {
     <>
       <SEO
         title="Shop"
-        description={`Shop Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} apparel, headwear, drinkware, and accessories.`}
+        description={`Shop published Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} merchandise.`}
         path="/shop"
         schema={productSchema}
       />
       <PageHero
         eyebrow="Official merchandise"
-        title="The official Ark of Bones shop."
-        description="Buy published products through their exact store pages, then explore the wider merchandise design archive."
+        title="Available now."
+        description="Every item on this page has a published price and a direct product page. Checkout stays on the secure Squarespace store."
         image={officialProducts[0].image}
         compact
       />
 
-      <section className="shop-status-band" aria-label="Merchandise collection overview">
-        <div><strong>{officialProducts.length}</strong><span>Published products</span></div>
-        <div><strong>{galleryProducts.length}</strong><span>Archived designs</span></div>
-        <div><strong>3</strong><span>Brand collections</span></div>
-        <div><strong>Secure</strong><span>Squarespace checkout</span></div>
-      </section>
-
       <section className="content-band shop-page">
         <div className="shop-toolbar">
-          <SectionHeader
-            eyebrow={collection === 'official' ? 'Buy online' : 'Design archive'}
-            title={collection === 'official' ? 'Six products. Six direct store links.' : 'A broader view of the merchandise system.'}
-            description={
-              collection === 'official'
-                ? 'Every purchase button opens the matching product page for options and checkout.'
-                : 'Browse apparel, headwear, drinkware, and accessories, then request current details on a specific design.'
-            }
-          />
-          {collection === 'official' ? (
-            <a className="button button--gold" href={STORE_URL} target="_blank" rel="noopener noreferrer">
-              Browse the complete shop<ExternalLink aria-hidden="true" />
-            </a>
-          ) : null}
-        </div>
-
-        <div className="collection-switcher" role="group" aria-label="Choose merchandise collection">
-          <button
-            type="button"
-            className={collection === 'official' ? 'is-active' : ''}
-            aria-pressed={collection === 'official'}
-            onClick={() => switchCollection('official')}
-          >
-            <ShoppingBag aria-hidden="true" />
-            <span>Available to buy<strong>{officialProducts.length} published product pages</strong></span>
-          </button>
-          <button
-            type="button"
-            className={collection === 'gallery' ? 'is-active' : ''}
-            aria-pressed={collection === 'gallery'}
-            onClick={() => switchCollection('gallery')}
-          >
-            <Layers3 aria-hidden="true" />
-            <span>Design archive<strong>{galleryProducts.length} designs across six categories</strong></span>
-          </button>
+          <SectionHeader eyebrow="Published collection" title={`${officialProducts.length} products ready to buy`} />
+          <a className="button button--gold" href={STORE_URL} target="_blank" rel="noopener noreferrer">
+            Open the complete shop<ExternalLink aria-hidden="true" />
+          </a>
         </div>
 
         <div className="shop-controls">
@@ -148,46 +85,22 @@ export default function ShopPage() {
               </button>
             ))}
           </div>
-          {collection === 'gallery' ? (
-            <label className="department-filter">
-              <span>Category</span>
-              <select value={departmentFilter} onChange={(event) => setDepartmentFilter(event.target.value)}>
-                {departmentFilters.map((item) => (
-                  <option key={item.value} value={item.value}>{item.label}</option>
-                ))}
-              </select>
-            </label>
-          ) : null}
-        </div>
-
-        <div className={`shop-disclosure${collection === 'gallery' ? ' shop-disclosure--gallery' : ''}`}>
-          <CheckCircle2 aria-hidden="true" />
-          <p>
-            {collection === 'official'
-              ? 'Published prices and product options are confirmed on the linked Ark of Bones shop pages. Checkout is completed securely through Squarespace.'
-              : 'Archive designs are shown for collection discovery. Request details to confirm production, price, sizing, and availability.'}
-          </p>
         </div>
 
         <div className="shop-results-heading" aria-live="polite">
           <strong>{visibleProducts.length}</strong>
-          <span>{collection === 'official' ? 'buyable products shown' : 'archive designs shown'}</span>
+          <span>buyable products shown</span>
         </div>
 
-        {visibleProducts.length ? (
-          <div className={`product-grid${collection === 'gallery' ? ' product-grid--gallery' : ''}`}>
-            {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
-          </div>
-        ) : (
-          <div className="shop-empty" role="status">
-            <h3>No products match these filters.</h3>
-            <button type="button" onClick={() => { changeBrand('all'); setDepartmentFilter('all'); }}>
-              Reset filters
-            </button>
-          </div>
-        )}
+        <div className="product-grid">
+          {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+        </div>
+
+        <div className="shop-disclosure shop-disclosure--gallery">
+          <p>The wider design library is kept separate so concept work cannot be mistaken for currently available merchandise.</p>
+          <Link className="text-link" to="/shop/archive">View the design archive<ArrowRight aria-hidden="true" /></Link>
+        </div>
       </section>
-      <CommerceJourney stages={orderStages} />
     </>
   );
 }
