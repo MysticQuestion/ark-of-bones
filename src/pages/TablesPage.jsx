@@ -181,6 +181,11 @@ export default function TablesPage() {
         secondaryLabel="Design a private table"
         secondaryTo="/contact?inquiry=Private%20%2F%20Home%20Table"
       />
+
+      <div className="mobile-build-bar" aria-label="Table inquiry actions">
+        <Link className="button button--gold" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Venue build</Link>
+        <Link className="button button--light" to="/contact?inquiry=Private%20%2F%20Home%20Table">Private table</Link>
+      </div>
     </>
   );
 }
