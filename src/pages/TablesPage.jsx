@@ -1,191 +1,186 @@
-import { ArrowRight, Building2, Camera, Gauge, Home, Lightbulb, Mic2, MonitorPlay, Radio, Users } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import CTASection from '../components/CTASection';
-import PageHero from '../components/PageHero';
-import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
-import SectionHeader from '../components/SectionHeader';
-import { ASSETS } from '../config/brand';
+import tableHero from '../assets/editorial/tables-1.webp';
+import tableRackPortrait from '../assets/editorial/tables-2.webp';
+import tablePlayerPortrait from '../assets/editorial/tables-3.webp';
+import tableRackDetail from '../assets/editorial/tables-4.webp';
+import tableFeltDetail from '../assets/editorial/tables-5.webp';
+import tableRoom from '../assets/editorial/tables-6.webp';
+import tableInPlay from '../assets/editorial/tables-7.webp';
+import tableCommunity from '../assets/editorial/tables-8.webp';
 
-const uses = [
-  'Hospitality and entertainment venues',
-  'Domino tournaments and leagues',
-  'Private homes and entertainment rooms',
-  'Private and corporate events',
-  'Festivals and cultural programming',
-  'Community and institutional programs',
+const specifications = [
+  ['Configuration', 'Built to order'],
+  ['Racks', 'Recessed and illuminated'],
+  ['Surface', 'Felt play field'],
+  ['Rail', 'Padded and upholstered'],
+  ['Finish', 'Selected during scoping'],
+  ['Media', 'Available according to build scope'],
+  ['Timeline', 'Confirmed in the written quote'],
+  ['Delivery', 'Confirmed by destination and access'],
 ];
 
-const process = [
-  ['01', 'Define the use case', 'Share the space, audience, location, timeline, and the way you want people to play or watch.'],
-  ['02', 'Confirm the build', 'Ark of Bones confirms the feature set, customization, technical requirements, scope, lead time, and quote before a deposit is requested.'],
-  ['03', 'Build and prepare', 'A custom build typically follows a 4–6 week production window after scope and deposit, subject to the final configuration.'],
-  ['04', 'Install or deliver', 'Delivery, setup, venue integration, and event support are scoped according to the project rather than assumed in the base build.'],
+const feltOptions = [
+  { name: 'Table green', color: '#1f5138' },
+  { name: 'Oxblood', color: '#7a1b1b' },
+  { name: 'Navy', color: '#12213f' },
+  { name: 'Charcoal', color: '#2e2e2c' },
+  { name: 'Wine', color: '#5c1f3a' },
 ];
 
-const buildOptions = [
-  ['Player-view cameras', 'Camera positions can make the board and player reactions legible beyond the seats.', Camera],
-  ['Table microphones', 'Capture table talk, reactions, instruction, and the social character of the game.', Mic2],
-  ['Lighting and indicators', 'Integrated lighting can define the playing surface and support scoring or production cues.', Lightbulb],
-  ['Scoring and tracking', 'Sensor and scoring integrations can be scoped according to the build and the official-play roadmap.', Gauge],
-  ['Streaming and screens', 'Route play to displays or a production workflow when the room and technical setup support it.', Radio],
-  ['Customization', 'Colors, logos, engraving, lighting choices, and other finish details can be reviewed during scoping.', MonitorPlay],
-];
-
-const preDepositChecks = [
-  'Final dimensions and room fit',
-  'Materials and finish selection',
-  'Power, display, camera, and network requirements',
-  'Included technology and optional integrations',
-  'Delivery, shipping, installation, or event support',
-  'Warranty and service terms for the quoted build',
-  'Production timeline and deposit schedule',
-  'Branding, engraving, lighting, and finish approvals',
-];
+const engravingOptions = ['None', 'Rail', 'Center'];
 
 export default function TablesPage() {
+  const [felt, setFelt] = useState(feltOptions[0].name);
+  const [engraving, setEngraving] = useState('Rail');
+  const quotePath = useMemo(() => {
+    const item = `Custom domino table — ${felt} felt, ${engraving.toLowerCase()} engraving`;
+    return `/contact?inquiry=Private%20%2F%20Home%20Table&item=${encodeURIComponent(item)}`;
+  }, [engraving, felt]);
+
   return (
     <>
       <SEO
-        title="Professional Domino Tables & Venue Experiences"
-        description="Explore Ark of Bones professional domino tables: handcrafted, media-ready builds for private homes, venues, tournaments, streaming, and cultural events."
+        title="Custom Domino Tables"
+        description="Explore Ark of Bones built-to-order domino tables with illuminated racks, upholstered rails, custom finishes, and optional media integration."
         path="/tables"
+        image={tableHero}
       />
-      <PageHero
-        eyebrow="The Ark of Bones table"
-        title="A handcrafted domino table built to become the studio floor."
-        description="For private spaces and public venues, Ark of Bones combines the social ritual of dominoes with cameras, sound, lighting, display integration, and custom finishes."
-        image={ASSETS.hero}
-      >
-        <Link className="button button--gold" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">
-          Plan a venue experience<ArrowRight aria-hidden="true" />
-        </Link>
-        <Link className="button button--light" to="/contact?inquiry=Private%20%2F%20Home%20Table">
-          Design a private table<Home aria-hidden="true" />
-        </Link>
-      </PageHero>
 
-      <section className="feature-ledger">
-        <article><Camera aria-hidden="true" /><span>Player-view cameras</span><p>Make the game readable beyond the four seats.</p></article>
-        <article><Mic2 aria-hidden="true" /><span>Table sound</span><p>Capture conversation, reactions, and the character of play.</p></article>
-        <article><MonitorPlay aria-hidden="true" /><span>Screen connection</span><p>Extend live action throughout a room when the setup supports it.</p></article>
-        <article><Users aria-hidden="true" /><span>Audience format</span><p>Protect player focus while giving guests a clear reason to stay engaged.</p></article>
-      </section>
+      <header className="editorial-mast">
+        <p className="eyebrow">Tables</p>
+        <h1>The racks light up.</h1>
+        <div className="editorial-rule" aria-hidden="true"><span /></div>
+      </header>
 
-      <section className="image-story">
-        <div className="image-story-media">
-          <SafeImage
-            src={ASSETS.table}
-            alt="Ark of Bones professional domino table prepared for live play"
-            fallbackAlt="Ark of Bones professional domino table"
-            width="1600"
-            height="1200"
-            loading="lazy"
-          />
-        </div>
-        <div className="image-story-copy">
-          <p className="eyebrow">Cultural broadcast studio</p>
-          <h2>The value is what the table enables.</h2>
-          <p>A conventional game table serves the players sitting around it. Ark of Bones is designed to support a larger experience: visible competition, recorded conversation, audience viewing, streaming workflows, and a repeatable event format.</p>
-          <p>Every custom build is scoped before deposit so the buyer knows what technology, finish work, delivery, and support are actually included.</p>
-        </div>
-      </section>
-
-      <section className="content-band">
-        <SectionHeader
-          eyebrow="Build options"
-          title="Configure the experience around the space"
-          description="The final build sheet should be specific enough to compare, approve, and price—without forcing every customer into the same configuration."
+      <section className="editorial-wide-media editorial-page-gutter">
+        <img
+          src={tableHero}
+          alt="Players gathered around an Ark of Bones table with illuminated racks"
+          width="1800"
+          height="900"
         />
-        <div className="table-feature-grid">
-          {buildOptions.map(([title, body, Icon]) => (
-            <article key={title}><Icon aria-hidden="true" /><h3>{title}</h3><p>{body}</p></article>
-          ))}
+        <p className="editorial-caption">Recessed illuminated racks keep each hand visible while the game stays centered on the felt.</p>
+      </section>
+
+      <section className="table-build editorial-band">
+        <div className="table-build-portraits">
+          <figure>
+            <img src={tableRackPortrait} alt="Illuminated rack holding dominoes" width="900" height="1800" loading="lazy" />
+            <figcaption>The rack sits inside the table instead of interrupting the playing surface.</figcaption>
+          </figure>
+          <figure>
+            <img src={tablePlayerPortrait} alt="Player seated at an Ark of Bones domino table" width="900" height="1800" loading="lazy" />
+            <figcaption>A padded rail supports long games and keeps the room close to the action.</figcaption>
+          </figure>
         </div>
-      </section>
 
-      <section className="mission-vision-grid">
-        <article>
-          <span>Venue / B2B</span>
-          <h2>Build an attraction people can see from across the room.</h2>
-          <p>For bars, clubs, event spaces, campuses, institutions, and cultural programs, the conversation starts with audience size, technical access, programming goals, and repeatability.</p>
-          <Link className="text-link" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Request venue build details<ArrowRight aria-hidden="true" /></Link>
-        </article>
-        <article>
-          <span>Private / residential</span>
-          <h2>Build the table around the way your people actually gather.</h2>
-          <p>Private builds can prioritize finish, room fit, lighting, media, engraving, and the social experience of a home game without requiring a venue-scale production package.</p>
-          <Link className="text-link" to="/contact?inquiry=Private%20%2F%20Home%20Table">Request private build details<ArrowRight aria-hidden="true" /></Link>
-        </article>
-      </section>
+        <div className="table-build-panel">
+          <p className="eyebrow">Build profile</p>
+          <dl className="editorial-spec-list">
+            {specifications.map(([term, detail]) => (
+              <div key={term}><dt>{term}</dt><dd>{detail}</dd></div>
+            ))}
+          </dl>
 
-      <section className="content-band content-band--wood">
-        <SectionHeader eyebrow="Where it works" title="One product, different operating contexts" />
-        <div className="use-grid">
-          {uses.map((use) => <div key={use}><Building2 aria-hidden="true" />{use}</div>)}
-        </div>
-      </section>
+          <div className="table-configurator">
+            <fieldset>
+              <legend>Felt</legend>
+              <div className="felt-options">
+                {feltOptions.map((option) => (
+                  <button
+                    key={option.name}
+                    type="button"
+                    aria-label={option.name}
+                    aria-pressed={felt === option.name}
+                    onClick={() => setFelt(option.name)}
+                    style={{ backgroundColor: option.color }}
+                  />
+                ))}
+              </div>
+              <p className="editorial-muted">Selected: {felt}</p>
+            </fieldset>
 
-      <section className="content-band">
-        <SectionHeader
-          eyebrow="Before any deposit"
-          title="The quote should remove uncertainty"
-          description="Ark of Bones should confirm the operational details that matter to a serious buyer before asking for money."
-        />
-        <div className="confirmation-panel">
-          <div>
-            <p className="eyebrow">Build sheet</p>
-            <h3>No mystery configuration.</h3>
-            <p>Pricing is quoted by scope until a standardized production specification and public starting price are formally approved.</p>
+            <fieldset>
+              <legend>Engraving</legend>
+              <div className="engraving-options">
+                {engravingOptions.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    aria-pressed={engraving === option}
+                    onClick={() => setEngraving(option)}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
           </div>
-          <ul>
-            {preDepositChecks.map((item) => <li key={item}>{item}</li>)}
-          </ul>
+
+          <div className="table-quote-panel">
+            <p className="eyebrow">Built to order</p>
+            <h2>Quoted by configuration.</h2>
+            <p>Final dimensions, materials, features, delivery, service terms, production timing, and payment schedule are confirmed in writing before a deposit is requested.</p>
+            <div className="hero-actions">
+              <Link className="button button--gold" to={quotePath}>Request this configuration<ArrowRight aria-hidden="true" /></Link>
+              <Link className="button button--outline" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Discuss a venue build</Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="content-band content-band--wood">
-        <SectionHeader eyebrow="Build process" title="From serious interest to a confirmed scope" />
-        <div className="process-grid">
-          {process.map(([number, title, body]) => (
-            <article key={number}><span>{number}</span><h3>{title}</h3><p>{body}</p></article>
-          ))}
+      <section className="editorial-band editorial-band--quiet">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">Details</p>
+          <div className="editorial-rule" aria-hidden="true"><span /></div>
+        </div>
+        <div className="editorial-gallery editorial-gallery--three">
+          <figure>
+            <img src={tableRackDetail} alt="Close view of an illuminated domino rack" width="1000" height="1000" loading="lazy" />
+            <figcaption>Rack detail.</figcaption>
+          </figure>
+          <figure>
+            <img src={tableFeltDetail} alt="Dominoes arranged across the felt playing surface" width="1000" height="1000" loading="lazy" />
+            <figcaption>A playing surface with room for the line to develop.</figcaption>
+          </figure>
+          <figure>
+            <img src={tableRoom} alt="Ark of Bones domino table in an entertainment room" width="1000" height="1000" loading="lazy" />
+            <figcaption>Designed for a room that gets used.</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section className="image-story image-story--reverse">
-        <div className="image-story-media">
-          <SafeImage
-            src={ASSETS.players}
-            alt="Players using an Ark of Bones domino table during a gathering"
-            fallbackAlt="Players gathered around an Ark of Bones domino table"
-            width="1800"
-            height="1200"
-            loading="lazy"
-          />
+      <section className="editorial-split editorial-band editorial-band--light">
+        <div>
+          <p className="eyebrow">Ordering</p>
+          <h2>Scope first. Approval before production.</h2>
         </div>
-        <div className="image-story-copy">
-          <p className="eyebrow">Proof before scale</p>
-          <h2>The table should generate evidence, not just impressions.</h2>
-          <p>Venue pilots should document participation, watch time, replay demand, repeat attendance, sponsor response, and operating cost. Those numbers make the next table easier to sell.</p>
-          <Link className="text-link" to="/official-play">See how official play extends beyond the table<ArrowRight aria-hidden="true" /></Link>
+        <div className="editorial-copy">
+          <p>Choose the intended use, finish direction, and key features. Ark of Bones then confirms the build details, drawings or approvals, delivery requirements, timeline, and quote.</p>
+          <p className="editorial-muted">Venue, league, event, and multi-table requirements are reviewed separately.</p>
+          <Link className="button button--dark" to={quotePath}>Start a build inquiry<ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
 
-      <CTASection
-        eyebrow="Build inquiries"
-        title="Serious builds start with a real conversation."
-        description="Share the space, city, timeline, use case, and what matters most. No payment is required to request build details or determine the right next step."
-        label="Plan a venue build"
-        to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership"
-        secondaryLabel="Design a private table"
-        secondaryTo="/contact?inquiry=Private%20%2F%20Home%20Table"
-      />
-
-      <div className="mobile-build-bar" aria-label="Table inquiry actions">
-        <Link className="button button--gold" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">Venue build</Link>
-        <Link className="button button--light" to="/contact?inquiry=Private%20%2F%20Home%20Table">Private table</Link>
-      </div>
+      <section className="editorial-band">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">In use</p>
+          <div className="editorial-rule" aria-hidden="true"><span /></div>
+        </div>
+        <div className="editorial-gallery editorial-gallery--pair">
+          <figure>
+            <img src={tableInPlay} alt="A full Ark of Bones domino table in play" width="1800" height="900" loading="lazy" />
+            <figcaption>Built for the players at the table and the people gathered around them.</figcaption>
+          </figure>
+          <figure>
+            <img src={tableCommunity} alt="Ark of Bones community gathered around an illuminated domino table" width="1400" height="700" loading="lazy" />
+            <figcaption>The product is the table; the value is the gathering it supports.</figcaption>
+          </figure>
+        </div>
+      </section>
     </>
   );
 }
