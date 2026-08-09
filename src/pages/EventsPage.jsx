@@ -1,12 +1,14 @@
 import { Building2, BriefcaseBusiness, PartyPopper } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 import EmptyState from '../components/EmptyState';
 import EventCard from '../components/EventCard';
 import PageHero from '../components/PageHero';
+import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
-import { ASSETS } from '../config/brand';
 import { events } from '../data/events';
+import { eventPhotos, featuredEventPhoto } from '../data/media';
 
 const experienceFormats = [
   {
@@ -30,10 +32,12 @@ const experienceFormats = [
 ];
 
 export default function EventsPage() {
+  const eventPreview = eventPhotos.slice(0, 6);
+
   return (
     <>
       <SEO title="Events" description="Find Ark of Bones domino events, tournaments, participation details, and venue information." path="/events" />
-      <PageHero eyebrow="Play in person" title="Events" description="Confirmed dates, participation details, and hosted formats for players, spectators, and venues." image={ASSETS.event} />
+      <PageHero eyebrow="Play in person" title="Events" description="Confirmed dates, participation details, and hosted formats for players, spectators, and venues." image={featuredEventPhoto?.src} />
       <section className="content-band">
         <SectionHeader eyebrow="Schedule" title="Confirmed upcoming dates" description="Each listing includes the venue, city, format, host brand, and participation route." />
         {events.upcoming.length ? (
@@ -48,6 +52,31 @@ export default function EventsPage() {
           <div className="event-list">{events.past.map((event) => <EventCard key={event.id} event={event} />)}</div>
         </section>
       ) : null}
+
+      <section className="content-band content-band--quiet event-photo-preview">
+        <SectionHeader
+          eyebrow="From the table"
+          title="What the room actually looks like"
+          description="Real sessions, real players, and the social energy around the Ark of Bones table."
+        />
+        <div className="event-photo-strip">
+          {eventPreview.map((photo) => (
+            <figure key={photo.id}>
+              <SafeImage
+                src={photo.src}
+                alt={photo.alt}
+                fallbackAlt="Ark of Bones event photography"
+                width={photo.orientation === 'portrait' ? '900' : '1400'}
+                height={photo.orientation === 'portrait' ? '1200' : '900'}
+                loading="lazy"
+              />
+              <figcaption>{photo.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <Link className="button button--outline" to="/media">Open the full media library</Link>
+      </section>
+
       <section className="content-band event-formats">
         <SectionHeader
           eyebrow="Event experiences"
