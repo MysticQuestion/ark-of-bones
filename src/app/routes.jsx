@@ -13,6 +13,7 @@ const EventsPage = lazy(() => import('../pages/EventsPage'));
 const FAQPage = lazy(() => import('../pages/FAQPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LearnPage = lazy(() => import('../pages/LearnPage'));
+const MediaPage = lazy(() => import('../pages/MediaPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 const OfficialPlayPage = lazy(() => import('../pages/OfficialPlayPage'));
 const ShopArchivePage = lazy(() => import('../pages/ShopArchivePage'));
@@ -26,6 +27,7 @@ export default function AppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/events" element={<EventsPage />} />
       <Route path="/watch" element={<WatchPage />} />
+      <Route path="/media" element={<MediaPage />} />
       <Route path="/official-play" element={<OfficialPlayPage />} />
       <Route path="/tables" element={<TablesPage />} />
       <Route path="/shop" element={<ShopPage />} />
