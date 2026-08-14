@@ -39,12 +39,15 @@ jobs:
           routes=(
             events
             watch
+            official-play
             tables
             shop
+            shop/archive
             brands
             brands/domino-mother-fucker
             brands/big-six-bones
             about
+            around-the-table
             contact
             learn
             faq

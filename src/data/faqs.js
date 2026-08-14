@@ -17,50 +17,71 @@ export const faqs = [
     category: 'Ark of Bones',
     question: 'What is Ark of Bones?',
     answer:
-      'Ark of Bones is the home of domino entertainment: live play, filmed competition, table experiences, cultural storytelling, merchandise, and community.',
+      'Ark of Bones is a domino entertainment company built around handcrafted table experiences, live and filmed competition, official-play systems, cultural storytelling, merchandise, and community programming.',
     link: { label: 'Read the company story', to: '/about' },
   },
   {
     category: 'Events',
     question: 'Where can I find upcoming events?',
     answer:
-      'Visit the Events page for upcoming dates and ways to join. Follow Ark of Bones on social media for new announcements.',
+      'Visit the Events page for published dates and participation details. Follow the official Ark of Bones channels for newly announced programs and competitions.',
     link: { label: 'View events', to: '/events' },
   },
   {
     category: 'Events',
     question: 'Can Ark of Bones produce an event at my venue?',
     answer:
-      'Yes. Use the Contact page and select Host an Event. Share your city, venue, audience, and event goals to start the conversation.',
-    link: { label: 'Request a hosted event', to: '/contact?inquiry=Host%20an%20Event' },
+      'Yes. Venue and hosted-event inquiries begin with the location, expected audience, available technical infrastructure, timing, and the kind of experience you want to produce.',
+    link: { label: 'Plan a venue experience', to: '/contact?inquiry=Tables%20%2F%20Venue%20Partnership' },
   },
   {
     category: 'Watch',
     question: 'Where can I watch Ark of Bones?',
     answer:
-      'Visit the Watch page or follow Ark of Bones on YouTube, Instagram, TikTok, and Facebook.',
+      'Visit the Watch page or follow Ark of Bones on YouTube, Instagram, TikTok, and Facebook for published footage, table features, competition, and cultural stories.',
     link: { label: 'Open the watch hub', to: '/watch' },
   },
   {
     category: 'Watch',
     question: 'Is a live game scheduled now?',
     answer:
-      'The Watch page shows when Ark of Bones is live and connects you to recent matches and clips between broadcasts.',
+      'The Watch page shows the current live status and keeps the archive available between broadcasts. When Ark of Bones is off air, recent footage and product context remain available.',
     link: { label: 'Check live status', to: '/watch' },
   },
   {
     category: 'Tables and Venue Partnerships',
-    question: 'What is the Ark of Bones table experience?',
+    question: 'What makes an Ark of Bones table different from a standard domino table?',
     answer:
-      'It brings live play, audience engagement, connected screens, and streaming possibilities together around the table.',
-    link: { label: 'Explore venue experiences', to: '/tables' },
+      'Ark of Bones treats the table as a media-ready playing surface. Depending on the build, the experience can incorporate player-view cameras, table sound, lighting and indicators, display or streaming integration, scoring or tracking technology, and custom finishes.',
+    link: { label: 'Explore the table', to: '/tables' },
   },
   {
     category: 'Tables and Venue Partnerships',
-    question: 'How do I get table pricing and details?',
+    question: 'Can I order an Ark of Bones table for a private home?',
     answer:
-      'Start a Tables / Venue Partnership inquiry and tell us about your space, city, audience, and event goals.',
-    link: { label: 'Request table details', to: '/contact?inquiry=Tables%20%2F%20Venue%20Partnership' },
+      'Yes. Private builds can be scoped around room fit, finish, lighting, engraving, media features, typical group size, and the way the table will actually be used at home.',
+    link: { label: 'Request private build details', to: '/contact?inquiry=Private%20%2F%20Home%20Table' },
+  },
+  {
+    category: 'Tables and Venue Partnerships',
+    question: 'How does table pricing work?',
+    answer:
+      'Pricing is quoted by scope because technology, finish work, branding, delivery, installation, and event support can vary materially between builds. Ark of Bones should confirm the build sheet, timeline, and included services before requesting a deposit.',
+    link: { label: 'Start a build inquiry', to: '/tables' },
+  },
+  {
+    category: 'Tables and Venue Partnerships',
+    question: 'How long does a custom build take?',
+    answer:
+      'A custom build typically follows a 4–6 week production window after the final scope and deposit, subject to the configuration, material availability, delivery requirements, and any venue integration work.',
+    link: { label: 'Review the build process', to: '/tables' },
+  },
+  {
+    category: 'Tables and Venue Partnerships',
+    question: 'What happens before I pay a deposit?',
+    answer:
+      'The goal is a clear written scope: dimensions and fit, materials and finishes, included technology, power and display requirements, customization, delivery or installation, service terms, timeline, and the deposit schedule for that specific build.',
+    link: { label: 'Request build details', to: '/contact?inquiry=Private%20%2F%20Home%20Table' },
   },
   {
     category: 'Shop',
@@ -73,7 +94,7 @@ export const faqs = [
     category: 'Shop',
     question: 'What happens after I place an order?',
     answer:
-      'Squarespace sends the buyer an order confirmation and receipt while authorized Ark of Bones store managers receive the details needed to prepare the purchase. A fulfillment email follows when the order is released for delivery.',
+      'Squarespace sends the buyer an order confirmation and receipt while authorized Ark of Bones store managers receive the information needed to prepare the purchase. A fulfillment email follows when the order is released for delivery.',
     link: { label: 'Review the complete order journey', to: '/shop#commerce-journey-title' },
   },
   {
@@ -108,13 +129,13 @@ export const faqs = [
     category: 'Game Guides',
     question: 'Are the guides official tournament rules?',
     answer:
-      'No. They are practical player primers. House, event, and tournament rules should always be confirmed before play starts.',
-    link: { label: 'Review the guides', to: '/learn' },
+      'No. The current guides are practical player primers. The Official Play program is the separate roadmap for standardized competition rules, ranking, sanctioning, and referee development.',
+    link: { label: 'Explore official play', to: '/official-play' },
   },
   {
     category: 'Contact',
     question: 'How do I contact Ark of Bones?',
-    answer: `Email ${CONTACT.email} or call ${CONTACT.phoneDisplay}. The Contact page also prepares a detailed inquiry for your email application.`,
-    link: { label: 'Contact Ark of Bones', to: '/contact' },
+    answer: `Email ${CONTACT.email}, call ${CONTACT.phoneDisplay}, or use Work With Us to provide the location, timeline, use case, and scope needed for a useful response.`,
+    link: { label: 'Work with Ark of Bones', to: '/contact' },
   },
 ];

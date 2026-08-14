@@ -4,6 +4,7 @@ import ExternalRedirect from '../components/ExternalRedirect';
 import { officialProducts } from '../data/products';
 
 const AboutPage = lazy(() => import('../pages/AboutPage'));
+const AroundTheTablePage = lazy(() => import('../pages/AroundTheTablePage'));
 const BigSixBonesPage = lazy(() => import('../pages/BigSixBonesPage'));
 const BrandsPage = lazy(() => import('../pages/BrandsPage'));
 const ContactPage = lazy(() => import('../pages/ContactPage'));
@@ -13,7 +14,9 @@ const FAQPage = lazy(() => import('../pages/FAQPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LearnPage = lazy(() => import('../pages/LearnPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
+const OfficialPlayPage = lazy(() => import('../pages/OfficialPlayPage'));
 const PartnershipsPage = lazy(() => import('../pages/PartnershipsPage'));
+const ShopArchivePage = lazy(() => import('../pages/ShopArchivePage'));
 const ShopPage = lazy(() => import('../pages/ShopPage'));
 const TablesPage = lazy(() => import('../pages/TablesPage'));
 const WatchPage = lazy(() => import('../pages/WatchPage'));
@@ -24,12 +27,15 @@ export default function AppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/events" element={<EventsPage />} />
       <Route path="/watch" element={<WatchPage />} />
+      <Route path="/official-play" element={<OfficialPlayPage />} />
       <Route path="/tables" element={<TablesPage />} />
       <Route path="/shop" element={<ShopPage />} />
+      <Route path="/shop/archive" element={<ShopArchivePage />} />
       <Route path="/brands" element={<BrandsPage />} />
       <Route path="/brands/domino-mother-fucker" element={<DominoMotherFuckerPage />} />
       <Route path="/brands/big-six-bones" element={<BigSixBonesPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/around-the-table" element={<AroundTheTablePage />} />
       <Route path="/partnerships" element={<PartnershipsPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/learn" element={<LearnPage />} />
