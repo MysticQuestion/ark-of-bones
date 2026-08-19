@@ -12,7 +12,8 @@ const name = brandDisplayName(brand);
 const actions = [
   { title: 'See the culture in motion', description: 'Open the Ark of Bones media hub for competition, interviews, and stories.', to: '/watch' },
   { title: 'Put DMF on the bill', description: 'Build an event, media feature, or cultural collaboration around the brand.', to: '/contact?inquiry=Brand%20Collaboration' },
-  { title: 'Shop the statement', description: 'Open the buyable Domino Mother Fucker products and wider design archive.', to: `/shop?brand=${brand.key}` },
+  { title: 'Shop published products', description: 'Open buyable Domino Mother Fucker merchandise with published prices and product pages.', to: `/shop?brand=${brand.key}` },
+  { title: 'Browse the design archive', description: 'See Domino Mother Fucker concept designs kept separate from currently available inventory.', to: `/shop/archive?brand=${brand.key}` },
 ];
 
 export default function DominoMotherFuckerPage() {
