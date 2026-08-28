@@ -1,161 +1,215 @@
 # Ark of Bones Website v2 — Build Brief
 
 ## Objective
-Rebuild the public headquarters so Ark reads as a credible cultural competition and entertainment institution with commercial discipline. Preserve factual capabilities from the current production system while replacing elementary presentation, stale copy, repetitive layouts and unsupported claims.
+Rebuild the site with stronger hierarchy, better typography, better use of imagery, cleaner information architecture, and less copy.
 
-## Non-negotiable product principles
-1. Evidence before aspiration.
-2. Editorial hierarchy before component abundance.
-3. Real photography/film before decorative graphics.
-4. Mobile is a first-class publication surface.
-5. Accessibility, semantic HTML and performance are design requirements.
-6. No fake social proof or placeholder metrics in production.
-7. Roadmap concepts carry explicit state labels.
-8. Promotion is structural: every event, result, story, rules page and product is a durable share/search destination.
+## Editorial rule
+Do not explain what the interface can show.
 
-## Homepage concept
-Hero line candidate: **Dominoes deserve a major stage.**
-Supporting copy: **Ark of Bones produces competition, media and the systems required to record serious play.**
-Primary actions: `Enter Official Play` / `See What’s Live`.
+Use words for information, not atmosphere.
 
-Alternative institutional line: **The table is the stage. The game is the institution.**
+Default to:
+- image
+- film
+- score
+- date
+- city
+- player name
+- event name
+- product specification
+- rule
+- status
+- caption
+- direct action
 
-Do not stack slogans. Pick one proposition per surface.
+Avoid:
+- marketing paragraphs
+- mission-heavy homepage copy
+- pitch-deck language
+- slogan stacking
+- “not X, but Y” language
+- “more than” language
+- “where X meets Y” language
+- “X + Y = Z” language
+- generic aspirational copy
+- filler text added only to balance a layout
 
-## Design system
-### Layout
-- 12-column desktop editorial grid.
-- max reading width 70–76ch.
-- generous section spacing; density increases intentionally on data/results surfaces.
-- square/low-radius UI by default; pills only for statuses/tags.
+## Homepage
+Recommended opening:
 
-### Type
-- Display: high-authority serif or condensed editorial display family.
-- UI/body: neutral grotesk/sans with excellent numerals.
-- Tabular numerals for scores, dates and rankings.
-- Avoid oversized type as a substitute for composition.
+`ARK OF BONES`
 
-### Surfaces
-- primary dark institutional surface;
-- editorial light surface for long-form reading;
-- restrained accent derived from the existing Ark identity;
-- photographs retain natural tonal range; avoid indiscriminate duotone filters.
+Full-bleed live-play image or film.
 
-### Motion
-- 150–350ms interface transitions.
-- match footage and score motion may be more expressive.
-- respect `prefers-reduced-motion`.
-- no perpetual background animation.
+Navigation remains visible.
 
-## Core reusable components
-- Masthead / institutional navigation
-- Live status strip
-- Editorial hero
+Below the fold, show current information rather than explanation:
+
+`NEXT EVENT`
+Event name
+Date
+City
+`REGISTER`
+
+Then:
+- latest result
+- current film or match
+- Official Play status
+- selected table/product
+- current journal story
+
+No mandatory hero paragraph.
+No mandatory tagline.
+No “who we are” block on the homepage unless there is factual information that belongs there.
+
+## Navigation
+Primary:
+- Play
+- Events
+- Watch
+- Tables
+- Journal
+- About
+
+Secondary:
+- Rules
+- Rankings
+- Partners
+- Shop
+- Contact
+
+## Layout
+- 12-column desktop grid
+- strong negative space
+- deliberate image scale
+- compact data surfaces
+- restrained borders and radii
+- no wall of cards
+- no repeated section templates
+
+## Typography
+- one strong display family
+- one restrained text/UI family
+- tabular numerals for scores, dates, standings, and rankings
+- headlines should be short
+- body copy should be rare and useful
+
+## Imagery
+Primary visual material:
+- real games
+- hands and bones
+- players
+- spectators
+- tables in use
+- venue context
+- scorekeeping
+- archival material
+- product details
+
+Avoid generic stock photography and decorative AI imagery when real Ark material exists.
+
+## Motion
+Use motion only when it adds information or presence:
+- live footage
+- score changes
+- match transitions
+- short editorial transitions
+
+No perpetual background effects.
+
+## Core components
+- Masthead
 - Event fixture
-- Result card
 - Scoreline
-- Player identity block
+- Result row
+- Player identity
 - Ranking table
-- Rules version notice
-- Program status (`Live`, `Pilot`, `Development`, `Research`)
-- Film/story feature
-- Photo essay module
-- Partner proof block
-- Product specification table
-- Press fact block
-- Newsletter module
-- Structured footer
+- Rules notice
+- Status label
+- Film feature
+- Photo feature
+- Product specifications
+- Caption
+- Footer
 
-## Data/content model
-Treat content as records rather than hard-coded marketing sections.
+Components should not require marketing copy to feel complete.
 
+## Content model
 ### Event
-id, slug, title, status, start/end, venue, city, format, ruleset, registration URL, participants, result IDs, media IDs, partner IDs.
+id, slug, title, status, date/time, venue, city, format, ruleset, registration URL, participants, results, media, partners.
 
-### Match/result
-id, event, players/teams, score, ruleset version, verification status, official/referee, played_at, footage, correction history.
+### Match
+id, event, players/teams, score, ruleset version, verification status, official, date, footage, correction history.
 
 ### Player
-id, display name, location/club, verified results, record, ranking state, profile media, consent state.
+id, display name, location/club, verified results, record, ranking state, media, consent state.
 
 ### Ruleset
-id, game, version, effective date, status, source/provenance, credited contributors, changelog.
+id, game, version, effective date, status, source, credited contributors, changelog.
 
 ### Story/media
-id, type, headline, dek, author/producer, date, subjects, event linkage, media, rights state, SEO fields.
+id, type, headline, author/producer, date, subjects, linked event, media, rights state.
 
-### Partner
-id, type, name, program, permission to display logo/name, evidence/case study.
+### Product
+id, name, availability, price, specifications, images, fulfillment status, purchase/inquiry path.
 
-## SEO / discoverability
-- unique title/meta for every canonical page;
-- Organization schema;
-- Event schema for verified public events;
-- Product schema only for actual purchasable products;
-- VideoObject where Ark hosts/indexes real video;
-- breadcrumbs on deep editorial/system pages;
-- sitemap and robots controls;
-- OpenGraph/Twitter cards with intentional art direction;
-- canonical URLs;
-- descriptive image alt text;
-- internal linking between event → result → player → ruleset → media.
+## Calls to action
+Use specific labels only:
+- Register
+- Watch
+- Results
+- Rules
+- Shop
+- Inquire
+- Contact
+- Read
+- View Event
+- View Match
 
-## Conversion architecture
-No generic `Learn More` proliferation.
+Avoid generic `Learn More` buttons.
 
-Primary conversions:
-- Attend/register
-- Host a program/event
-- Become a venue/organizational partner
-- Sponsor a property
-- Enter/learn Official Play
-- Watch a match/story
-- Purchase a verified product
-- Join the mailing list
+## Discoverability
+Use technical metadata without turning SEO language into visible copy:
+- unique titles and descriptions
+- Organization schema
+- Event schema for real events
+- Product schema for real products
+- VideoObject for real video
+- canonical URLs
+- sitemap
+- OpenGraph metadata
+- alt text
+- internal links
 
-Each conversion receives a dedicated landing context rather than a universal contact form.
+## Build order
+### 1. Shell
+Navigation, typography, spacing, color, footer.
 
-## Promotion engine
-For every completed flagship event generate:
-1. canonical event page;
-2. verified results;
-3. match/replay pages as available;
-4. editorial recap;
-5. 3–8 short social cuts from owned footage;
-6. photography package;
-7. player/profile updates;
-8. partner/sponsor recap metrics;
-9. newsletter module;
-10. internal links into rules, rankings and next event.
+### 2. Homepage
+Minimal opening, current event, result, media, Official Play status, selected product, journal.
 
-This makes the website the source system and social channels distribution endpoints.
+### 3. Competition
+Play, rules, events, results, players, rankings when data is sufficient.
 
-## Build phases
-### Phase 0 — Canon audit
-Resolve table sales/customization policy, live offerings, brands, rights, event claims, merch inventory and partner permissions.
+### 4. Media
+Watch, match pages, films, photography, editorial.
 
-### Phase 1 — Institutional shell
-Navigation, homepage, About, Partners, Contact, Journal shell, design tokens, accessibility baseline, SEO foundations.
+### 5. Commerce
+Tables and Shop using only verified products, configurations, pricing, and fulfillment terms.
 
-### Phase 2 — Competition
-Play/Official Play, rules registry, event model, results model, player profiles. Rankings remain hidden until enough verified data exists.
+### 6. Institutional pages
+About, Partners, Contact.
 
-### Phase 3 — Media
-Watch index, video/story templates, match recaps, photo essays, structured rights metadata.
+## Release rules
+- No unsupported claim.
+- No stale legacy copy.
+- No filler section.
+- No fake metric.
+- No hidden development status.
+- No paragraph where structured information would work better.
+- No animation required for the composition to succeed.
+- Mobile receives the same editorial care as desktop.
+- Accessibility and performance are release requirements.
 
-### Phase 4 — Commerce
-Tables and Shop rebuilt around verified inventory/configuration and actual fulfillment policy.
-
-### Phase 5 — Growth instrumentation
-Privacy-conscious analytics, conversion events, newsletter attribution, event acquisition source, replay attach rate and partner reporting.
-
-## Acceptance criteria
-- No stale legacy FAQ language survives by accident.
-- No unsupported financing/shipping/customization claims.
-- No homepage section exists solely to repeat positioning.
-- All roadmap systems are state-labeled.
-- Core pages pass keyboard navigation and contrast review.
-- Core Web Vitals are treated as release gates.
-- Site is coherent without animation.
-- Search/social metadata are production-ready.
-- A venue director, serious player, journalist and sponsor can each understand Ark's proposition and find their next action in under two minutes.
+## Final test
+If deleting a paragraph makes the page stronger and no factual information is lost, delete it.
