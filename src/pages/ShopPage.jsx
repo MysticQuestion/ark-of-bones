@@ -1,10 +1,8 @@
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
-import SectionHeader from '../components/SectionHeader';
 import { SUBSIDIARY_BRANDS } from '../config/brand';
 import { officialProducts, productFilters, STORE_URL } from '../data/products';
 
@@ -51,31 +49,22 @@ export default function ShopPage() {
     <>
       <SEO
         title="Shop"
-        description={`Shop published Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} merchandise.`}
+        description={`Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} merchandise.`}
         path="/shop"
         schema={productSchema}
       />
-      <PageHero
-        eyebrow="Official merchandise"
-        title="Available now."
-        description="Every item on this page has a published price and a direct product page. Checkout stays on the secure Squarespace store."
-        image={officialProducts[0].image}
-        compact
-      />
+
+      <header className="shop-page-header content-band">
+        <p className="eyebrow">Shop</p>
+        <div className="shop-page-header__row">
+          <h1>Ark of Bones</h1>
+          <a className="text-link" href={STORE_URL} target="_blank" rel="noopener noreferrer">
+            Checkout <ExternalLink aria-hidden="true" />
+          </a>
+        </div>
+      </header>
 
       <section className="content-band shop-page">
-        <div className="shop-toolbar">
-          <SectionHeader eyebrow="Published collection" title={`${officialProducts.length} products ready to buy`} />
-          <div className="shop-toolbar-actions">
-            <a className="button button--gold" href={STORE_URL} target="_blank" rel="noopener noreferrer">
-              Open the complete shop<ExternalLink aria-hidden="true" />
-            </a>
-            <Link className="button button--outline" to="/shop/archive">
-              Design archive<ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-
         <div className="shop-controls">
           <div className="filter-control" role="group" aria-label="Filter products by brand">
             {productFilters.map((item) => (
@@ -92,18 +81,8 @@ export default function ShopPage() {
           </div>
         </div>
 
-        <div className="shop-results-heading" aria-live="polite">
-          <strong>{visibleProducts.length}</strong>
-          <span>buyable products shown</span>
-        </div>
-
         <div className="product-grid">
           {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
-        </div>
-
-        <div className="shop-disclosure shop-disclosure--gallery">
-          <p>The wider design library is kept separate so concept work cannot be mistaken for currently available merchandise.</p>
-          <Link className="text-link" to="/shop/archive">View the design archive<ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
     </>
