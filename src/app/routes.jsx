@@ -13,9 +13,13 @@ const EventsPage = lazy(() => import('../pages/EventsPage'));
 const FAQPage = lazy(() => import('../pages/FAQPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LearnPage = lazy(() => import('../pages/LearnPage'));
+const JournalPage = lazy(() => import('../pages/JournalPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 const OfficialPlayPage = lazy(() => import('../pages/OfficialPlayPage'));
 const PartnershipsPage = lazy(() => import('../pages/PartnershipsPage'));
+const PoliciesPage = lazy(() => import('../pages/PoliciesPage'));
+const RankingsPage = lazy(() => import('../pages/RankingsPage'));
+const RulesPage = lazy(() => import('../pages/RulesPage'));
 const ShopArchivePage = lazy(() => import('../pages/ShopArchivePage'));
 const ShopPage = lazy(() => import('../pages/ShopPage'));
 const TablesPage = lazy(() => import('../pages/TablesPage'));
@@ -28,6 +32,8 @@ export default function AppRoutes() {
       <Route path="/events" element={<EventsPage />} />
       <Route path="/watch" element={<WatchPage />} />
       <Route path="/official-play" element={<OfficialPlayPage />} />
+      <Route path="/rules" element={<RulesPage />} />
+      <Route path="/rankings" element={<RankingsPage />} />
       <Route path="/tables" element={<TablesPage />} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/shop/archive" element={<ShopArchivePage />} />
@@ -35,11 +41,13 @@ export default function AppRoutes() {
       <Route path="/brands/domino-mother-fucker" element={<DominoMotherFuckerPage />} />
       <Route path="/brands/big-six-bones" element={<BigSixBonesPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/journal" element={<JournalPage />} />
       <Route path="/around-the-table" element={<AroundTheTablePage />} />
       <Route path="/partnerships" element={<PartnershipsPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/learn" element={<LearnPage />} />
       <Route path="/faq" element={<FAQPage />} />
+      <Route path="/policies" element={<PoliciesPage />} />
 
       <Route path="/domino-mother-fucker" element={<Navigate to="/brands/domino-mother-fucker" replace />} />
       <Route path="/big-six-bones" element={<Navigate to="/brands/big-six-bones" replace />} />

@@ -10,7 +10,7 @@ import { officialProducts } from '../data/products';
 import { featuredVideo } from '../data/videos';
 
 const index = [
-  { label: 'Competition', title: 'Official Play', state: 'Development', to: '/official-play' },
+  { label: 'Competition', title: 'Official Play', state: 'In Development', to: '/official-play' },
   { label: 'Live', title: 'Events', state: 'Schedule + archive', to: '/events' },
   { label: 'Media', title: 'Watch', state: 'Films + matches', to: '/watch' },
   { label: 'Commerce', title: 'Shop', state: `${officialProducts.length} published products`, to: '/shop' },

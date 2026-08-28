@@ -1,98 +1,34 @@
-import { ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import CTASection from '../components/CTASection';
-import PageHero from '../components/PageHero';
 import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
 import { ASSETS } from '../config/brand';
 
+const chronology = [
+  ['31 MAR 2025', 'AOB Intro 2', 'Film record', '/watch'],
+  ['16 APR 2025', 'Founder introduction and table film published', 'Media record', '/watch'],
+  ['17 APR 2025', 'Ark of Bones short published', 'Media record', '/watch'],
+  ['2026', 'Institutional website record established', 'Company record', '/journal'],
+];
+
 export default function AboutPage() {
   return (
     <>
-      <SEO
-        title="About"
-        description="Meet Ark of Bones founder Tony Covington and the company building a modern competition, media, and community platform around domino play."
-        path="/about"
-      />
-
-      <PageHero
-        eyebrow="The company"
-        title="A larger platform for a game people already love."
-        description="Ark of Bones brings live competition, media, venue programming, merchandise, and an emerging official-play system under one company."
-        image={ASSETS.players}
-      />
-
-      <section className="leadership-feature">
-        <div className="leadership-feature-media">
-          <SafeImage
-            src={ASSETS.owner}
-            alt="Ark of Bones founder Tony Covington at a domino tournament"
-            fallbackAlt="Tony Covington, founder of Ark of Bones"
-            width="1500"
-            height="1092"
-            loading="lazy"
-          />
-        </div>
-        <div className="leadership-feature-copy">
-          <p className="eyebrow">Founder</p>
-          <h2>Tony Covington</h2>
-          <p>Tony Covington built Ark of Bones around a straightforward idea: dominoes can hold the attention of a room, carry family and community history, and support a serious competition business without losing the social character that made the game matter in the first place.</p>
-          <Link className="button button--dark" to="/watch#founder-video-title"><Play aria-hidden="true" />Hear Tony explain the concept</Link>
-        </div>
+      <SEO title="About" description="Ark of Bones company record, founder, brands, and chronology." path="/about" />
+      <header className="about-mast"><p className="eyebrow">Company record</p><h1>Ark of Bones</h1></header>
+      <section className="founder-record">
+        <SafeImage src={ASSETS.owner} alt="Ark of Bones founder Tony Covington" fallbackAlt="Tony Covington, founder of Ark of Bones" width="1500" height="1092" loading="eager" />
+        <div><p className="eyebrow">Founder</p><h2>Tony Covington</h2><dl><div><dt>Organization</dt><dd>Ark of Bones</dd></div><div><dt>Primary work</dt><dd>Domino tables, events, film, competition systems, published goods</dd></div><div><dt>Public introduction</dt><dd>16 April 2025</dd></div></dl><Link className="text-link" to="/watch">Watch founder record</Link></div>
       </section>
-
-      <section className="about-story">
-        <div>
-          <p className="eyebrow">Why dominoes</p>
-          <h2>The culture existed before the company.</h2>
-        </div>
-        <div>
-          <p>Dominoes and spades have been sustained for generations in Black American, Caribbean, Latino, military, family, neighborhood, and social settings. Ark of Bones does not claim ownership of those traditions.</p>
-          <p>The company’s opportunity is to build better ways to document play, organize competition, compensate partners, preserve local knowledge, and create media that gives skilled players and longtime community authorities more visibility.</p>
-        </div>
+      <section className="chronology" aria-labelledby="chronology-title">
+        <div><p className="eyebrow">Chronology</p><h2 id="chronology-title">Public record</h2></div>
+        <div>{chronology.map(([date, title, type, to]) => <Link key={`${date}-${title}`} to={to}><time>{date}</time><strong>{title}</strong><span>{type}</span></Link>)}</div>
       </section>
-
-      <section className="mission-vision-grid">
-        <article>
-          <span>Operating principle</span>
-          <h2>Credit the people who built the game.</h2>
-          <p>Future sanctioned programs are being designed to document house-rule contributions, feature elders and experienced players as authorities, and create meaningful participation for clubs, hosts, and community partners.</p>
-        </article>
-        <article>
-          <span>Business direction</span>
-          <h2>Build recurring systems around the event.</h2>
-          <p>The long-term value is not another piece of furniture. It is the rules, rankings, sanctioned competition, referee network, scoring technology, data, media, and partner relationships that can improve with every recorded game.</p>
-        </article>
+      <section className="identity-register">
+        <p className="eyebrow">Identity register</p>
+        <Link to="/brands"><span>01</span><strong>Ark of Bones</strong><em>Parent identity</em></Link>
+        <Link to="/brands/big-six-bones"><span>02</span><strong>Big Six Bones</strong><em>Game identity</em></Link>
+        <Link to="/brands/domino-mother-fucker"><span>03</span><strong>Domino Mother Fucker</strong><em>Product identity</em></Link>
       </section>
-
-      <section className="image-story image-story--reverse">
-        <div className="image-story-media">
-          <SafeImage
-            src={ASSETS.learn}
-            alt="Dominoes arranged for learning and play"
-            fallbackAlt="Domino game education"
-            width="1600"
-            height="1000"
-            loading="lazy"
-          />
-        </div>
-        <div className="image-story-copy">
-          <p className="eyebrow">Where it goes next</p>
-          <h2>Prove the model before scaling it.</h2>
-          <p>Ark of Bones is prioritizing pilots, audience evidence, repeatable event economics, official-play infrastructure, and automated scoring before pursuing heavy venue expansion or territory sales.</p>
-          <Link className="text-link" to="/official-play">Review the official-play roadmap<ArrowRight aria-hidden="true" /></Link>
-        </div>
-      </section>
-
-      <CTASection
-        eyebrow="Work with Ark of Bones"
-        title="Bring a real setting, audience, or community to the next pilot."
-        description="Venue operators, event hosts, military MWR programs, campuses, community organizations, sponsors, and cultural partners can start with one measurable program."
-        label="Start a partnership inquiry"
-        to="/contact?inquiry=General%20Partnership"
-        secondaryLabel="Explore Around the Table"
-        secondaryTo="/around-the-table"
-      />
     </>
   );
 }

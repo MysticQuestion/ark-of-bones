@@ -53,10 +53,9 @@ export default function AroundTheTablePage() {
           />
         </div>
         <div className="image-story-copy">
-          <p className="eyebrow">Not a $49 replay</p>
-          <h2>The product is the family record.</h2>
-          <p>A game replay documents who won. A legacy session preserves how people spoke to one another, what they remembered, what they taught, and what made the room theirs.</p>
-          <p><strong>Pilot pricing:</strong> $750–$2,500 depending on filming time, travel, edit length, number of participants, and final deliverables.</p>
+          <p className="eyebrow">Family record</p>
+          <h2>Voices, play, and table talk.</h2>
+          <p>Session scope and public availability are confirmed directly.</p>
         </div>
       </section>
 
@@ -70,11 +69,10 @@ export default function AroundTheTablePage() {
       <section className="about-story">
         <div>
           <p className="eyebrow">What families receive</p>
-          <h2>A clear scope before the cameras arrive.</h2>
+          <h2>Written scope before recording.</h2>
         </div>
         <div>
-          <p>Each commission is quoted by scope. The proposal can specify filming time, location, number of cameras, interview prompts, edit length, digital delivery, additional family copies, and any travel or archival work.</p>
-          <p>Families keep the personal film. Any public promotional use should be separately authorized rather than assumed as part of the booking.</p>
+          <p>Recording time, location, participants, edit length, delivery, rights, and any public use require written agreement.</p>
         </div>
       </section>
 

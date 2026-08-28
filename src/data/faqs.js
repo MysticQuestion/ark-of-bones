@@ -135,7 +135,7 @@ export const faqs = [
   {
     category: 'Contact',
     question: 'How do I contact Ark of Bones?',
-    answer: `Email ${CONTACT.email}, call ${CONTACT.phoneDisplay}, or use Work With Us to provide the location, timeline, use case, and scope needed for a useful response.`,
-    link: { label: 'Work with Ark of Bones', to: '/contact' },
+    answer: `Email ${CONTACT.email}, call ${CONTACT.phoneDisplay}, or use the contact form with the relevant inquiry category.`,
+    link: { label: 'Contact Ark of Bones', to: '/contact' },
   },
 ];

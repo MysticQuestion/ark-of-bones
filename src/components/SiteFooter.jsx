@@ -3,9 +3,9 @@ import { BRAND } from '../config/brand';
 import { CONTACT } from '../config/contact';
 
 const columns = [
-  ['Play', [['Official Play', '/official-play'], ['Events', '/events'], ['Watch', '/watch']]],
-  ['Company', [['About', '/about'], ['Around the Table', '/around-the-table'], ['Brands', '/brands']]],
-  ['Access', [['Shop', '/shop'], ['Tables', '/tables'], ['Partnerships', '/partnerships'], ['Contact', '/contact']]],
+  ['Competition', [['Official Play', '/official-play'], ['Rules', '/rules'], ['Rankings', '/rankings'], ['Events', '/events']]],
+  ['Record', [['Watch', '/watch'], ['Journal', '/journal'], ['About', '/about'], ['Brands', '/brands']]],
+  ['Access', [['Shop', '/shop'], ['Tables', '/tables'], ['Contact', '/contact'], ['Policies', '/policies']]],
 ];
 
 export default function SiteFooter() {
