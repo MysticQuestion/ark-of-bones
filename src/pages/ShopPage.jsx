@@ -13,8 +13,7 @@ export default function ShopPage() {
   const [brandFilter, setBrandFilter] = useState(initialBrand);
 
   useEffect(() => {
-    const nextBrand = productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all';
-    setBrandFilter(nextBrand);
+    setBrandFilter(productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all');
   }, [requestedBrand]);
 
   const visibleProducts = useMemo(
@@ -23,68 +22,48 @@ export default function ShopPage() {
   );
 
   const productSchema = officialProducts.map((product) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: product.name,
-    description: product.description,
-    image: product.image,
-    brand: { '@type': 'Brand', name: product.brand },
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'USD',
-      price: product.price.replace('$', ''),
-      url: product.href,
-    },
+    '@context': 'https://schema.org', '@type': 'Product', name: product.name, description: product.description,
+    image: product.image, brand: { '@type': 'Brand', name: product.brand },
+    offers: { '@type': 'Offer', priceCurrency: 'USD', price: product.price.replace('$', ''), url: product.href },
   }));
 
   const changeBrand = (nextBrand) => {
     setBrandFilter(nextBrand);
     const nextParams = new URLSearchParams(searchParams);
-    if (nextBrand === 'all') nextParams.delete('brand');
-    else nextParams.set('brand', nextBrand);
+    if (nextBrand === 'all') nextParams.delete('brand'); else nextParams.set('brand', nextBrand);
     setSearchParams(nextParams, { replace: true });
   };
 
   return (
     <>
-      <SEO
-        title="Shop"
-        description={`Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} merchandise.`}
-        path="/shop"
-        schema={productSchema}
-      />
+      <SEO title="Shop" description={`Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} merchandise.`} path="/shop" schema={productSchema} />
 
-      <header className="shop-page-header content-band">
-        <p className="eyebrow">Shop</p>
-        <div className="shop-page-header__row">
-          <h1>Ark of Bones</h1>
-          <a className="text-link" href={STORE_URL} target="_blank" rel="noopener noreferrer">
-            Checkout <ExternalLink aria-hidden="true" />
-          </a>
-        </div>
+      <header className="record-mast shop-mast">
+        <div><p className="eyebrow">Collection / 2026</p><h1>Shop</h1></div>
+        <a className="record-mast__status" href={STORE_URL} target="_blank" rel="noopener noreferrer">Checkout <ExternalLink aria-hidden="true" /></a>
       </header>
 
-      <section className="content-band shop-page">
-        <div className="shop-controls">
-          <div className="filter-control" role="group" aria-label="Filter products by brand">
-            {productFilters.map((item) => (
-              <button
-                key={item.value}
-                type="button"
-                className={brandFilter === item.value ? 'is-active' : ''}
-                aria-pressed={brandFilter === item.value}
-                onClick={() => changeBrand(item.value)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
+      <nav className="catalog-filter" aria-label="Filter products by brand">
+        {productFilters.map((item) => (
+          <button key={item.value} type="button" className={brandFilter === item.value ? 'is-active' : ''} aria-pressed={brandFilter === item.value} onClick={() => changeBrand(item.value)}>
+            {item.label}
+          </button>
+        ))}
+      </nav>
 
-        <div className="product-grid">
-          {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
-        </div>
+      <section className="catalog-grid" aria-live="polite">
+        {visibleProducts.map((product, index) => (
+          <div className="catalog-item" key={product.id}>
+            <span className="catalog-item__number">{String(index + 1).padStart(2, '0')}</span>
+            <ProductCard product={product} />
+          </div>
+        ))}
       </section>
+
+      <div className="catalog-foot">
+        <span>{visibleProducts.length} published products</span>
+        <a href={STORE_URL} target="_blank" rel="noopener noreferrer">Store checkout <ExternalLink aria-hidden="true" /></a>
+      </div>
     </>
   );
 }
