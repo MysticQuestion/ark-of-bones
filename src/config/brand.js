@@ -1,11 +1,10 @@
 import heroLogoSmall from '../assets/brand/aob-logo-1440.webp';
-import heroLogo4k from '../assets/brand/aob-logo-4k.webp';
 
 export const SITE_URL = 'https://www.arkofbones.com';
 
 export const ASSETS = {
   logo: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/273fa447-0add-4ecb-b99a-a0ce8d893111/Ark+Of+Bones+Domino+LOGO+GOLD.png?format=500w',
-  heroLogo: heroLogo4k,
+  heroLogo: heroLogoSmall,
   heroLogoSmall,
   hero: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=2500w',
   table: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=1800w',

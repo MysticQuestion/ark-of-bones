@@ -34,6 +34,14 @@ const bannedPhrases = [
   'appears here',
   'production plan',
   'approved experience',
+  'work with us',
+  'cost per player acquired',
+  'sponsor renewal rate',
+  'territory sales',
+  'unit economics',
+  'acquisition economics',
+  'replay attach rate',
+  'editing minutes per asset',
 ];
 
 async function collectFiles(directory) {
