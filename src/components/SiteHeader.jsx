@@ -23,14 +23,15 @@ export default function SiteHeader() {
     <>
       <header className="site-header">
         <Link className="site-brand" to="/" aria-label={`${BRAND.name} home`}>
-          <img src={ASSETS.heroLogoSmall} alt="" width="48" height="48" />
+          <img src={ASSETS.heroLogoSmall} alt="" width="42" height="42" />
           <span>{BRAND.name}</span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {primaryNavigation.map((item) => (
-            <NavLink key={item.to} to={item.to} end={item.to === '/'}>{item.label}</NavLink>
+            <NavLink key={item.to} to={item.to}>{item.label}</NavLink>
           ))}
         </nav>
+        <Link className="header-contact" to="/contact">Contact</Link>
         <button
           className="menu-button"
           type="button"
