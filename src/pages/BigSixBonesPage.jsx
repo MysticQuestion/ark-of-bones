@@ -15,7 +15,7 @@ export default function BigSixBonesPage() {
     <>
       <SEO title={brand.name} description="Big Six Bones game identity, rules status, records, and published products." path={brand.path} />
       <header className="game-identity-mast" style={{ '--game-image': `url("${ASSETS.players}")` }}>
-        <div><p className="eyebrow">Ark of Bones / Game identity</p><h1>Big Six<br />Bones</h1></div>
+        <div><p className="eyebrow">Ark of Bones / Game identity</p><h1>Big Six <br />Bones</h1></div>
         <dl>
           <div><dt>Game type</dt><dd>Dominoes</dd></div>
           <div><dt>Official status</dt><dd>Research</dd></div>

@@ -17,7 +17,7 @@ export default function ProductCard({ product }) {
           height={isGallery ? '788' : '1000'}
           loading="lazy"
         />
-        {isGallery ? <span className="product-card-number">{product.catalogNumber}</span> : null}
+        <span className="product-card-number">{product.catalogNumber}</span>
       </div>
       <div className="product-card-body">
         <div className="product-card-kicker">
@@ -26,7 +26,6 @@ export default function ProductCard({ product }) {
         </div>
         <h3>{product.name}</h3>
         {product.variant ? <p className="product-variant">{product.variant}</p> : null}
-        {product.description ? <p>{product.description}</p> : null}
         {product.specs ? (
           <ul className="product-specs" aria-label={`${product.name} details`}>
             {product.specs.map((spec) => <li key={spec}>{spec}</li>)}

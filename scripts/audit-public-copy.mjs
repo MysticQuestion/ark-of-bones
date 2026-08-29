@@ -42,6 +42,20 @@ const bannedPhrases = [
   'acquisition economics',
   'replay attach rate',
   'editing minutes per asset',
+  'where culture meets',
+  'redefining dominoes',
+  'reimagining dominoes',
+  'game-changing',
+  'future of domino',
+  'at the intersection of',
+  'experience unlike any other',
+  'join the movement',
+  'explore our world',
+  '4–6 week',
+  '4-6 week',
+  'nationwide shipping',
+  'financing available',
+  'custom builds are available',
 ];
 
 async function collectFiles(directory) {

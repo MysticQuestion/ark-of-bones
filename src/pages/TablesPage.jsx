@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import StatusLabel from '../components/StatusLabel';
 import tableHero from '../assets/editorial/tables-1.webp';
 import tableRackPortrait from '../assets/editorial/tables-2.webp';
 import tablePlayerPortrait from '../assets/editorial/tables-3.webp';
@@ -19,7 +20,7 @@ const observedDetails = [
 const pendingPolicy = [
   'Dimensions and weight',
   'Available finishes',
-  'Customization and engraving',
+  'Finish and marking options',
   'Electrical requirements',
   'Production lead time',
   'Delivery and installation area',
@@ -33,7 +34,7 @@ export default function TablesPage() {
       <SEO title="Tables" description="Ark of Bones table design record and current inquiry status." path="/tables" image={tableHero} />
       <header className="table-document-mast">
         <div><p className="eyebrow">Industrial record / Table 01</p><h1>Tables</h1></div>
-        <div><span className="status-label">Research</span><p>Commercial policy under review</p></div>
+        <div><StatusLabel state="Research" /><p>Commercial policy under review</p></div>
       </header>
       <figure className="table-document-hero">
         <img src={tableHero} alt="Four players at an Ark of Bones domino table with illuminated recessed racks" width="1800" height="900" />
@@ -47,7 +48,7 @@ export default function TablesPage() {
         <div className="table-document-notice">
           <p className="eyebrow">Before quotation</p>
           <h2>Production terms are not published.</h2>
-          <p>Availability, customization, shipping, installation, financing, lead time, and warranty require written confirmation.</p>
+          <p>Availability, specifications, delivery area, installation, lead time, warranty, and price require written confirmation.</p>
           <Link className="text-link" to="/contact?inquiry=Tables">Table inquiry <ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>

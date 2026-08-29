@@ -4,20 +4,16 @@ export const brands = [
   {
     ...SUBSIDIARY_BRANDS.dominoMotherFucker,
     displayName: brandDisplayName(SUBSIDIARY_BRANDS.dominoMotherFucker),
-    category: 'Culture, media and merchandise',
-    proposition: 'Victory with a point of view.',
-    description:
-      'Attitude, humor, storytelling, media, and merchandise connected to the table.',
+    category: 'Merchandise and media identity',
+    description: 'Wordmark, apparel, product graphics, and media connected to Ark of Bones.',
     image: ASSETS.event,
     tone: 'red',
   },
   {
     ...SUBSIDIARY_BRANDS.bigSixBones,
     displayName: brandDisplayName(SUBSIDIARY_BRANDS.bigSixBones),
-    category: 'Competition, events and education',
-    proposition: 'Fast rounds. Big plays. Community competition.',
-    description:
-      'American domino play, events, education, and tournament energy from Ark of Bones.',
+    category: 'Domino game identity',
+    description: 'Game development, rules publication, match records, and related products.',
     image: ASSETS.players,
     tone: 'gold',
   },

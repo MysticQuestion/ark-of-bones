@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import EmptyState from '../components/EmptyState';
 import SEO from '../components/SEO';
+import StatusLabel from '../components/StatusLabel';
 import {
   correctionProcedure,
   matches,
@@ -27,7 +28,7 @@ export default function OfficialPlayPage() {
       />
       <header className="authority-mast">
         <div><p className="eyebrow">Competition authority</p><h1>Official Play</h1></div>
-        <span className="status-label">{officialPlayStatus.label}</span>
+        <StatusLabel state={officialPlayStatus.label} />
       </header>
       <section className="authority-index" aria-label="Official Play status">
         {authorities.map(([title, status, to], index) => (

@@ -40,7 +40,7 @@ export default function PartnershipsPage() {
         title="Venue. Sponsor. Production."
         image={ASSETS.hero}
       >
-        <Link className="button button--gold" to="/contact?inquiry=Partnership%20Inquiry">
+        <Link className="button button--gold" to="/contact?inquiry=Partnerships">
           Contact<ArrowRight aria-hidden="true" />
         </Link>
       </PageHero>

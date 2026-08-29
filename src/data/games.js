@@ -36,8 +36,7 @@ export const games = [
   {
     slug: 'big-six-bones',
     name: 'Big Six Bones',
-    summary:
-      'Classic, loud, and beloved, Big Six Bones is an American domino game built for quick rounds, big plays, and double-six pressure.',
+    summary: 'An Ark of Bones domino game identity currently documented as a player primer, not a canonical ruleset.',
     players: 'Best with 2-4 players or partner teams',
     objective:
       'Win rounds through legal tile play, board control, and clean scoring under the agreed Big Six house rules.',

@@ -22,7 +22,7 @@ export default function ShopPage() {
   );
 
   const productSchema = officialProducts.map((product) => ({
-    '@context': 'https://schema.org', '@type': 'Product', name: product.name, description: product.description,
+    '@context': 'https://schema.org', '@type': 'Product', name: `${product.brand} ${product.name}`, description: product.specs.join(', '),
     image: product.image, brand: { '@type': 'Brand', name: product.brand },
     offers: { '@type': 'Offer', priceCurrency: 'USD', price: product.price.replace('$', ''), url: product.href },
   }));

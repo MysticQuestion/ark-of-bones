@@ -25,13 +25,12 @@ const brandNames = {
 export const officialProducts = [
   {
     id: 'ark-embroidered-sweatshirt',
-    name: 'Ark of Bones - Embroidered Sweatshirt',
+    catalogNumber: 'AOB 001',
+    name: 'Embroidered Sweatshirt',
     brand: BRAND.name,
     brandKey: 'ark-of-bones',
     price: '$90.00',
     category: 'Sweatshirt',
-    description:
-      'A relaxed unisex sweatshirt in a soft cotton-polyester blend, finished with an embroidered Ark of Bones logo.',
     specs: ['Vantage Varsity sweatshirt', 'Cotton-polyester blend', 'Relaxed unisex fit', 'Standard collar', 'Embroidered front logo'],
     href: productPage('ark-of-bones-embroidered-sweatshirt'),
     ctaLabel: 'Select options',
@@ -40,13 +39,12 @@ export const officialProducts = [
   },
   {
     id: 'big-six-long-sleeve',
-    name: 'Big Six Bones - Long Sleeve Crew Neck',
+    catalogNumber: 'BSB 001',
+    name: 'Long Sleeve Crew Neck',
     brand: SUBSIDIARY_BRANDS.bigSixBones.name,
     brandKey: SUBSIDIARY_BRANDS.bigSixBones.key,
     price: '$40.00',
     category: 'Long-sleeve tee',
-    description:
-      'A 100% cotton long-sleeve crew neck with Big Six Bones on the front and Ark of Bones on the back.',
     specs: ['Port & Company long-sleeve tee', '100% cotton', 'Relaxed men / unisex fit', 'Printed front and back'],
     href: productPage('long-sleeve-crew-neck'),
     ctaLabel: 'Select options',
@@ -55,13 +53,12 @@ export const officialProducts = [
   },
   {
     id: 'dmf-graphic-tee',
-    name: `${SUBSIDIARY_BRANDS.dominoMotherFucker.name} - Graphic Tee`,
+    catalogNumber: 'DMF 001',
+    name: 'Graphic Tee',
     brand: SUBSIDIARY_BRANDS.dominoMotherFucker.name,
     brandKey: SUBSIDIARY_BRANDS.dominoMotherFucker.key,
     price: '$25.00',
     category: 'Graphic tee',
-    description:
-      'A breathable 100% cotton crew-neck tee with a bold printed design and clean everyday fit.',
     specs: ['100% cotton', 'Unisex crew-neck fit', 'Taped neck and shoulders', 'Tear-away label', 'Printed front design', 'Machine washable'],
     href: productPage('kkcizt5w74u864q22c2w175tajc3l9-g8wb7'),
     ctaLabel: 'Select options',
@@ -70,13 +67,12 @@ export const officialProducts = [
   },
   {
     id: 'big-six-short-sleeve',
-    name: 'Big Six Bones - Short Sleeved Tee',
+    catalogNumber: 'BSB 002',
+    name: 'Short Sleeve Tee',
     brand: SUBSIDIARY_BRANDS.bigSixBones.name,
     brandKey: SUBSIDIARY_BRANDS.bigSixBones.key,
     price: '$25.00',
     category: 'Graphic tee',
-    description:
-      'A breathable 100% cotton short-sleeve tee featuring the Big Six Bones identity.',
     specs: ['100% cotton', 'Unisex crew-neck fit', 'Taped neck and shoulders', 'Tear-away label', 'Printed front design', 'Machine washable'],
     href: productPage('kkcizt5w74u864q22c2w175tajc3l9'),
     ctaLabel: 'Select options',
@@ -85,13 +81,12 @@ export const officialProducts = [
   },
   {
     id: 'dmf-embroidered-beanie',
-    name: `${SUBSIDIARY_BRANDS.dominoMotherFucker.name} - Embroidered Beanie`,
+    catalogNumber: 'DMF 002',
+    name: 'Embroidered Beanie',
     brand: SUBSIDIARY_BRANDS.dominoMotherFucker.name,
     brandKey: SUBSIDIARY_BRANDS.dominoMotherFucker.key,
     price: '$32.00',
     category: 'Beanie',
-    description:
-      'A cuffed acrylic beanie with insulated 3M Thinsulate lining and an embroidered Domino Mother Fucker mark.',
     specs: ['100% acrylic exterior', '3M Thinsulate lining', 'Cuffed construction', 'Embroidered front mark', 'One size fits most'],
     href: productPage('ark-of-bones-beanie-p3kd2'),
     ctaLabel: 'Buy the beanie',
@@ -100,13 +95,12 @@ export const officialProducts = [
   },
   {
     id: 'ark-beanie',
-    name: 'Ark of Bones - Beanie',
+    catalogNumber: 'AOB 002',
+    name: 'Embroidered Beanie',
     brand: BRAND.name,
     brandKey: 'ark-of-bones',
     price: '$32.00',
     category: 'Beanie',
-    description:
-      'A cuffed acrylic beanie with insulated 3M Thinsulate lining and embroidered Ark of Bones branding.',
     specs: ['100% acrylic exterior', '3M Thinsulate lining', 'Cuffed construction', 'Embroidered front mark', 'One size fits most'],
     href: productPage('ark-of-bones-beanie'),
     ctaLabel: 'Buy the beanie',

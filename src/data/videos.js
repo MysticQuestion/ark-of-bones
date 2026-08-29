@@ -21,7 +21,7 @@ export const founderVideo = {
   ...youtubeVideo(
     'VoNPo9Gc2Gg',
     'What is Ark of Bones',
-    'Owner Tony Covington introduces the idea, purpose, and entertainment vision behind Ark of Bones.',
+    'Owner Tony Covington introduces Ark of Bones.',
     'Interviews / Culture',
     'Video',
     '2025-04-16',
@@ -34,7 +34,7 @@ export const founderVideo = {
 export const featuredVideo = youtubeVideo(
   'DeYb0llvnCM',
   'Ark of Bones',
-  'A concise introduction to the Ark of Bones world from the official channel.',
+  'Ark of Bones short from the official channel.',
   'Ark of Bones',
   'Short',
   '2025-04-17',
@@ -44,7 +44,7 @@ export const videos = [
   youtubeVideo(
     'kQsr5BW7f-g',
     'How AOB Tables Work',
-    'A short look at how the Ark of Bones table experience brings the game into view.',
+    'Ark of Bones table short from the official channel.',
     'Ark of Bones',
     'Short',
     '2025-04-16',
@@ -60,7 +60,7 @@ export const videos = [
   youtubeVideo(
     'RoP0lSIjX2c',
     'AOB Intro 2',
-    'A second official introduction to the Ark of Bones experience.',
+    'A second official Ark of Bones introduction.',
     'Ark of Bones',
     'Video',
     '2025-03-31',

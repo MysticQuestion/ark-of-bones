@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import EmptyState from '../components/EmptyState';
 import SEO from '../components/SEO';
+import StatusLabel from '../components/StatusLabel';
 import { rulesets } from '../data/competition';
 
 export default function RulesPage() {
@@ -9,7 +10,7 @@ export default function RulesPage() {
       <SEO title="Rules" description="Ark of Bones rules versions and change records." path="/rules" />
       <header className="record-mast">
         <div><p className="eyebrow">Official Play / Rules</p><h1>Rules</h1></div>
-        <span className="status-label">In Development</span>
+        <StatusLabel state="In Development" />
       </header>
       <section className="single-record-state">
         {rulesets.length ? null : (

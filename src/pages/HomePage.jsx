@@ -11,8 +11,8 @@ import { featuredVideo } from '../data/videos';
 
 const index = [
   { label: 'Competition', title: 'Official Play', state: 'In Development', to: '/official-play' },
-  { label: 'Live', title: 'Events', state: 'Schedule + archive', to: '/events' },
-  { label: 'Media', title: 'Watch', state: 'Films + matches', to: '/watch' },
+  { label: 'Calendar', title: 'Events', state: 'No date confirmed', to: '/events' },
+  { label: 'Media', title: 'Watch', state: 'Film archive', to: '/watch' },
   { label: 'Commerce', title: 'Shop', state: `${officialProducts.length} published products`, to: '/shop' },
 ];
 
@@ -39,7 +39,7 @@ export default function HomePage() {
     <>
       <SEO
         title={BRAND.name}
-        description="Ark of Bones: domino competition, events, film, official play development, tables, and published merchandise."
+        description="Ark of Bones domino events, film archive, Official Play status, table records, and published merchandise."
         path="/"
         schema={schema}
       />
