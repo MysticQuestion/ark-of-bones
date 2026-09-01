@@ -1,10 +1,12 @@
 import { ArrowRight, Building2, PartyPopper, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
+import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
 import eventHero from '../assets/editorial/events-1.webp';
 import eventTable from '../assets/editorial/events-2.webp';
 import eventRacks from '../assets/editorial/events-3.webp';
+import { eventPhotos } from '../data/media';
 
 const eventFormats = [
   {
@@ -25,6 +27,8 @@ const eventFormats = [
 ];
 
 export default function EventsPage() {
+  const eventPreview = eventPhotos.slice(0, 6);
+
   return (
     <>
       <SEO
@@ -80,6 +84,30 @@ export default function EventsPage() {
             <figcaption>Illuminated racks keep each hand readable without pulling attention away from play.</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section className="editorial-band editorial-band--quiet event-photo-preview">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">From the table</p>
+          <h2>What the room actually looks like.</h2>
+          <div className="editorial-rule" aria-hidden="true"><span /></div>
+        </div>
+        <div className="event-photo-strip">
+          {eventPreview.map((photo) => (
+            <figure key={photo.id}>
+              <SafeImage
+                src={photo.src}
+                alt={photo.alt}
+                fallbackAlt="Ark of Bones event photography"
+                width={photo.orientation === 'portrait' ? '900' : '1400'}
+                height={photo.orientation === 'portrait' ? '1200' : '900'}
+                loading="lazy"
+              />
+              <figcaption>{photo.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <Link className="button button--outline" to="/media">Open the full media library</Link>
       </section>
 
       <section className="editorial-band editorial-band--light">

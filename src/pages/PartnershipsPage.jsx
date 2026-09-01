@@ -32,7 +32,7 @@ const partnershipOffers = [
 
 const pilotSteps = [
   ['01', 'Discover', 'Define the venue, audience, capacity, date, operating constraints, and desired outcome.'],
-  ['02', 'Scope', 'Choose the game format, production plan, sponsor inventory, content rights, and measurement.'],
+  ['02', 'Scope', 'Choose the game format, capture plan, sponsor inventory, content rights, and measurement.'],
   ['03', 'Operate', 'Coordinate promotion, releases, show flow, filming, guest experience, and incident readiness.'],
   ['04', 'Deliver', 'Close the event ledger, deliver agreed media, review performance, and make the renewal decision.'],
 ];
@@ -74,7 +74,7 @@ export default function PartnershipsPage() {
 
       <section className="partnership-proof" aria-label="Partnership system">
         <article><PlayCircle aria-hidden="true" /><span>Live experience</span><p>A format built around competition, culture, and hospitality.</p></article>
-        <article><Camera aria-hidden="true" /><span>Recorded media</span><p>A production plan that defines what is captured and delivered.</p></article>
+        <article><Camera aria-hidden="true" /><span>Recorded media</span><p>A capture plan that defines what is filmed and delivered.</p></article>
         <article><BarChart3 aria-hidden="true" /><span>Measurable proof</span><p>A closed event ledger and partner-facing performance review.</p></article>
         <article><ShieldCheck aria-hidden="true" /><span>Clear permissions</span><p>Rights, releases, and responsibilities established before filming.</p></article>
       </section>

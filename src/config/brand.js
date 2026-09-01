@@ -10,8 +10,8 @@ export const ASSETS = {
   hero: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=2500w',
   table: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=1800w',
   owner: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/f96cc1d7-4f62-4aaa-ab70-dca20554672f/Untitled+%281080+x+786+px%29.png?format=1500w',
-  players: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/742aa300-12fb-4a8e-a4b0-5300b527018a/freepik__rich-black-men-playing-dominoes-on-a-green-velvet-__7559.png?format=1800w',
-  event: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/f96cc1d7-4f62-4aaa-ab70-dca20554672f/Untitled+%281080+x+786+px%29.png?format=1800w',
+  players: 'https://drive.google.com/thumbnail?id=1X48APY0t6pAlAvaTDT4WPNv4Q71mogGb&sz=w1800',
+  event: 'https://drive.google.com/thumbnail?id=1572SbfaOL6JIdURixI65pz6QbeOvu4mz&sz=w2200',
   learn: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=1600w',
   social: '/og-ark-of-bones.webp',
 };
