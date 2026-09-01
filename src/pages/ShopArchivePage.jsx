@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
@@ -8,8 +8,24 @@ import { ASSETS } from '../config/brand';
 import { departmentFilters, galleryProducts, productFilters } from '../data/products';
 
 export default function ShopArchivePage() {
-  const [brandFilter, setBrandFilter] = useState('all');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedBrand = searchParams.get('brand');
+  const initialBrand = productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all';
+  const [brandFilter, setBrandFilter] = useState(initialBrand);
   const [departmentFilter, setDepartmentFilter] = useState('all');
+
+  useEffect(() => {
+    const nextBrand = productFilters.some((item) => item.value === requestedBrand) ? requestedBrand : 'all';
+    setBrandFilter(nextBrand);
+  }, [requestedBrand]);
+
+  const changeBrand = (nextBrand) => {
+    setBrandFilter(nextBrand);
+    const nextParams = new URLSearchParams(searchParams);
+    if (nextBrand === 'all') nextParams.delete('brand');
+    else nextParams.set('brand', nextBrand);
+    setSearchParams(nextParams, { replace: true });
+  };
 
   const visibleProducts = useMemo(
     () => galleryProducts.filter((product) => {
@@ -53,7 +69,7 @@ export default function ShopArchivePage() {
                 type="button"
                 className={brandFilter === item.value ? 'is-active' : ''}
                 aria-pressed={brandFilter === item.value}
-                onClick={() => setBrandFilter(item.value)}
+                onClick={() => changeBrand(item.value)}
               >
                 {item.label}
               </button>

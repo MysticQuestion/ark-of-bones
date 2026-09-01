@@ -1,33 +1,28 @@
-import { Building2, BriefcaseBusiness, PartyPopper } from 'lucide-react';
+import { ArrowRight, Building2, PartyPopper, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
-import EmptyState from '../components/EmptyState';
-import EventCard from '../components/EventCard';
-import PageHero from '../components/PageHero';
 import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
-import SectionHeader from '../components/SectionHeader';
-import { events } from '../data/events';
-import { eventPhotos, featuredEventPhoto } from '../data/media';
+import eventHero from '../assets/editorial/events-1.webp';
+import eventTable from '../assets/editorial/events-2.webp';
+import eventRacks from '../assets/editorial/events-3.webp';
+import { eventPhotos } from '../data/media';
 
-const experienceFormats = [
+const eventFormats = [
   {
-    title: 'Private Events',
-    note: 'Milestone celebrations, reunions, VIP game nights, and hosted gatherings.',
-    detail: 'The format can combine table setup, structured play, optional recording, and branded photo moments.',
+    title: 'Private gatherings',
+    body: 'Milestone celebrations, reunions, hosted game nights, and gatherings shaped around the people in the room.',
     icon: PartyPopper,
   },
   {
-    title: 'Casino and Venue Activations',
-    note: 'Domino programming for hospitality and entertainment environments.',
-    detail: 'Bring together tournament play, screens, audience energy, and sponsor moments that fit the room.',
+    title: 'Venue activations',
+    body: 'Domino programming for hospitality and entertainment spaces, with the table, audience, and production needs scoped together.',
     icon: Building2,
   },
   {
-    title: 'Corporate and Cultural Programs',
-    note: 'Team events, community programs, and premium brand experiences.',
-    detail: 'Shape the gathering around your audience, venue, and goals for the day.',
-    icon: BriefcaseBusiness,
+    title: 'Cultural programs',
+    body: 'Community, institutional, and team experiences that treat dominoes as both competition and shared culture.',
+    icon: Users,
   },
 ];
 
@@ -36,29 +31,67 @@ export default function EventsPage() {
 
   return (
     <>
-      <SEO title="Events" description="Find Ark of Bones domino events, tournaments, participation details, and venue information." path="/events" />
-      <PageHero eyebrow="Play in person" title="Events" description="Confirmed dates, participation details, and hosted formats for players, spectators, and venues." image={featuredEventPhoto?.src} />
-      <section className="content-band">
-        <SectionHeader eyebrow="Schedule" title="Confirmed upcoming dates" description="Each listing includes the venue, city, format, host brand, and participation route." />
-        {events.upcoming.length ? (
-          <div className="event-list">{events.upcoming.map((event) => <EventCard key={event.id} event={event} />)}</div>
-        ) : (
-          <EmptyState title="No public date is on the calendar" description="Event announcements publish here as soon as the details are confirmed." actionLabel="Discuss hosting" actionTo="/contact?inquiry=Host%20an%20Event" />
-        )}
-      </section>
-      {events.past.length ? (
-        <section className="content-band content-band--quiet">
-          <SectionHeader eyebrow="Past events" title="From tables we have shared" description="Highlights and recaps from Ark of Bones gatherings." />
-          <div className="event-list">{events.past.map((event) => <EventCard key={event.id} event={event} />)}</div>
-        </section>
-      ) : null}
+      <SEO
+        title="Events"
+        description="Follow confirmed Ark of Bones domino events and inquire about private gatherings, venue activations, and cultural programs."
+        path="/events"
+        image={eventHero}
+      />
 
-      <section className="content-band content-band--quiet event-photo-preview">
-        <SectionHeader
-          eyebrow="From the table"
-          title="What the room actually looks like"
-          description="Real sessions, real players, and the social energy around the Ark of Bones table."
+      <header className="editorial-mast">
+        <p className="eyebrow">Events</p>
+        <h1>Dates publish when they are confirmed.</h1>
+        <div className="editorial-rule" aria-hidden="true"><span /></div>
+      </header>
+
+      <section className="editorial-wide-media editorial-page-gutter">
+        <img
+          src={eventHero}
+          alt="Players gathered around an Ark of Bones domino table"
+          width="1800"
+          height="900"
         />
+        <p className="editorial-caption">Competition, conversation, and a room gathered around the same game.</p>
+      </section>
+
+      <section className="editorial-split editorial-band">
+        <div>
+          <p className="eyebrow">Schedule</p>
+          <h2>No public date is on the calendar yet.</h2>
+        </div>
+        <div className="editorial-copy">
+          <p>Ark of Bones publishes announcements only after the date, city, venue, format, entry details, and participation route have been verified.</p>
+          <p className="editorial-muted">For an invitation, private booking, or venue conversation, contact Ark of Bones directly.</p>
+          <div className="hero-actions">
+            <Link className="button button--gold" to="/contact?inquiry=Host%20an%20Event">Discuss an event<ArrowRight aria-hidden="true" /></Link>
+            <Link className="button button--outline" to="/watch">Watch Ark of Bones</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="editorial-band editorial-band--quiet">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">Around the table</p>
+          <div className="editorial-rule" aria-hidden="true"><span /></div>
+        </div>
+        <div className="editorial-gallery editorial-gallery--pair">
+          <figure>
+            <img src={eventTable} alt="A full Ark of Bones table in active play" width="1400" height="700" loading="lazy" />
+            <figcaption>The table carries the game; the people give the event its character.</figcaption>
+          </figure>
+          <figure>
+            <img src={eventRacks} alt="Players using illuminated domino racks" width="1400" height="700" loading="lazy" />
+            <figcaption>Illuminated racks keep each hand readable without pulling attention away from play.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="editorial-band editorial-band--quiet event-photo-preview">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">From the table</p>
+          <h2>What the room actually looks like.</h2>
+          <div className="editorial-rule" aria-hidden="true"><span /></div>
+        </div>
         <div className="event-photo-strip">
           {eventPreview.map((photo) => (
             <figure key={photo.id}>
@@ -77,24 +110,31 @@ export default function EventsPage() {
         <Link className="button button--outline" to="/media">Open the full media library</Link>
       </section>
 
-      <section className="content-band event-formats">
-        <SectionHeader
-          eyebrow="Event experiences"
-          title="Choose the format that fits the occasion"
-          description="Private celebrations, hospitality activations, and cultural programs each call for a distinct format."
-        />
-        <div className="event-format-grid">
-          {experienceFormats.map(({ title, note, detail, icon: Icon }) => (
+      <section className="editorial-band editorial-band--light">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">Event formats</p>
+          <h2>Build the gathering around the occasion.</h2>
+        </div>
+        <div className="editorial-format-grid">
+          {eventFormats.map(({ title, body, icon: Icon }) => (
             <article key={title}>
               <Icon aria-hidden="true" />
-              <p className="eyebrow">{note}</p>
               <h3>{title}</h3>
-              <p>{detail}</p>
+              <p>{body}</p>
             </article>
           ))}
         </div>
       </section>
-      <CTASection eyebrow="For venues and hosts" title="Put a date, room, and audience around the game." description="Share the occasion, location, expected guests, and event objectives." label="Request an event conversation" to="/contact?inquiry=Host%20an%20Event" secondaryLabel="Review venue production" secondaryTo="/tables" />
+
+      <CTASection
+        eyebrow="For hosts and venues"
+        title="Put a real room and audience around the game."
+        description="Share the occasion, city, space, expected guests, and what you want the experience to accomplish."
+        label="Request an event conversation"
+        to="/contact?inquiry=Host%20an%20Event"
+        secondaryLabel="Review the table"
+        secondaryTo="/tables"
+      />
     </>
   );
 }

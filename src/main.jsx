@@ -8,6 +8,7 @@ import './styles/global.css';
 import './styles/components.css';
 import './styles/conversion.css';
 import './styles/media.css';
+import './styles/partnerships.css';
 
 const routerBase = import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL;
 

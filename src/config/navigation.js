@@ -12,6 +12,7 @@ export const resourceNavigation = [
   { label: 'About', to: '/about' },
   { label: 'Around the Table', to: '/around-the-table' },
   { label: 'Brands', to: '/brands' },
+  { label: 'Partnerships', to: '/partnerships' },
   { label: 'Learn', to: '/learn' },
   { label: 'FAQ', to: '/faq' },
 ];

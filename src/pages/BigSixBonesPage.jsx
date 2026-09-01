@@ -12,7 +12,8 @@ const name = brandDisplayName(brand);
 const actions = [
   { title: 'Learn the format', description: 'Read the Big Six Bones guide for setup, play, scoring, strategy, and etiquette.', to: '/learn#big-six-bones' },
   { title: 'Find a competition', description: 'Check confirmed Ark of Bones dates and participation details.', to: '/events' },
-  { title: 'Carry the competitive mark', description: 'Shop published Big Six Bones products and browse the design archive.', to: `/shop?brand=${brand.key}` },
+  { title: 'Shop published products', description: 'Open buyable Big Six Bones merchandise with published prices and product pages.', to: `/shop?brand=${brand.key}` },
+  { title: 'Browse the design archive', description: 'See Big Six Bones concept designs kept separate from currently available inventory.', to: `/shop/archive?brand=${brand.key}` },
 ];
 
 export default function BigSixBonesPage() {

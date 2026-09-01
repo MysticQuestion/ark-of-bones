@@ -66,9 +66,14 @@ export default function ShopPage() {
       <section className="content-band shop-page">
         <div className="shop-toolbar">
           <SectionHeader eyebrow="Published collection" title={`${officialProducts.length} products ready to buy`} />
-          <a className="button button--gold" href={STORE_URL} target="_blank" rel="noopener noreferrer">
-            Open the complete shop<ExternalLink aria-hidden="true" />
-          </a>
+          <div className="shop-toolbar-actions">
+            <a className="button button--gold" href={STORE_URL} target="_blank" rel="noopener noreferrer">
+              Open the complete shop<ExternalLink aria-hidden="true" />
+            </a>
+            <Link className="button button--outline" to="/shop/archive">
+              Design archive<ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
         </div>
 
         <div className="shop-controls">
