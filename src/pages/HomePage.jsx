@@ -1,37 +1,11 @@
-import { ArrowRight, CalendarDays, Home, Play, ShoppingBag, Table2 } from 'lucide-react';
+import { ArrowRight, ShoppingBag, Table2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import CTASection from '../components/CTASection';
+import ProductCard from '../components/ProductCard';
 import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
-import SectionHeader from '../components/SectionHeader';
-import VideoCard from '../components/VideoCard';
 import { ASSETS, BRAND, SITE_URL } from '../config/brand';
 import { CONTACT } from '../config/contact';
-import { featuredVideo } from '../data/videos';
-
-const pathways = [
-  {
-    title: 'Play',
-    label: 'Events',
-    description: 'Find public dates, participation details, and hosted competition.',
-    to: '/events',
-    icon: CalendarDays,
-  },
-  {
-    title: 'Build',
-    label: 'Private + venue tables',
-    description: 'Explore handcrafted, media-ready domino tables for homes, venues, and programs.',
-    to: '/tables',
-    icon: Table2,
-  },
-  {
-    title: 'Shop',
-    label: 'Official merchandise',
-    description: 'Buy the published collection through secure Squarespace checkout.',
-    to: '/shop',
-    icon: ShoppingBag,
-  },
-];
+import { officialProducts } from '../data/products';
 
 export default function HomePage() {
   const schema = [
@@ -57,121 +31,94 @@ export default function HomePage() {
     <>
       <SEO
         title={BRAND.name}
-        description="Ark of Bones creates handcrafted professional domino tables, live competition, official-play systems, original media, merchandise, and cultural programming."
+        description="Ark of Bones builds custom domino tables and a focused collection of domino goods. Configure a table, preview the build, and send the specification directly for a quote."
         path="/"
         schema={schema}
       />
 
       <section
-        className="home-hero home-hero--logo"
-        style={{
-          '--home-hero-image': `url("${ASSETS.hero}")`,
-          '--hero-logo-image': `url("${ASSETS.heroLogo}")`,
-        }}
+        className="home-hero home-hero--logo table-first-hero"
+        style={{ '--home-hero-image': `url("${ASSETS.table}")` }}
       >
         <div className="home-hero-content home-hero-content--center">
-          <p className="hero-brand-line">{BRAND.proposition}</p>
-          <h1 className="sr-only">Ark of Bones</h1>
+          <p className="hero-brand-line">Ark of Bones</p>
           <div className="hero-logo-stage" aria-hidden="true">
             <img
               className="hero-logo"
               src={ASSETS.heroLogoSmall}
               srcSet={`${ASSETS.heroLogoSmall} 1440w, ${ASSETS.heroLogo} 4096w`}
-              sizes="(max-width: 720px) 88vw, 480px"
+              sizes="(max-width: 720px) 82vw, 430px"
               alt=""
               width="4096"
               height="3026"
               fetchPriority="high"
             />
           </div>
-          <p className="hero-declaration">Domino entertainment built for competition, audiences, and culture.</p>
-          <p className="home-description">Handcrafted tables. Live play. Official competition systems. Original media.</p>
+          <p className="hero-declaration">Custom domino tables, built to be used.</p>
+          <p className="home-description">
+            Configure the table before the quote. Review the finish, felt, engraving, intended setting, and build notes in one place.
+          </p>
           <div className="hero-actions">
-            <Link className="button button--gold" to="/contact?inquiry=Tables%20%2F%20Venue%20Partnership">
-              Plan a venue experience<ArrowRight aria-hidden="true" />
+            <Link className="button button--gold" to="/tables#build-studio">
+              Build your table<Table2 aria-hidden="true" />
             </Link>
-            <Link className="button button--light" to="/contact?inquiry=Private%20%2F%20Home%20Table">
-              Design a private table<Home aria-hidden="true" />
+            <Link className="button button--outline" to="/shop">
+              Shop the collection<ShoppingBag aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="content-band media-preview">
-        <div className="media-preview-copy">
-          <p className="eyebrow">See it in action</p>
-          <h2>The game explains the product better than a spec sheet alone.</h2>
-          <p>Watch competition, personalities, instruction, and the table experience, then explore the build that makes those views possible.</p>
-          <Link className="button button--outline" to="/watch"><Play aria-hidden="true" />Open the watch hub</Link>
-        </div>
-        <div className="media-preview-frame">
-          {featuredVideo ? <VideoCard video={featuredVideo} /> : null}
-        </div>
-      </section>
-
-      <section className="image-story image-story--reverse">
-        <div className="image-story-media">
+      <section className="table-home-feature">
+        <div className="table-home-feature-media">
           <SafeImage
             src={ASSETS.table}
-            alt="Ark of Bones professional domino table prepared for live play"
-            fallbackAlt="Ark of Bones professional domino table"
-            width="1600"
-            height="1200"
-            loading="lazy"
-          />
-        </div>
-        <div className="image-story-copy">
-          <p className="eyebrow">The signature experience</p>
-          <h2>The table is the studio floor, not the whole business.</h2>
-          <p>Cameras, sound, lighting, screens, and custom finishes make the game visible. The larger system adds rules, rankings, sanctioned events, media, and repeatable competition.</p>
-          <Link className="button button--dark" to="/tables">Explore the table<ArrowRight aria-hidden="true" /></Link>
-        </div>
-      </section>
-
-      <section className="content-band pathway-band" aria-labelledby="pathways-title">
-        <SectionHeader id="pathways-title" eyebrow="Get involved" title="Three direct ways to enter" />
-        <div className="pathway-grid">
-          {pathways.map(({ icon: Icon, ...pathway }, index) => (
-            <Link className="pathway-card" to={pathway.to} key={pathway.title}>
-              <span className="pathway-number">0{index + 1}</span>
-              <Icon aria-hidden="true" />
-              <p className="eyebrow">{pathway.label}</p>
-              <h3>{pathway.title}</h3>
-              <p>{pathway.description}</p>
-              <span className="text-link">Continue <ArrowRight aria-hidden="true" /></span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="image-story">
-        <div className="image-story-media">
-          <SafeImage
-            src={ASSETS.players}
-            alt="Players sharing a domino game together"
-            fallbackAlt="Domino players gathered around a table"
+            alt="Ark of Bones custom domino table"
+            fallbackAlt="Ark of Bones custom domino table"
             width="1800"
             height="1200"
             loading="lazy"
           />
         </div>
-        <div className="image-story-copy">
-          <p className="eyebrow">Around the Table</p>
-          <h2>Record the people, not only the score.</h2>
-          <p>A filmed family game can preserve voices, stories, jokes, rivalries, and knowledge that disappear when nobody records them.</p>
-          <Link className="button button--dark" to="/around-the-table">Explore legacy sessions<ArrowRight aria-hidden="true" /></Link>
+        <div className="table-home-feature-copy">
+          <p className="eyebrow">The table comes first</p>
+          <h2>See the build before you send the request.</h2>
+          <p>
+            The table studio now keeps the specification and the preview together. Felt, engraving, use case, dimensions, and notes remain visible while the build takes shape.
+          </p>
+          <p>
+            When the configuration is ready, the complete specification can be addressed directly to Anthony for review and quoting.
+          </p>
+          <Link className="button button--gold" to="/tables#build-studio">
+            Open the table studio<ArrowRight aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
-      <CTASection
-        eyebrow="Official play pilot"
-        title="Make the next game count."
-        description="Ark of Bones is developing rules, rankings, sanctioned events, referee certification, and automated scoring through a measured pilot before wider expansion."
-        label="Explore official play"
-        to="/official-play"
-        secondaryLabel="Start a partnership inquiry"
-        secondaryTo="/contact?inquiry=Official%20Play%20%2F%20Sanctioning"
-      />
+      <section className="content-band home-shop-edit">
+        <div className="home-shop-heading">
+          <div>
+            <p className="eyebrow">Shop</p>
+            <h2>The collection stays in one place.</h2>
+            <p>Current products and the wider design archive now live together instead of being presented as competing stores.</p>
+          </div>
+          <Link className="button button--outline" to="/shop">Open the shop<ArrowRight aria-hidden="true" /></Link>
+        </div>
+        <div className="product-grid">
+          {officialProducts.slice(0, 3).map((product) => <ProductCard key={product.id} product={product} />)}
+        </div>
+      </section>
+
+      <section className="coming-soon-strip">
+        <div>
+          <p className="eyebrow">In development</p>
+          <h2>Future systems have their own place now.</h2>
+          <p>
+            Digital play, events, ratings, media, organizer tools, and other unfinished systems are collected on one Coming Soon page instead of being presented beside live products as if they already operate at the same level.
+          </p>
+        </div>
+        <Link className="button button--gold" to="/coming-soon">Preview what is next<ArrowRight aria-hidden="true" /></Link>
+      </section>
     </>
   );
 }
