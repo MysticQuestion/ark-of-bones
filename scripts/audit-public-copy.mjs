@@ -36,6 +36,11 @@ const bannedPhrases = [
   'approved experience',
 ];
 
+const approvedPublicEmails = new Set([
+  'info@arkofbones.com',
+  'anthony@arkofbones.com',
+]);
+
 async function collectFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = await Promise.all(entries.map(async (entry) => {
@@ -57,7 +62,7 @@ for (const file of files) {
   }
 
   const brandedEmails = rawContent.match(/[\w.+-]+@arkofbones\.com/gi) || [];
-  if (brandedEmails.some((email) => email.toLowerCase() !== 'info@arkofbones.com')) {
+  if (brandedEmails.some((email) => !approvedPublicEmails.has(email.toLowerCase()))) {
     findings.push(`${file}: non-public Ark of Bones email address`);
   }
 }
