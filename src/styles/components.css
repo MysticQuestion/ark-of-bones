@@ -3254,6 +3254,15 @@
   margin-top: 1.25rem;
 }
 
+.library-edition + .library-edition {
+  margin-top: 1.5rem;
+}
+
+.library-edition h3 {
+  font-size: 1.35rem;
+  margin: 0 0 0.6rem;
+}
+
 .table-home-feature,
 .coming-soon-strip {
   align-items: center;

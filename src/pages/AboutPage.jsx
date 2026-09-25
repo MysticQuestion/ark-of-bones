@@ -79,7 +79,7 @@ export default function AboutPage() {
         <div className="image-story-copy">
           <p className="eyebrow">Authorship</p>
           <h2>The book stays with the author.</h2>
-          <p>Anthony Covington's verified title is listed in the library with the publisher facts that could be confirmed. Missing cover art and any second title stay out until they can be checked.</p>
+          <p>Anthony Covington's verified title is listed in the library with the publisher cover, the paperback facts, and the ebook ISBN. A second title is not listed.</p>
           <Link className="text-link" to="/library">Open the library<ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>

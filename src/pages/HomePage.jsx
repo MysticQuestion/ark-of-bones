@@ -46,6 +46,7 @@ export default function HomePage() {
             <img
               className="hero-logo"
               src={ASSETS.heroLogo}
+              srcSet={`${ASSETS.mark} 384w, ${ASSETS.heroLogo} 1440w`}
               sizes="(max-width: 720px) min(88vw, 360px), (max-height: 760px) min(38vw, 420px), min(42vw, 480px)"
               alt=""
               width="1440"
