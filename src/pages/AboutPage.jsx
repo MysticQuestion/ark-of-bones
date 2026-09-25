@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 import PageHero from '../components/PageHero';
@@ -11,23 +11,23 @@ export default function AboutPage() {
     <>
       <SEO
         title="About"
-        description="Meet Ark of Bones founder Tony Covington and the company building a modern competition, media, and community platform around domino play."
+        description="Ark of Bones, founded by Tony Covington, builds custom domino tables and publishes a focused collection of domino goods."
         path="/about"
       />
 
       <PageHero
         eyebrow="The company"
-        title="A larger platform for a game people already love."
-        description="Ark of Bones brings live competition, media, venue programming, merchandise, and an emerging official-play system under one company."
-        image={ASSETS.players}
+        title="The table is the work that exists today."
+        description="Ark of Bones builds custom domino tables and sells the goods that are actually published. Events, digital play, and competition tools are separated until they are real."
+        image={ASSETS.table}
       />
 
       <section className="leadership-feature">
         <div className="leadership-feature-media">
           <SafeImage
-            src={ASSETS.owner}
-            alt="Ark of Bones founder Tony Covington at a domino tournament"
-            fallbackAlt="Tony Covington, founder of Ark of Bones"
+            src={ASSETS.table}
+            alt="Ark of Bones custom domino table"
+            fallbackAlt="Ark of Bones custom domino table"
             width="1500"
             height="1092"
             loading="lazy"
@@ -36,8 +36,8 @@ export default function AboutPage() {
         <div className="leadership-feature-copy">
           <p className="eyebrow">Founder</p>
           <h2>Tony Covington</h2>
-          <p>Tony Covington built Ark of Bones around a straightforward idea: dominoes can hold the attention of a room, carry family and community history, and support a serious competition business without losing the social character that made the game matter in the first place.</p>
-          <Link className="button button--dark" to="/watch#founder-video-title"><Play aria-hidden="true" />Hear Tony explain the concept</Link>
+          <p>Tony Covington founded Ark of Bones. The public site now leads with the tables that can be configured and the goods that can be purchased, instead of presenting unfinished systems as operating services.</p>
+          <Link className="button button--dark" to="/tables#build-studio">Review a custom table<ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -48,50 +48,50 @@ export default function AboutPage() {
         </div>
         <div>
           <p>Dominoes and spades have been sustained for generations in Black American, Caribbean, Latino, military, family, neighborhood, and social settings. Ark of Bones does not claim ownership of those traditions.</p>
-          <p>The company’s opportunity is to build better ways to document play, organize competition, compensate partners, preserve local knowledge, and create media that gives skilled players and longtime community authorities more visibility.</p>
+          <p>The company's current work is the table, the published goods, and a written record of the games. Broader systems stay on the Coming Soon page until they can be offered plainly.</p>
         </div>
       </section>
 
       <section className="mission-vision-grid">
         <article>
-          <span>Operating principle</span>
-          <h2>Credit the people who built the game.</h2>
-          <p>Future sanctioned programs are being designed to document house-rule contributions, feature elders and experienced players as authorities, and create meaningful participation for clubs, hosts, and community partners.</p>
+          <span>What can be ordered</span>
+          <h2>A table specification, then a quote.</h2>
+          <p>Configure felt, engraving, intended use, and dimensions. Anthony reviews the specification and confirms price, timing, and delivery in writing. Nothing is charged from this site at that step.</p>
         </article>
         <article>
-          <span>Business direction</span>
-          <h2>Build recurring systems around the event.</h2>
-          <p>The long-term value is not another piece of furniture. It is the rules, rankings, sanctioned competition, referee network, scoring technology, data, media, and partner relationships that can improve with every recorded game.</p>
+          <span>What is not live</span>
+          <h2>Do not treat a plan as a service.</h2>
+          <p>Digital play, event calendars, ratings, media, and organizer tools are in development. They are not rankings, sanctioning, or a broadcast schedule.</p>
         </article>
       </section>
 
       <section className="image-story image-story--reverse">
         <div className="image-story-media">
           <SafeImage
-            src={ASSETS.learn}
-            alt="Dominoes arranged for learning and play"
-            fallbackAlt="Domino game education"
+            src={ASSETS.table}
+            alt="Dominoes on an Ark of Bones table"
+            fallbackAlt="Dominoes on an Ark of Bones table"
             width="1600"
             height="1000"
             loading="lazy"
           />
         </div>
         <div className="image-story-copy">
-          <p className="eyebrow">Where it goes next</p>
-          <h2>Prove the model before scaling it.</h2>
-          <p>Ark of Bones is prioritizing pilots, audience evidence, repeatable event economics, official-play infrastructure, and automated scoring before pursuing heavy venue expansion or territory sales.</p>
-          <Link className="text-link" to="/official-play">Review the official-play roadmap<ArrowRight aria-hidden="true" /></Link>
+          <p className="eyebrow">Authorship</p>
+          <h2>The book stays with the author.</h2>
+          <p>Anthony Covington's verified title is listed in the library with the publisher facts that could be confirmed. Missing cover art and any second title stay out until they can be checked.</p>
+          <Link className="text-link" to="/library">Open the library<ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
 
       <CTASection
-        eyebrow="Work with Ark of Bones"
-        title="Bring a real setting, audience, or community to the next pilot."
-        description="Venue operators, event hosts, military MWR programs, campuses, community organizations, sponsors, and cultural partners can start with one measurable program."
-        label="Start a partnership inquiry"
-        to="/contact?inquiry=General%20Partnership"
-        secondaryLabel="Explore Around the Table"
-        secondaryTo="/around-the-table"
+        eyebrow="Contact"
+        title="Start with the table, the shop, or a direct question."
+        description="Include the city, the use, and what should be quoted. Table requests can also be sent from the studio."
+        label="Contact Ark of Bones"
+        to="/contact"
+        secondaryLabel="See what is still in development"
+        secondaryTo="/coming-soon"
       />
     </>
   );

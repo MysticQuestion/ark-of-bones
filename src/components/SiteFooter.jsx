@@ -1,26 +1,23 @@
 import { Link } from 'react-router-dom';
-import { BRAND } from '../config/brand';
+import { ASSETS, BRAND } from '../config/brand';
 import { CONTACT } from '../config/contact';
 
 const exploreLinks = [
-  ['Events', '/events'],
-  ['Watch', '/watch'],
-  ['Official Play', '/official-play'],
   ['Tables', '/tables'],
   ['Shop', '/shop'],
+  ['Coming Soon', '/coming-soon'],
 ];
 
 const companyLinks = [
   ['About', '/about'],
-  ['Around the Table', '/around-the-table'],
   ['Brands', '/brands'],
-  ['Work With Us', '/contact'],
+  ['Contact', '/contact'],
 ];
 
 const resourceLinks = [
-  ['Learn', '/learn'],
   ['FAQ', '/faq'],
-  ['Design Archive', '/shop/archive'],
+  ['Library', '/library'],
+  ['Around the Table', '/around-the-table'],
 ];
 
 export default function SiteFooter() {
@@ -28,10 +25,14 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-main">
         <div className="footer-positioning">
-          <Link to="/" className="footer-brand">{BRAND.name}</Link>
-          <p>Live competition, official play, media, and community.</p>
+          <Link to="/" className="footer-brand">
+            <img src={ASSETS.mark} alt="" width="384" height="284" />
+            {BRAND.name}
+          </Link>
+          <p>Custom domino tables, goods, and selected projects in development.</p>
           <p className="footer-contact">
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a><br />
+            <a href={`mailto:${CONTACT.tablesEmail}`}>{CONTACT.tablesEmail}</a><br />
             <a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a>
           </p>
         </div>

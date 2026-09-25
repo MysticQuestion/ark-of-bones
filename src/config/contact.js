@@ -1,5 +1,6 @@
 export const CONTACT = {
   email: 'info@arkofbones.com',
+  tablesEmail: 'anthony@arkofbones.com',
   phoneDisplay: '(951) 599-0214',
   phoneHref: 'tel:+19515990214',
   social: {
@@ -12,19 +13,10 @@ export const CONTACT = {
 
 export const INQUIRY_TYPES = [
   'General Question',
-  'General Partnership',
   'Private / Home Table',
-  'Events / Player Participation',
-  'Host an Event',
-  'Official Play / Sanctioning',
-  'Rules / Referee Certification',
-  'Tables / Venue Partnership',
-  'Military MWR / Institutional Program',
-  'Campus / Divine Nine Program',
-  'Senior / Community Program',
-  'Around the Table Legacy Session',
-  'Sponsorship',
-  'Media / Press',
+  'Venue / Commercial Table',
+  'Custom Table Build',
   'Merchandise',
   'Brand Collaboration',
+  'Media / Press',
 ];

@@ -1,29 +1,32 @@
-import heroLogoSmall from '../assets/brand/aob-logo-1440.webp';
-import heroLogo4k from '../assets/brand/aob-logo-4k.webp';
+import heroLogo from '../assets/brand/aob-logo-1440.webp';
+import mark from '../assets/brand/aob-mark-384.webp';
 
 export const SITE_URL = 'https://www.arkofbones.com';
 
+const tableImage = 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=2500w';
+
 export const ASSETS = {
-  logo: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/273fa447-0add-4ecb-b99a-a0ce8d893111/Ark+Of+Bones+Domino+LOGO+GOLD.png?format=500w',
-  heroLogo: heroLogo4k,
-  heroLogoSmall,
-  hero: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=2500w',
-  table: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=1800w',
-  owner: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/f96cc1d7-4f62-4aaa-ab70-dca20554672f/Untitled+%281080+x+786+px%29.png?format=1500w',
-  players: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/742aa300-12fb-4a8e-a4b0-5300b527018a/freepik__rich-black-men-playing-dominoes-on-a-green-velvet-__7559.png?format=1800w',
-  event: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/f96cc1d7-4f62-4aaa-ab70-dca20554672f/Untitled+%281080+x+786+px%29.png?format=1800w',
-  learn: 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=1600w',
+  logo: mark,
+  mark,
+  heroLogo,
+  hero: tableImage,
+  table: tableImage,
+  // Human-image placeholders intentionally resolve to verified table photography
+  // until original, rights-cleared human photography is supplied.
+  owner: tableImage,
+  players: tableImage,
+  event: tableImage,
+  learn: tableImage,
   social: '/og-ark-of-bones.webp',
 };
 
 export const BRAND = {
   name: 'Ark of Bones',
-  proposition: 'The Home of Domino Entertainment',
+  proposition: 'Custom Domino Tables & Goods',
   description:
-    'Ark of Bones is the home for live domino competition, connected table experiences, original media, and official merchandise rooted in the communities that keep the game alive.',
+    'Ark of Bones builds custom domino tables and develops a focused collection of domino goods, apparel, and future play experiences.',
 };
 
-// Trademark presentation is centralized here until legal approval is documented.
 export const SUBSIDIARY_BRANDS = {
   dominoMotherFucker: {
     key: 'domino-mother-fucker',

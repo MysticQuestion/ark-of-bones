@@ -1,86 +1,69 @@
-# Ark of Bones Digital Headquarters
+# Ark of Bones
 
-The Vite + React production application for **Ark of Bones — The Home of Domino Entertainment**.
+Vite + React site for **Ark of Bones**. The public offer is custom domino tables first, current goods second, and unfinished systems kept on Coming Soon.
 
-The site presents Ark of Bones as an entertainment and competition company rather than a furniture catalog. The current public model centers live play, media, official-play infrastructure, venue partnerships, merchandise, family legacy sessions, and community participation.
+Canonical site: [https://www.arkofbones.com](https://www.arkofbones.com)
 
-## Local Development
+## What the site actually does
+
+- **Tables** (`/tables`) — configure felt, engraving, intended use, and dimensions, preview the build, and open a specification addressed to `anthony@arkofbones.com`. Tables are quotes, not cart items. Price, lead time, and delivery are not published.
+- **Shop** (`/shop`) — six published products with exact Squarespace Commerce links. The design archive on the same page is a request list, not stocked inventory.
+- **Coming Soon** (`/coming-soon`) — digital play, events, Ark Circuit, media, and organizer tools. These are not live services.
+- **Library** (`/library`) — verified Anthony Covington title only.
+- **About, Contact, FAQ, Brands, Around the Table** — supporting pages. Contact is an inquiry desk, not a hiring page.
+
+Approved public addresses:
+
+- `info@arkofbones.com`
+- `anthony@arkofbones.com`
+- `(951) 599-0214`
+
+## Routes
+
+Canonical paths live in `src/config/publicRoutes.js` and must also be rendered in `src/app/routes.jsx`. Legacy redirects live in the same file and are mapped by the router.
+
+`npm run build` writes GitHub Pages `index.html` fallbacks for every live route, legacy path, and merchandise deep link, plus `dist/404.html`, `dist/CNAME`, and `sitemap.xml`. Do not keep a second handwritten route list in the Pages workflow.
+
+Primary navigation: Home, Tables, Shop, Coming Soon, About.
+
+## Local development
+
+Node.js **22.x** is the production runtime (GitHub Pages and `.nvmrc`).
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-## Production Build
+## Production build
 
 ```bash
+npm ci
 npm run build
 npm run preview
 ```
 
-The compiled site is written to `dist/`. `vercel.json`, `public/_redirects`, and the GitHub Pages workflow provide SPA fallbacks for supported hosts.
+`npm run build` ends with the public-copy audit. The audit must stay enabled. Approved Ark addresses are only `info@arkofbones.com` and `anthony@arkofbones.com`.
 
-## Primary Routes
+## Hosting
 
-- `/` — reduced editorial homepage
-- `/events` — verified event listings and archive
-- `/watch` — broadcasts and media archive
-- `/official-play` — rankings, sanctioned events, rules, referee certification, scoring technology, and pilot strategy
-- `/tables` — venue and table experience
-- `/shop` — published merchandise only
-- `/shop/archive` — separate merchandise concept archive
-- `/around-the-table` — family legacy-session product
-- `/about` — founder, cultural context, operating principles, and business direction
-- `/contact` — partnerships, pilots, bookings, and program inquiries
-- `/brands` — subsidiary brand portfolio
-- `/learn` — game education center
-- `/faq` — categorized questions
+- **GitHub Pages** is production. Workflow: `.github/workflows/pages.yml`, branch `main`.
+- **www.arkofbones.com** is the canonical hostname. The apex redirects to www.
+- **Vercel** is for preview builds and diagnostics. It is not the public production host. Do not point the public domain at Vercel unless that hosting decision is explicitly changed.
+- **Squarespace Commerce** (`https://bugle-marigold-6r8e.squarespace.com/merch`) remains merchandise checkout.
 
-Legacy Squarespace paths remain redirected in `src/app/routes.jsx`.
+The high-resolution logo source remains `src/assets/brand/aob-logo-4k.webp`. Pages should use the 1440 hero file and the small mark, not the 4K file.
 
-## Editorial Standard
+## Library records still needed
 
-The site is intentionally moving away from repetitive component grids and over-explanation. Public pages should follow four tests:
+Listed: *Ark of Bones: Origins, Evolution, and Cultural Legacy of Dominoes, Spades, Euchre, and Booray* by Anthony Covington (Lulu, May 8, 2025, 28 pages, paperback saddle stitch).
 
-1. Does the element introduce necessary information?
-2. Does it provide evidence rather than repeat a claim?
-3. Does it make the next action clearer?
-4. If none of the above are true, can it be removed or moved deeper into the site?
+Not published because they could not be verified:
 
-## Commercial Direction
+- a second title
+- an ISBN
+- a rights-cleared cover file in this repository
 
-The current roadmap treats the physical table as a customer-acquisition and production surface, while recurring value is expected to come from official-play infrastructure: rules, rankings, event sanctioning, referee certification, scoring technology, data, media, sponsorship, memberships or participation programs, and partner relationships.
+## Editorial limit
 
-The pilot is designed to measure four numbers before wider expansion:
-
-- cost per player acquired
-- replay attach rate
-- editing minutes per sellable asset
-- sponsor renewal rate
-
-The public roadmap does not include dual-currency or cash-redeemable sweepstakes mechanics and does not assume territory sales before a working unit-economic model exists.
-
-## Cultural Participation
-
-Dominoes and spades predate Ark of Bones and belong to many Black American, Caribbean, Latino, military, family, neighborhood, and social traditions. Future official-play programs are being designed to document credited house-rule contributions, feature experienced players and elders as authorities, and create transparent participation for clubs, hosts, and community partners.
-
-## Current Integration Status
-
-- GitHub Pages is the production host for the public headquarters.
-- `www.arkofbones.com` is the canonical domain.
-- Merchandise checkout remains on the existing Squarespace Commerce store through exact product links.
-- The Shop page separates six published products from the larger concept archive.
-- The inquiry form currently validates entries and opens a prepared email; a persistent CRM/form backend still needs to be connected.
-- No real-money wagering or sweepstakes system is implemented.
-- Automated scoring, national rankings, sanctioning, and referee certification are roadmap/pilot systems and are not represented as mature production services.
-
-## Deployment
-
-The production workflow runs from `main` using GitHub Actions:
-
-- install: `npm ci`
-- build: `npm run build`
-- output: `dist`
-- canonical hostname: `www.arkofbones.com`
-
-Before major launches, verify HTTPS, route fallbacks, merchandise deep links, inquiry handling, mobile rendering, and current public claims.
+Use words for specification, evidence, or an action. Do not describe unfinished systems as live rankings, sanctioning, events, or broadcasts. Do not invent table prices, lead times, or delivery coverage.
