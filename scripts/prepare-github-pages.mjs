@@ -48,6 +48,17 @@ if (!fallbackPaths.includes('/coming-soon')) {
 
 await readFile(indexHtml);
 
+async function writeIfChanged(path, content) {
+  let current = '';
+  try {
+    current = await readFile(path, 'utf8');
+  } catch {
+    current = '';
+  }
+  if (current.replaceAll('\r\n', '\n') === content) return;
+  await writeFile(path, content);
+}
+
 for (const path of fallbackPaths) {
   const directory = join(dist, path);
   await mkdir(directory, { recursive: true });
@@ -63,7 +74,7 @@ ${canonicalRoutes.map((route) => `  <url><loc>https://${CANONICAL_HOST}${route.p
 </urlset>
 `;
 
-await writeFile(join(dist, 'sitemap.xml'), sitemap);
-await writeFile(join(root, 'public/sitemap.xml'), sitemap);
+await writeIfChanged(join(dist, 'sitemap.xml'), sitemap);
+await writeIfChanged(join(root, 'public/sitemap.xml'), sitemap);
 
 console.log(`GitHub Pages fallbacks written for ${fallbackPaths.length} routes, including /coming-soon.`);

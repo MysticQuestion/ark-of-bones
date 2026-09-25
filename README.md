@@ -56,13 +56,14 @@ The high-resolution logo source remains `src/assets/brand/aob-logo-4k.webp`. Pag
 
 ## Library records still needed
 
-Listed: *Ark of Bones: Origins, Evolution, and Cultural Legacy of Dominoes, Spades, Euchre, and Booray* by Anthony Covington (Lulu, May 8, 2025, 28 pages, paperback saddle stitch).
+Listed: *Ark of Bones: Origins, Evolution, and Cultural Legacy of Dominoes, Spades, Euchre, and Booray* by Anthony Covington.
 
-Not published because they could not be verified:
+- Paperback on Lulu, May 8, 2025, 28 pages, saddle stitch, US Trade. The paperback listing does not print an ISBN. The publisher cover is stored in `src/assets/library/origins-cover.js` so the page does not depend on the Lulu image host.
+- Ebook on Lulu, same date, EPUB, ISBN `9798998832611`.
 
-- a second title
-- an ISBN
-- a rights-cleared cover file in this repository
+A second title is not listed. None was found in the repository or on the publisher listing.
+
+The homepage logo uses `aob-mark-384.webp` and `aob-logo-1440.webp` through `srcSet`. `src/assets/brand/aob-logo-4k.webp` stays in the repository as the high-resolution source and is not referenced by the pages.
 
 ## Editorial limit
 

@@ -122,7 +122,7 @@ export const faqs = [
     category: 'Library',
     question: 'Which books are listed?',
     answer:
-      'The library lists Ark of Bones: Origins, Evolution, and Cultural Legacy of Dominoes, Spades, Euchre, and Booray by Anthony Covington. A second title is not listed because it could not be verified.',
+      'The library lists one Anthony Covington title: Ark of Bones: Origins, Evolution, and Cultural Legacy of Dominoes, Spades, Euchre, and Booray. Lulu publishes it as a paperback and as an ebook. The ebook ISBN is 9798998832611. The paperback listing does not print an ISBN. A second title is not listed.',
     link: { label: 'Open the library', to: '/library' },
   },
   {
