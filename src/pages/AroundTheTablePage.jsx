@@ -19,15 +19,15 @@ export default function AroundTheTablePage() {
     <>
       <SEO
         title="Around the Table"
-        description="Around the Table is an Ark of Bones family legacy session: a filmed game designed to preserve voices, stories, humor, and play across generations."
+        description="Around the Table is an inquiry for a filmed family game. It is not a published package, and it is not checkout."
         path="/around-the-table"
       />
 
       <PageHero
         eyebrow="Family legacy sessions"
-        title="Record the people you will want to hear again."
-        description="Around the Table turns a real domino or card game into a family film: the jokes, the strategy, the arguments, the stories, and the voices that rarely make it into a formal interview."
-        image={ASSETS.players}
+        title="A filmed family game, quoted before it is booked."
+        description="Use this page to describe the people, the room, and the occasion. Price, date, and what is actually filmed are confirmed in writing. Nothing on this page is a rate card."
+        image={ASSETS.table}
       >
         <Link className="button button--gold" to="/contact?inquiry=Around%20the%20Table%20Legacy%20Session">
           Plan a legacy session<ArrowRight aria-hidden="true" />
@@ -44,19 +44,19 @@ export default function AroundTheTablePage() {
       <section className="image-story image-story--reverse">
         <div className="image-story-media">
           <SafeImage
-            src={ASSETS.owner}
-            alt="A player at an Ark of Bones domino gathering"
-            fallbackAlt="Ark of Bones domino gathering"
+            src={ASSETS.table}
+            alt="Ark of Bones domino table prepared for a gathering"
+            fallbackAlt="Ark of Bones domino table"
             width="1500"
             height="1092"
             loading="lazy"
           />
         </div>
         <div className="image-story-copy">
-          <p className="eyebrow">Not a $49 replay</p>
-          <h2>The product is the family record.</h2>
-          <p>A game replay documents who won. A legacy session preserves how people spoke to one another, what they remembered, what they taught, and what made the room theirs.</p>
-          <p><strong>Pilot pricing:</strong> $750–$2,500 depending on filming time, travel, edit length, number of participants, and final deliverables.</p>
+          <p className="eyebrow">Inquiry, not a package</p>
+          <h2>The request is the family record.</h2>
+          <p>A game result says who won. A legacy session, if it is commissioned, is meant to keep how people spoke, what they remembered, and what the room sounded like.</p>
+          <p>No session price is published here. Scope, travel, and the edit are quoted after the inquiry, the same way a table is quoted.</p>
         </div>
       </section>
 
@@ -84,8 +84,8 @@ export default function AroundTheTablePage() {
         description="Start with the family, location, occasion, and the people whose voices matter most."
         label="Request a legacy-session quote"
         to="/contact?inquiry=Around%20the%20Table%20Legacy%20Session"
-        secondaryLabel="Watch Ark of Bones"
-        secondaryTo="/watch"
+        secondaryLabel="See what is in development"
+        secondaryTo="/coming-soon"
       />
     </>
   );

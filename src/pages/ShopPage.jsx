@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
@@ -13,9 +14,13 @@ import {
   STORE_URL,
 } from '../data/products';
 
+const brandFromQuery = (value) => (productFilters.some((item) => item.value === value) ? value : 'all');
+
 export default function ShopPage() {
-  const [availableBrand, setAvailableBrand] = useState('all');
-  const [archiveBrand, setArchiveBrand] = useState('all');
+  const [searchParams] = useSearchParams();
+  const requestedBrand = brandFromQuery(searchParams.get('brand'));
+  const [availableBrand, setAvailableBrand] = useState(requestedBrand);
+  const [archiveBrand, setArchiveBrand] = useState(requestedBrand);
   const [departmentFilter, setDepartmentFilter] = useState('all');
 
   const availableProducts = useMemo(

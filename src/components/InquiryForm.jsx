@@ -118,7 +118,7 @@ export default function InquiryForm() {
       form.message,
     ].join('\n');
 
-    setStatus(`Your email application is opening with a prepared request to ${CONTACT.email}.`);
+    setStatus(`Your inquiry email is opening, addressed to ${CONTACT.email}.`);
     window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 

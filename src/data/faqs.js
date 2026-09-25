@@ -5,10 +5,10 @@ export const faqCategories = [
   'Ark of Bones',
   'Events',
   'Watch',
-  'Tables and Venue Partnerships',
+  'Tables',
   'Shop',
   'Brands',
-  'Game Guides',
+  'Library',
   'Contact',
 ];
 
@@ -17,125 +17,118 @@ export const faqs = [
     category: 'Ark of Bones',
     question: 'What is Ark of Bones?',
     answer:
-      'Ark of Bones is a domino entertainment company built around handcrafted table experiences, live and filmed competition, official-play systems, cultural storytelling, merchandise, and community programming.',
-    link: { label: 'Read the company story', to: '/about' },
+      'Ark of Bones builds custom domino tables and sells a small published collection of goods. Digital play, events, and competition tools are in development and are not offered as live services.',
+    link: { label: 'Read the company note', to: '/about' },
   },
   {
     category: 'Events',
     question: 'Where can I find upcoming events?',
     answer:
-      'Visit the Events page for published dates and participation details. Follow the official Ark of Bones channels for newly announced programs and competitions.',
-    link: { label: 'View events', to: '/events' },
+      'No public event calendar is published. Event tools are described on the Coming Soon page and should not be read as confirmed dates or registration.',
+    link: { label: 'See the events note', to: '/coming-soon#events' },
   },
   {
     category: 'Events',
     question: 'Can Ark of Bones produce an event at my venue?',
     answer:
-      'Yes. Venue and hosted-event inquiries begin with the location, expected audience, available technical infrastructure, timing, and the kind of experience you want to produce.',
-    link: { label: 'Plan a venue experience', to: '/contact?inquiry=Tables%20%2F%20Venue%20Partnership' },
+      'There is no operating event program to book from this site. If you have a specific table or hospitality request, send the city, setting, and what you need quoted.',
+    link: { label: 'Send an inquiry', to: '/contact?inquiry=Venue%20%2F%20Commercial%20Table' },
   },
   {
     category: 'Watch',
     question: 'Where can I watch Ark of Bones?',
     answer:
-      'Visit the Watch page or follow Ark of Bones on YouTube, Instagram, TikTok, and Facebook for published footage, table features, competition, and cultural stories.',
-    link: { label: 'Open the watch hub', to: '/watch' },
+      'There is no live watch hub. Follow the official YouTube, Instagram, TikTok, and Facebook accounts for anything those channels actually publish.',
+    link: { label: 'See the media note', to: '/coming-soon#media' },
   },
   {
     category: 'Watch',
     question: 'Is a live game scheduled now?',
     answer:
-      'The Watch page shows the current live status and keeps the archive available between broadcasts. When Ark of Bones is off air, recent footage and product context remain available.',
-    link: { label: 'Check live status', to: '/watch' },
+      'No. A broadcast schedule is not part of the current site.',
+    link: { label: 'See what is in development', to: '/coming-soon#media' },
   },
   {
-    category: 'Tables and Venue Partnerships',
-    question: 'What makes an Ark of Bones table different from a standard domino table?',
+    category: 'Tables',
+    question: 'What is specified on a current Ark of Bones table?',
     answer:
-      'Ark of Bones treats the table as a media-ready playing surface. Depending on the build, the experience can incorporate player-view cameras, table sound, lighting and indicators, display or streaming integration, scoring or tracking technology, and custom finishes.',
-    link: { label: 'Explore the table', to: '/tables' },
+      'The studio covers intended use, felt, engraving position and text, and requested dimensions. Current reference builds include a felt play field, recessed illuminated racks, and a padded rail. Finish, price, timing, and delivery are confirmed only in the written quote.',
+    link: { label: 'Open the table studio', to: '/tables#build-studio' },
   },
   {
-    category: 'Tables and Venue Partnerships',
-    question: 'Can I order an Ark of Bones table for a private home?',
+    category: 'Tables',
+    question: 'Can I order a table for a private home?',
     answer:
-      'Yes. Private builds can be scoped around room fit, finish, lighting, engraving, media features, typical group size, and the way the table will actually be used at home.',
-    link: { label: 'Request private build details', to: '/contact?inquiry=Private%20%2F%20Home%20Table' },
+      'Yes. Choose Private / Home in the studio, add the room and delivery notes you already know, and send the specification to Anthony. It is a quote request, not a checkout.',
+    link: { label: 'Configure a home table', to: '/tables#build-studio' },
   },
   {
-    category: 'Tables and Venue Partnerships',
+    category: 'Tables',
     question: 'How does table pricing work?',
     answer:
-      'Pricing is quoted by scope because technology, finish work, branding, delivery, installation, and event support can vary materially between builds. Ark of Bones should confirm the build sheet, timeline, and included services before requesting a deposit.',
-    link: { label: 'Start a build inquiry', to: '/tables' },
+      'This site does not publish a table price. Anthony reviews the specification and sends a written quote before any deposit.',
+    link: { label: 'Start a build request', to: '/tables#build-studio' },
   },
   {
-    category: 'Tables and Venue Partnerships',
+    category: 'Tables',
     question: 'How long does a custom build take?',
     answer:
-      'A custom build typically follows a 4–6 week production window after the final scope and deposit, subject to the configuration, material availability, delivery requirements, and any venue integration work.',
-    link: { label: 'Review the build process', to: '/tables' },
+      'A lead time is not published as a standard window. Timing is confirmed in the written quote after materials, configuration, and delivery conditions are reviewed.',
+    link: { label: 'Review the build notes', to: '/tables' },
   },
   {
-    category: 'Tables and Venue Partnerships',
+    category: 'Tables',
     question: 'What happens before I pay a deposit?',
     answer:
-      'The goal is a clear written scope: dimensions and fit, materials and finishes, included technology, power and display requirements, customization, delivery or installation, service terms, timeline, and the deposit schedule for that specific build.',
-    link: { label: 'Request build details', to: '/contact?inquiry=Private%20%2F%20Home%20Table' },
+      'You receive a written scope for the specific build: dimensions, materials, engraving, delivery conditions, price, and timing. No payment is taken from the table studio.',
+    link: { label: 'Send the specification', to: '/tables#build-studio' },
   },
   {
     category: 'Shop',
     question: 'Where does merchandise checkout happen?',
     answer:
-      'Each published product links to its matching page in the official Ark of Bones Squarespace store. Product options, cart review, shipping, taxes, payment, and order confirmation are handled there.',
-    link: { label: 'Shop published products', to: '/shop' },
+      'Each of the six published products links to its matching Squarespace page. Options, cart, shipping, taxes, and payment are handled there. Archive designs are requests, not stocked inventory.',
+    link: { label: 'Shop current products', to: '/shop' },
   },
   {
     category: 'Shop',
     question: 'What happens after I place an order?',
     answer:
-      'Squarespace sends the buyer an order confirmation and receipt while authorized Ark of Bones store managers receive the information needed to prepare the purchase. A fulfillment email follows when the order is released for delivery.',
-    link: { label: 'Review the complete order journey', to: '/shop#commerce-journey-title' },
+      'Squarespace sends the order confirmation. Fulfillment email follows from that store when the order is released.',
+    link: { label: 'Open the shop', to: '/shop' },
   },
   {
     category: 'Shop',
     question: 'How do I track a merchandise order?',
     answer:
-      'Use the order-status link in the confirmation email. When carrier tracking is supplied during fulfillment, it is included in the fulfillment email.',
-    link: { label: 'Contact merchandise support', to: '/contact?inquiry=Merchandise' },
+      'Use the order-status link in the Squarespace confirmation email. Carrier tracking, when supplied, is included in the fulfillment email.',
+    link: { label: 'Merchandise question', to: '/contact?inquiry=Merchandise' },
   },
   {
     category: 'Brands',
     question: `How does ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} relate to Ark of Bones?`,
     answer:
-      `It is the expressive Ark of Bones brand for attitude, humor, storytelling, media, and merchandise around the game.`,
+      'It is the expressive Ark of Bones label used on merchandise and brand language. It is not a separate store.',
     link: { label: `Enter ${SUBSIDIARY_BRANDS.dominoMotherFucker.name}`, to: SUBSIDIARY_BRANDS.dominoMotherFucker.path },
   },
   {
     category: 'Brands',
     question: 'What is Big Six Bones?',
     answer:
-      'Big Six Bones is the competitive Ark of Bones brand for American domino play, events, education, and community competition.',
+      'Big Six Bones is an Ark of Bones label for American domino play and related merchandise. It is not a live sanctioning body or event calendar.',
     link: { label: 'Enter Big Six Bones', to: SUBSIDIARY_BRANDS.bigSixBones.path },
   },
   {
-    category: 'Game Guides',
-    question: 'Which games are covered?',
+    category: 'Library',
+    question: 'Which books are listed?',
     answer:
-      'The resource center covers Dominoes, Big Six Bones, Spades, Euchre, Booray, Tonk, and Poker.',
-    link: { label: 'Open the resource center', to: '/learn' },
-  },
-  {
-    category: 'Game Guides',
-    question: 'Are the guides official tournament rules?',
-    answer:
-      'No. The current guides are practical player primers. The Official Play program is the separate roadmap for standardized competition rules, ranking, sanctioning, and referee development.',
-    link: { label: 'Explore official play', to: '/official-play' },
+      'The library lists Ark of Bones: Origins, Evolution, and Cultural Legacy of Dominoes, Spades, Euchre, and Booray by Anthony Covington. A second title is not listed because it could not be verified.',
+    link: { label: 'Open the library', to: '/library' },
   },
   {
     category: 'Contact',
     question: 'How do I contact Ark of Bones?',
-    answer: `Email ${CONTACT.email}, call ${CONTACT.phoneDisplay}, or use Work With Us to provide the location, timeline, use case, and scope needed for a useful response.`,
-    link: { label: 'Work with Ark of Bones', to: '/contact' },
+    answer: `Email ${CONTACT.email}, call ${CONTACT.phoneDisplay}, or send a table specification to ${CONTACT.tablesEmail}.`,
+    link: { label: 'Open contact', to: '/contact' },
   },
 ];

@@ -3,12 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && node scripts/prepare-github-pages.mjs && node scripts/audit-public-copy.mjs dist",
     "postbuild": "node scripts/audit-public-copy.mjs dist",
     "copy:audit": "node scripts/audit-public-copy.mjs dist",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0 --port 8080"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

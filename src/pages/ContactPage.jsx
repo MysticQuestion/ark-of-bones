@@ -9,25 +9,26 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Work With Us"
-        description="Work with Ark of Bones on official play, events, venue programs, institutional partnerships, legacy sessions, sponsorships, media, and merchandise."
+        title="Contact"
+        description="Contact Ark of Bones about a custom table, current merchandise, or a specific question. Table specifications are reviewed by Anthony before a quote."
         path="/contact"
       />
       <PageHero
-        eyebrow="Partnerships, pilots, and bookings"
-        title="Work with Ark of Bones."
-        description="Tell us the setting, audience, city, and outcome you have in mind. We will route the conversation from there."
-        image={ASSETS.event}
+        eyebrow="Contact"
+        title="Request details."
+        description="General questions use info@arkofbones.com. A configured table can be sent directly to Anthony from the table studio."
+        image={ASSETS.table}
         compact
       />
       <section className="contact-layout">
         <aside className="contact-details">
           <p className="eyebrow">Direct contact</p>
-          <h2>Start with the real opportunity.</h2>
-          <p>Official-play pilots, venues, military MWR, campuses, community programs, Around the Table sessions, sponsorships, and media can all begin through the same intake.</p>
-          <a href={`mailto:${CONTACT.email}`}><Mail aria-hidden="true" /><span>Email<strong>{CONTACT.email}</strong></span></a>
+          <h2>Use the address that matches the request.</h2>
+          <p>Table builds are not cart items. Anthony reviews the specification, then sends a written quote. Merchandise checkout stays on the published product pages.</p>
+          <a href={`mailto:${CONTACT.email}`}><Mail aria-hidden="true" /><span>General<strong>{CONTACT.email}</strong></span></a>
+          <a href={`mailto:${CONTACT.tablesEmail}`}><Mail aria-hidden="true" /><span>Tables<strong>{CONTACT.tablesEmail}</strong></span></a>
           <a href={CONTACT.phoneHref}><Phone aria-hidden="true" /><span>Telephone<strong>{CONTACT.phoneDisplay}</strong></span></a>
-          <div><MapPin aria-hidden="true" /><span>Location<strong>Include your city and venue or organization</strong></span></div>
+          <div><MapPin aria-hidden="true" /><span>Location<strong>Include your city and delivery area</strong></span></div>
           <div className="contact-socials" aria-label="Official social channels">
             <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Ark of Bones on Facebook">FB</a>
             <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Ark of Bones on Instagram">IG</a>

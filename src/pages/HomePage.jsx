@@ -45,16 +45,15 @@ export default function HomePage() {
           <div className="hero-logo-stage" aria-hidden="true">
             <img
               className="hero-logo"
-              src={ASSETS.heroLogoSmall}
-              srcSet={`${ASSETS.heroLogoSmall} 1440w, ${ASSETS.heroLogo} 4096w`}
-              sizes="(max-width: 720px) 82vw, 430px"
+              src={ASSETS.heroLogo}
+              sizes="(max-width: 720px) min(88vw, 360px), (max-height: 760px) min(38vw, 420px), min(42vw, 480px)"
               alt=""
-              width="4096"
-              height="3026"
+              width="1440"
+              height="1064"
               fetchPriority="high"
             />
           </div>
-          <p className="hero-declaration">Custom domino tables, built to be used.</p>
+          <h1 className="hero-declaration">Custom domino tables, built to be used.</h1>
           <p className="home-description">
             Configure the table before the quote. Review the finish, felt, engraving, intended setting, and build notes in one place.
           </p>
