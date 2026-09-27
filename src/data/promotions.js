@@ -11,8 +11,8 @@ export const campaigns = {
   homeShop: {
     id: 'home-embroidered-sweatshirt',
     eyebrow: 'From the official shop',
-    title: 'The Ark, embroidered.',
-    description: 'A relaxed unisex sweatshirt finished with the Ark of Bones mark and built for easy layering.',
+    title: 'Ark of Bones Embroidered Sweatshirt',
+    description: 'Cotton-polyester sweatshirt with an embroidered Ark of Bones front mark.',
     price: arkSweatshirt.price,
     label: 'View the sweatshirt',
     to: arkSweatshirt.href,
@@ -23,8 +23,8 @@ export const campaigns = {
   watchShop: {
     id: 'watch-big-six-long-sleeve',
     eyebrow: 'Official Big Six Bones merchandise',
-    title: 'Competition on the front. The Ark on the back.',
-    description: 'The 100% cotton long-sleeve crew carries Big Six Bones up front and Ark of Bones across the back.',
+    title: 'Big Six Bones Long-Sleeve Tee',
+    description: '100% cotton long-sleeve tee with Big Six Bones on the front and Ark of Bones on the back.',
     price: bigSixLongSleeve.price,
     label: 'Choose a size',
     to: bigSixLongSleeve.href,
@@ -35,8 +35,8 @@ export const campaigns = {
   learnBigSix: {
     id: 'learn-big-six-brand',
     eyebrow: 'Continue with Big Six Bones',
-    title: 'Know the pressure behind every play.',
-    description: 'Move from the rules into the competition, identity, and merchandise built around Big Six Bones.',
+    title: 'Big Six Bones',
+    description: 'American domino play and related Big Six Bones merchandise.',
     label: 'Enter Big Six Bones',
     to: '/brands/big-six-bones',
     external: false,
@@ -46,7 +46,7 @@ export const campaigns = {
   dmfBrand: {
     id: 'dmf-brand-beanie',
     eyebrow: 'Domino Mother Fucker merchandise',
-    title: 'Victory, stitched in gold.',
+    title: 'Domino Mother Fucker Embroidered Beanie',
     description: 'A cuffed acrylic beanie with insulated 3M Thinsulate lining and an embroidered front mark.',
     price: dmfBeanie.price,
     label: 'View the beanie',
@@ -58,8 +58,8 @@ export const campaigns = {
   bigSixBrand: {
     id: 'big-six-brand-tee',
     eyebrow: 'Big Six Bones merchandise',
-    title: 'The competitive mark, ready to move.',
-    description: 'A breathable 100% cotton short-sleeve tee with a clean unisex fit and printed Big Six Bones identity.',
+    title: 'Big Six Bones Short-Sleeve Tee',
+    description: '100% cotton short-sleeve tee with a printed Big Six Bones front design.',
     price: bigSixTee.price,
     label: 'Choose a size',
     to: bigSixTee.href,
