@@ -22,9 +22,9 @@ export const ASSETS = {
 
 export const BRAND = {
   name: 'Ark of Bones',
-  proposition: 'Custom Domino Tables & Goods',
+  proposition: 'Custom Domino Tables',
   description:
-    'Ark of Bones builds custom domino tables and develops a focused collection of domino goods, apparel, and future play experiences.',
+    'Ark of Bones builds custom domino tables and sells apparel and published work related to domino and table-game culture.',
 };
 
 export const SUBSIDIARY_BRANDS = {
