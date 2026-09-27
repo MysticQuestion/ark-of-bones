@@ -31,7 +31,7 @@ export default function HomePage() {
     <>
       <SEO
         title={BRAND.name}
-        description="Ark of Bones builds custom domino tables and a focused collection of domino goods. Configure a table, preview the build, and send the specification directly for a quote."
+        description="Custom domino tables from Ark of Bones. Configure felt, engraving, dimensions, and project details, request a quote, or shop current Ark of Bones merchandise."
         path="/"
         schema={schema}
       />
@@ -54,16 +54,16 @@ export default function HomePage() {
               fetchPriority="high"
             />
           </div>
-          <h1 className="hero-declaration">Custom domino tables, built to be used.</h1>
+          <h1 className="hero-declaration">Custom Domino Tables</h1>
           <p className="home-description">
-            Configure the table before the quote. Review the finish, felt, engraving, intended setting, and build notes in one place.
+            Built-to-order tables for homes, game rooms, hospitality spaces, and other commissioned settings. Configure the felt, engraving, dimensions, and intended use before requesting a quote.
           </p>
           <div className="hero-actions">
             <Link className="button button--gold" to="/tables#build-studio">
-              Build your table<Table2 aria-hidden="true" />
+              Design a Table<Table2 aria-hidden="true" />
             </Link>
             <Link className="button button--outline" to="/shop">
-              Shop the collection<ShoppingBag aria-hidden="true" />
+              Shop<ShoppingBag aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -81,16 +81,15 @@ export default function HomePage() {
           />
         </div>
         <div className="table-home-feature-copy">
-          <p className="eyebrow">The table comes first</p>
-          <h2>See the build before you send the request.</h2>
+          <h2>Custom Tables</h2>
           <p>
-            The table studio now keeps the specification and the preview together. Felt, engraving, use case, dimensions, and notes remain visible while the build takes shape.
+            Ark of Bones tables can be configured by intended use, felt color, engraving, requested dimensions, and project notes.
           </p>
           <p>
-            When the configuration is ready, the complete specification can be addressed directly to Anthony for review and quoting.
+            Each request is reviewed by Anthony Covington before pricing, production timing, and delivery terms are confirmed.
           </p>
           <Link className="button button--gold" to="/tables#build-studio">
-            Open the table studio<ArrowRight aria-hidden="true" />
+            Design a Table<ArrowRight aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -98,26 +97,14 @@ export default function HomePage() {
       <section className="content-band home-shop-edit">
         <div className="home-shop-heading">
           <div>
-            <p className="eyebrow">Shop</p>
-            <h2>The collection stays in one place.</h2>
-            <p>Current products and the wider design archive now live together instead of being presented as competing stores.</p>
+            <h2>Shop</h2>
+            <p>Ark of Bones, Big Six Bones, and Domino Mother Fucker apparel and accessories.</p>
           </div>
-          <Link className="button button--outline" to="/shop">Open the shop<ArrowRight aria-hidden="true" /></Link>
+          <Link className="button button--outline" to="/shop">Open Shop<ArrowRight aria-hidden="true" /></Link>
         </div>
         <div className="product-grid">
           {officialProducts.slice(0, 3).map((product) => <ProductCard key={product.id} product={product} />)}
         </div>
-      </section>
-
-      <section className="coming-soon-strip">
-        <div>
-          <p className="eyebrow">In development</p>
-          <h2>Future systems have their own place now.</h2>
-          <p>
-            Digital play, events, ratings, media, organizer tools, and other unfinished systems are collected on one Coming Soon page instead of being presented beside live products as if they already operate at the same level.
-          </p>
-        </div>
-        <Link className="button button--gold" to="/coming-soon">Preview what is next<ArrowRight aria-hidden="true" /></Link>
       </section>
     </>
   );
