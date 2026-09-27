@@ -6,17 +6,13 @@ export default function LibraryPage() {
     <>
       <SEO
         title="Library"
-        description="The verified Anthony Covington title, Ark of Bones, in the paperback and ebook editions published on Lulu."
+        description="Books by Anthony Covington, including Ark of Bones: Origins, Evolution, and Cultural Legacy of Dominoes, Spades, Euchre, and Booray."
         path="/library"
       />
-
       <header className="editorial-mast">
-        <p className="eyebrow">Library</p>
-        <h1>Tony's books.</h1>
-        <p className="table-mast-copy">Only the verified title is listed. Paperback and ebook are the same book. This page is not checkout.</p>
+        <h1>Books by Anthony Covington</h1>
         <div className="editorial-rule" aria-hidden="true"><span /></div>
       </header>
-
       <section className="content-band library-list">
         {books.map((book) => (
           <article className="library-entry" key={book.id}>
@@ -41,10 +37,9 @@ export default function LibraryPage() {
                     <div><dt>Language</dt><dd>{edition.language}</dd></div>
                     <div><dt>ISBN</dt><dd>{edition.isbn}</dd></div>
                   </dl>
-                  <a className="button button--gold" href={edition.href} target="_blank" rel="noopener noreferrer">{edition.linkLabel}</a>
+                  <a className="button button--gold" href={edition.href} target="_blank" rel="noopener noreferrer">{edition.format}</a>
                 </section>
               ))}
-              <p className="editorial-caption">No second title is listed. Price stays on the publisher page.</p>
             </div>
           </article>
         ))}
