@@ -5,7 +5,7 @@ import { CONTACT } from '../config/contact';
 const exploreLinks = [
   ['Tables', '/tables'],
   ['Shop', '/shop'],
-  ['Coming Soon', '/coming-soon'],
+  ['Projects', '/coming-soon'],
 ];
 
 const companyLinks = [
@@ -29,7 +29,7 @@ export default function SiteFooter() {
             <img src={ASSETS.mark} alt="" width="384" height="284" />
             {BRAND.name}
           </Link>
-          <p>Custom domino tables, goods, and selected projects in development.</p>
+          <p>Custom domino tables, apparel, and publishing.</p>
           <p className="footer-contact">
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a><br />
             <a href={`mailto:${CONTACT.tablesEmail}`}>{CONTACT.tablesEmail}</a><br />
