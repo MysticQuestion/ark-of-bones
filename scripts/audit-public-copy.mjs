@@ -34,6 +34,22 @@ const bannedPhrases = [
   'appears here',
   'production plan',
   'approved experience',
+  'the site now',
+  'the public site now',
+  'now live together',
+  'has its own place now',
+  'future systems have their own place',
+  'do not treat a plan as a service',
+  'operating proof first',
+  'waiting on real dates',
+  'pilot concept',
+  'cadence required',
+  'manual pilots should determine',
+  'move it from this page',
+  'bring watch forward',
+  'details should earn the premium',
+  'victory, stitched in gold',
+  'short rounds. immediate stakes. no hiding.',
 ];
 
 const approvedPublicEmails = new Set([

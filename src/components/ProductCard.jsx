@@ -26,14 +26,9 @@ export default function ProductCard({ product }) {
         </div>
         <h3>{product.name}</h3>
         {product.variant ? <p className="product-variant">{product.variant}</p> : null}
-        {product.description ? <p>{product.description}</p> : null}
-        {product.specs ? (
-          <ul className="product-specs" aria-label={`${product.name} details`}>
-            {product.specs.map((spec) => <li key={spec}>{spec}</li>)}
-          </ul>
-        ) : null}
+        {!isGallery && product.specs?.length ? <p>{product.specs.slice(0, 2).join(' · ')}</p> : null}
         <div className="product-card-footer">
-          {product.price ? <strong><span>Current price</span>{product.price}</strong> : <span className="product-status">{product.status}</span>}
+          {product.price ? <strong>{product.price}</strong> : <span className="product-status">{product.status}</span>}
           {product.href ? (
             <a
               className="button button--dark"

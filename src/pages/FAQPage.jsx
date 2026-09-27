@@ -12,8 +12,8 @@ export default function FAQPage() {
 
   return (
     <>
-      <SEO title="FAQ" description="Answers about Ark of Bones custom tables, current merchandise, brands, the library, and contact. Unfinished systems are identified as such." path="/faq" />
-      <PageHero eyebrow="Questions and answers" title="Ark of Bones FAQ" description="Tables, current goods, and how to reach Anthony or the general desk. Items that are not live are labeled that way." image={ASSETS.table} compact />
+      <SEO title="FAQ" description="Answers about Ark of Bones custom tables, merchandise, quoting, and contact." path="/faq" />
+      <PageHero title="Ark of Bones FAQ" description="Practical information about custom tables, merchandise, and contacting Ark of Bones." image={ASSETS.table} compact />
       <section className="content-band faq-page">
         <div className="filter-control filter-control--wrap" role="group" aria-label="Filter frequently asked questions">
           {['All', ...faqCategories].map((item) => <button key={item} type="button" className={category === item ? 'is-active' : ''} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}

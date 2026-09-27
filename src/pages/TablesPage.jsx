@@ -8,13 +8,14 @@ import tableFeltDetail from '../assets/editorial/tables-5.webp';
 import tableRoom from '../assets/editorial/tables-6.webp';
 
 const specifications = [
-  ['Configuration', 'Built to order'],
-  ['Racks', 'Recessed and illuminated'],
-  ['Surface', 'Felt play field'],
+  ['Playing surface', 'Felt'],
   ['Rail', 'Padded and upholstered'],
-  ['Finish', 'Confirmed during scoping'],
-  ['Timeline', 'Confirmed in the written quote'],
-  ['Delivery', 'Confirmed by destination and access'],
+  ['Domino racks', 'Recessed with integrated lighting'],
+  ['Engraving', 'Rail or center placement'],
+  ['Dimensions', 'Confirmed per commission'],
+  ['Finish', 'Confirmed during project review'],
+  ['Production schedule', 'Confirmed in quote'],
+  ['Delivery', 'Quoted by destination and access requirements'],
 ];
 
 const feltOptions = [
@@ -86,15 +87,14 @@ export default function TablesPage() {
     <>
       <SEO
         title="Custom Domino Tables"
-        description="Configure an Ark of Bones custom domino table, preview the build as you make selections, and send the completed specification directly for review."
+        description="Configure an Ark of Bones domino table and submit the specification for a custom quote."
         path="/tables"
         image={tableHero}
       />
 
       <header className="editorial-mast table-mast">
-        <p className="eyebrow">Custom tables</p>
-        <h1>Build the table before the quote.</h1>
-        <p className="table-mast-copy">The preview is not a fabrication drawing. It is a live visual reference that keeps the selected finish decisions together while the request is being prepared.</p>
+        <h1>Custom Domino Tables</h1>
+        <p className="table-mast-copy">Configure the table and submit the specification for a quote.</p>
         <div className="editorial-rule" aria-hidden="true"><span /></div>
       </header>
 
@@ -105,14 +105,13 @@ export default function TablesPage() {
           width="1800"
           height="900"
         />
-        <p className="editorial-caption">The current table concept centers the playing surface, recessed illuminated racks, padded rail, and a finish selected for the room where it will live.</p>
+        <p className="editorial-caption">Preview is illustrative. Final dimensions, materials, pricing, and production details are confirmed in the written quote.</p>
       </section>
 
       <section className="table-studio editorial-band" id="build-studio">
         <div className="table-studio-heading">
-          <p className="eyebrow">Table studio</p>
-          <h2>Configure. Preview. Send.</h2>
-          <p>Selections update the preview immediately. The final build request is prepared for <a href={`mailto:${CONTACT.tablesEmail}`}>{CONTACT.tablesEmail}</a>.</p>
+          <h2>Table Configuration</h2>
+          <p>Select the intended use, felt, engraving, dimensions, and project notes. The preview updates with the selected options.</p>
         </div>
 
         <div className="table-studio-grid">
@@ -239,13 +238,12 @@ export default function TablesPage() {
 
             <div className="build-submit-panel">
               <div>
-                <p className="eyebrow">Ready for review</p>
-                <h3>Send this configuration to Anthony.</h3>
-                <p>The button opens a prepared email with the build specification already addressed to {CONTACT.tablesEmail}. No payment is requested at this stage.</p>
+                <h3>Request a Quote</h3>
+                <p>Submit this specification to Anthony Covington for review and quotation. No payment is required to submit a request.</p>
               </div>
               <div className="build-submit-actions">
                 <a className="button button--gold" href={buildEmailHref}>
-                  <Mail aria-hidden="true" />Send build request
+                  <Mail aria-hidden="true" />Request Quote
                 </a>
                 <button className="button button--outline" type="button" onClick={resetBuild}>
                   <RotateCcw aria-hidden="true" />Reset
@@ -258,21 +256,20 @@ export default function TablesPage() {
 
       <section className="editorial-band editorial-band--quiet table-detail-edit">
         <div className="editorial-section-heading">
-          <p className="eyebrow">Material reference</p>
-          <h2>Details should earn the premium.</h2>
+          <h2>Table Details</h2>
         </div>
         <div className="editorial-gallery editorial-gallery--three">
           <figure>
             <img src={tableRackDetail} alt="Close view of an illuminated domino rack" width="1000" height="1000" loading="lazy" />
-            <figcaption>Recessed illuminated rack detail.</figcaption>
+            <figcaption>Recessed illuminated domino rack.</figcaption>
           </figure>
           <figure>
             <img src={tableFeltDetail} alt="Dominoes arranged across the felt playing surface" width="1000" height="1000" loading="lazy" />
-            <figcaption>Playing-surface reference.</figcaption>
+            <figcaption>Felt playing surface.</figcaption>
           </figure>
           <figure>
             <img src={tableRoom} alt="Ark of Bones domino table in an interior setting" width="1000" height="1000" loading="lazy" />
-            <figcaption>Room and placement reference.</figcaption>
+            <figcaption>Table shown in a residential interior.</figcaption>
           </figure>
         </div>
       </section>
