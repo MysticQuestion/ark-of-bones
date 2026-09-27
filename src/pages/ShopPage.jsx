@@ -61,28 +61,23 @@ export default function ShopPage() {
     <>
       <SEO
         title="Shop"
-        description={`Browse Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} goods, including current products and the wider design archive.`}
+        description={`Shop current Ark of Bones, ${SUBSIDIARY_BRANDS.bigSixBones.name}, and ${SUBSIDIARY_BRANDS.dominoMotherFucker.name} apparel and accessories.`}
         path="/shop"
         schema={productSchema}
       />
 
       <PageHero
-        eyebrow="Ark of Bones shop"
-        title="The collection."
-        description="Current products and the design archive now live together. Items with a published price link to checkout; archive pieces can be requested for production details."
+        title="Shop Ark of Bones"
+        description="Available apparel and accessories from Ark of Bones, Big Six Bones, and Domino Mother Fucker."
         image={officialProducts[0].image}
         compact
       />
 
       <section className="content-band shop-page shop-current">
         <div className="shop-toolbar">
-          <SectionHeader
-            eyebrow="Available"
-            title="Current products"
-            description="Published products with current pricing and direct checkout."
-          />
+          <SectionHeader title="Available Now" />
           <a className="button button--gold" href={STORE_URL} target="_blank" rel="noopener noreferrer">
-            Open checkout<ExternalLink aria-hidden="true" />
+            Shop All<ExternalLink aria-hidden="true" />
           </a>
         </div>
 
@@ -108,40 +103,39 @@ export default function ShopPage() {
       </section>
 
       <section className="content-band shop-page shop-archive" id="archive">
-        <div className="shop-toolbar">
-          <SectionHeader
-            eyebrow="Design archive"
-            title="Archive and special requests"
-            description="The archive stays visible as part of the shop. These designs are not represented as stocked inventory; use the request button on any piece to ask about production, sizing, pricing, or availability."
-          />
-        </div>
+        <SectionHeader
+          title="Design Archive"
+          description="Previous and proposed designs available for production inquiries."
+        />
+        <details className="shop-archive-disclosure">
+          <summary>View Design Archive</summary>
+          <div className="shop-controls shop-controls--archive">
+            <div className="filter-control" role="group" aria-label="Filter archive designs by brand">
+              {productFilters.map((item) => (
+                <button
+                  key={item.value}
+                  type="button"
+                  className={archiveBrand === item.value ? 'is-active' : ''}
+                  aria-pressed={archiveBrand === item.value}
+                  onClick={() => setArchiveBrand(item.value)}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
 
-        <div className="shop-controls shop-controls--archive">
-          <div className="filter-control" role="group" aria-label="Filter archive designs by brand">
-            {productFilters.map((item) => (
-              <button
-                key={item.value}
-                type="button"
-                className={archiveBrand === item.value ? 'is-active' : ''}
-                aria-pressed={archiveBrand === item.value}
-                onClick={() => setArchiveBrand(item.value)}
-              >
-                {item.label}
-              </button>
-            ))}
+            <label className="department-filter">
+              <span>Category</span>
+              <select value={departmentFilter} onChange={(event) => setDepartmentFilter(event.target.value)}>
+                {departmentFilters.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
+              </select>
+            </label>
           </div>
 
-          <label className="department-filter">
-            <span>Category</span>
-            <select value={departmentFilter} onChange={(event) => setDepartmentFilter(event.target.value)}>
-              {departmentFilters.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
-            </select>
-          </label>
-        </div>
-
-        <div className="product-grid product-grid--gallery">
-          {archiveProducts.map((product) => <ProductCard key={product.id} product={product} />)}
-        </div>
+          <div className="product-grid product-grid--gallery">
+            {archiveProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+          </div>
+        </details>
       </section>
     </>
   );
