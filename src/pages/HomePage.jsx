@@ -1,4 +1,4 @@
-import { ArrowRight, ShoppingBag, Table2 } from 'lucide-react';
+import { ArrowRight, BookOpen, CalendarDays, PlayCircle, ShoppingBag, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import SafeImage from '../components/SafeImage';
@@ -6,6 +6,33 @@ import SEO from '../components/SEO';
 import { ASSETS, BRAND, SITE_URL } from '../config/brand';
 import { CONTACT } from '../config/contact';
 import { officialProducts } from '../data/products';
+
+const platformCards = [
+  {
+    title: 'Watch',
+    text: 'Live and recorded domino action, replays, highlights, and culture around the table.',
+    to: '/around-the-table',
+    icon: PlayCircle,
+  },
+  {
+    title: 'Events',
+    text: 'Official updates, community gatherings, tournament visibility, and public announcements.',
+    to: '/coming-soon',
+    icon: CalendarDays,
+  },
+  {
+    title: 'Game Education',
+    text: 'Rules, setup, scoring, etiquette, and primers for Dominoes, Big Six Bones, Spades, Euchre, Booray, Tonk, and Poker.',
+    to: '/library',
+    icon: BookOpen,
+  },
+  {
+    title: 'Shop',
+    text: 'Confirmed Ark of Bones, Big Six Bones, and Domino Mother Fucker merch and accessories.',
+    to: '/shop',
+    icon: ShoppingBag,
+  },
+];
 
 export default function HomePage() {
   const schema = [
@@ -31,14 +58,14 @@ export default function HomePage() {
     <>
       <SEO
         title={BRAND.name}
-        description="Custom domino tables from Ark of Bones. Configure felt, engraving, dimensions, and project details, request a quote, or shop current Ark of Bones merchandise."
+        description="Ark of Bones is a domino culture platform for live and recorded play, events, game education, official merch, publishing, and community connection."
         path="/"
         schema={schema}
       />
 
       <section
         className="home-hero home-hero--logo table-first-hero"
-        style={{ '--home-hero-image': `url("${ASSETS.table}")` }}
+        style={{ '--home-hero-image': `url("${ASSETS.hero}")` }}
       >
         <div className="home-hero-content home-hero-content--center">
           <p className="hero-brand-line">Ark of Bones</p>
@@ -54,43 +81,67 @@ export default function HomePage() {
               fetchPriority="high"
             />
           </div>
-          <h1 className="hero-declaration">Custom Domino Tables</h1>
+          <h1 className="hero-declaration">Domino Culture. Live Play. Official Goods.</h1>
           <p className="home-description">
-            Built-to-order tables for homes, game rooms, hospitality spaces, and other commissioned settings. Configure the felt, engraving, dimensions, and intended use before requesting a quote.
+            Ark of Bones brings together domino culture, competitive play, recorded media, education, official merch, publishing, and community connection. The app now represents only confirmed public offerings and does not advertise table sales or customization services.
           </p>
           <div className="hero-actions">
-            <Link className="button button--gold" to="/tables#build-studio">
-              Design a Table<Table2 aria-hidden="true" />
+            <Link className="button button--gold" to="/around-the-table">
+              Watch Ark of Bones<PlayCircle aria-hidden="true" />
             </Link>
             <Link className="button button--outline" to="/shop">
-              Shop<ShoppingBag aria-hidden="true" />
+              Shop Official Merch<ShoppingBag aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="table-home-feature">
+      <section className="content-band table-home-feature">
         <div className="table-home-feature-media">
           <SafeImage
-            src={ASSETS.table}
-            alt="Ark of Bones custom domino table"
-            fallbackAlt="Ark of Bones custom domino table"
+            src={ASSETS.hero}
+            alt="Ark of Bones domino culture photography"
+            fallbackAlt="Ark of Bones domino culture photography"
             width="1800"
             height="1200"
             loading="lazy"
           />
         </div>
         <div className="table-home-feature-copy">
-          <h2>Custom Tables</h2>
+          <h2>What the site should promote</h2>
           <p>
-            Ark of Bones tables can be configured by intended use, felt color, engraving, requested dimensions, and project notes.
+            The correct focus is not custom furniture. The stronger public offer is Ark of Bones as a premium domino culture and media platform: games, events, watchable play, merch, education, and publishing.
           </p>
           <p>
-            Each request is reviewed by Anthony Covington before pricing, production timing, and delivery terms are confirmed.
+            Every page should direct visitors toward confirmed public actions: watch, learn, shop, follow, read, or contact.
           </p>
-          <Link className="button button--gold" to="/tables#build-studio">
-            Design a Table<ArrowRight aria-hidden="true" />
+          <Link className="button button--gold" to="/about">
+            Read the Story<ArrowRight aria-hidden="true" />
           </Link>
+        </div>
+      </section>
+
+      <section className="content-band home-shop-edit">
+        <div className="home-shop-heading">
+          <div>
+            <h2>Core Platform</h2>
+            <p>Actual site pillars, stripped of invented services and aligned with the Ark of Bones brand system.</p>
+          </div>
+        </div>
+        <div className="product-grid">
+          {platformCards.map(({ title, text, to, icon: Icon }) => (
+            <article className="product-card" key={title}>
+              <div className="product-card__image product-card__image--placeholder">
+                <Icon aria-hidden="true" />
+              </div>
+              <div className="product-card__body">
+                <p className="eyebrow"><Users aria-hidden="true" /> Ark of Bones</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <Link className="button button--outline" to={to}>Open {title}<ArrowRight aria-hidden="true" /></Link>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
