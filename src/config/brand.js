@@ -3,28 +3,26 @@ import mark from '../assets/brand/aob-mark-384.webp';
 
 export const SITE_URL = 'https://www.arkofbones.com';
 
-const tableImage = 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=2500w';
+const heroImage = 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=2500w';
 
 export const ASSETS = {
   logo: mark,
   mark,
   heroLogo,
-  hero: tableImage,
-  table: tableImage,
-  // Human-image placeholders intentionally resolve to verified table photography
-  // until original, rights-cleared human photography is supplied.
-  owner: tableImage,
-  players: tableImage,
-  event: tableImage,
-  learn: tableImage,
+  hero: heroImage,
+  table: heroImage,
+  owner: heroImage,
+  players: heroImage,
+  event: heroImage,
+  learn: heroImage,
   social: '/og-ark-of-bones.webp',
 };
 
 export const BRAND = {
   name: 'Ark of Bones',
-  proposition: 'Custom Domino Tables',
+  proposition: 'Domino Culture, Live Play, Education & Official Merch',
   description:
-    'Ark of Bones builds custom domino tables and sells apparel and published work related to domino and table-game culture.',
+    'Ark of Bones is a domino culture platform for live and recorded play, events, game education, official merchandise, publishing, and community connection.',
 };
 
 export const SUBSIDIARY_BRANDS = {
