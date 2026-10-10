@@ -1,30 +1,32 @@
 # Ark of Bones
 
-Vite + React site for **Ark of Bones**. The public offer is custom domino tables first, current goods second, and unfinished systems kept on Coming Soon.
+Vite + React site for **Ark of Bones**. The public offer is domino culture, live and recorded play, game education, official merchandise, publishing, and community connection. The app must not advertise custom domino table sales, table customization, table financing, or made-to-order furniture.
 
 Canonical site: [https://www.arkofbones.com](https://www.arkofbones.com)
 
 ## What the site actually does
 
-- **Tables** (`/tables`) — configure felt, engraving, intended use, and dimensions, preview the build, and open a specification addressed to `anthony@arkofbones.com`. Tables are quotes, not cart items. Price, lead time, and delivery are not published.
-- **Shop** (`/shop`) — six published products with exact Squarespace Commerce links. The design archive on the same page is a request list, not stocked inventory.
-- **Coming Soon** (`/coming-soon`) — digital play, events, Ark Circuit, media, and organizer tools. These are not live services.
-- **Library** (`/library`) — verified Anthony Covington title only.
-- **About, Contact, FAQ, Brands, Around the Table** — supporting pages. Contact is an inquiry desk, not a hiring page.
+- **Watch / Around the Table** (`/around-the-table`) — media, live-play positioning, replays, highlights, and cultural storytelling.
+- **Shop** (`/shop`) — confirmed products with Squarespace Commerce links. The design archive on the same page is a request list, not stocked inventory.
+- **Library** (`/library`) — verified Anthony Covington title and educational material.
+- **Brands** (`/brands`) — Ark of Bones related brand pages, including Big Six Bones and Domino Mother Fucker.
+- **About, Contact, FAQ** — supporting pages. Contact is an inquiry desk, not a table-order desk.
+- **Coming Soon** (`/coming-soon`) — future or unfinished items. These are not live services.
 
-Approved public addresses:
+Approved public contact:
 
 - `info@arkofbones.com`
-- `anthony@arkofbones.com`
 - `(951) 599-0214`
 
 ## Routes
 
 Canonical paths live in `src/config/publicRoutes.js` and must also be rendered in `src/app/routes.jsx`. Legacy redirects live in the same file and are mapped by the router.
 
+`/tables` is retained only as a correction/safety page so old links do not imply a live service. It must not contain a configurator, quote form, pricing language, table specifications, delivery promises, or table-build CTAs.
+
 `npm run build` writes GitHub Pages `index.html` fallbacks for every live route, legacy path, and merchandise deep link, plus `dist/404.html`, `dist/CNAME`, and `sitemap.xml`. Do not keep a second handwritten route list in the Pages workflow.
 
-Primary navigation: Home, Tables, Shop, Coming Soon, About.
+Primary navigation: Watch, Shop, Library, About, Contact.
 
 ## Local development
 
@@ -43,14 +45,14 @@ npm run build
 npm run preview
 ```
 
-`npm run build` ends with the public-copy audit. The audit must stay enabled. Approved Ark addresses are only `info@arkofbones.com` and `anthony@arkofbones.com`.
+`npm run build` ends with the public-copy audit. The audit must stay enabled. Approved Ark contact addresses should be limited to confirmed public channels.
 
 ## Hosting
 
 - **GitHub Pages** is production. Workflow: `.github/workflows/pages.yml`, branch `main`.
 - **www.arkofbones.com** is the canonical hostname. The apex redirects to www.
 - **Vercel** is for preview builds and diagnostics. It is not the public production host. Do not point the public domain at Vercel unless that hosting decision is explicitly changed.
-- **Squarespace Commerce** (`https://bugle-marigold-6r8e.squarespace.com/merch`) remains merchandise checkout.
+- **Squarespace Commerce** remains merchandise checkout.
 
 The high-resolution logo source remains `src/assets/brand/aob-logo-4k.webp`. Pages should use the 1440 hero file and the small mark, not the 4K file.
 
@@ -67,4 +69,4 @@ The homepage logo uses `aob-mark-384.webp` and `aob-logo-1440.webp` through `src
 
 ## Editorial limit
 
-Use words for specification, evidence, or an action. Do not describe unfinished systems as live rankings, sanctioning, events, or broadcasts. Do not invent table prices, lead times, or delivery coverage.
+Use words for specification, evidence, or an action. Do not describe unfinished systems as live rankings, sanctioning, events, or broadcasts. Do not invent table services, prices, lead times, delivery coverage, table customization, or table-order workflows.
