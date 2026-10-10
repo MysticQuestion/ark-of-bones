@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, PlayCircle, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import SafeImage from '../components/SafeImage';
@@ -10,22 +10,22 @@ export default function AboutPage() {
     <>
       <SEO
         title="About"
-        description="Ark of Bones is a domino table and game-culture company founded by Anthony Covington."
+        description="Ark of Bones is a domino culture platform founded by Anthony Covington, centered on live play, education, publishing, official merch, and community connection."
         path="/about"
       />
 
       <PageHero
         title="About Ark of Bones"
-        description="Ark of Bones is a domino table and game-culture company founded by Anthony Covington. The company produces built-to-order domino tables, apparel, publishing projects, and related work centered on social and competitive table play."
-        image={ASSETS.table}
+        description="Ark of Bones is a domino culture platform founded by Anthony Covington. The brand centers live and recorded play, game education, official merchandise, publishing, and the communities that keep domino culture active."
+        image={ASSETS.hero}
       />
 
       <section className="leadership-feature">
         <div className="leadership-feature-media">
           <SafeImage
-            src={ASSETS.table}
-            alt="Ark of Bones custom domino table"
-            fallbackAlt="Ark of Bones custom domino table"
+            src={ASSETS.hero}
+            alt="Ark of Bones domino culture photography"
+            fallbackAlt="Ark of Bones domino culture photography"
             width="1500"
             height="1092"
             loading="lazy"
@@ -41,18 +41,21 @@ export default function AboutPage() {
 
       <section className="mission-vision-grid">
         <article>
-          <h2>Custom Tables</h2>
-          <p>Design and request a built-to-order domino table.</p>
-          <Link className="text-link" to="/tables#build-studio">Design a Table<ArrowRight aria-hidden="true" /></Link>
+          <PlayCircle aria-hidden="true" />
+          <h2>Watch</h2>
+          <p>Follow live play, recorded matches, highlights, and media built around the culture of the table.</p>
+          <Link className="text-link" to="/around-the-table">Watch Content<ArrowRight aria-hidden="true" /></Link>
         </article>
         <article>
+          <ShoppingBag aria-hidden="true" />
           <h2>Shop</h2>
           <p>Browse current Ark of Bones, Big Six Bones, and Domino Mother Fucker products.</p>
           <Link className="text-link" to="/shop">Shop Current Products<ArrowRight aria-hidden="true" /></Link>
         </article>
         <article>
+          <BookOpen aria-hidden="true" />
           <h2>Library</h2>
-          <p>Books by Anthony Covington on dominoes and table-game culture.</p>
+          <p>Read the published work and educational material attached to Ark of Bones culture.</p>
           <Link className="text-link" to="/library">View Books<ArrowRight aria-hidden="true" /></Link>
         </article>
       </section>
