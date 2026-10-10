@@ -16,7 +16,7 @@ const platformCards = [
   },
   {
     title: 'Events',
-    text: 'Official updates, community gatherings, tournament visibility, and public announcements.',
+    text: 'Community updates, gatherings, and news from the world of Ark of Bones.',
     to: '/coming-soon',
     icon: CalendarDays,
   },
@@ -28,7 +28,7 @@ const platformCards = [
   },
   {
     title: 'Shop',
-    text: 'Confirmed Ark of Bones, Big Six Bones, and Domino Mother Fucker merch and accessories.',
+    text: 'Apparel and accessories from Ark of Bones, Big Six Bones, and Domino Mother Fucker.',
     to: '/shop',
     icon: ShoppingBag,
   },
@@ -83,7 +83,7 @@ export default function HomePage() {
           </div>
           <h1 className="hero-declaration">Domino Culture. Live Play. Official Goods.</h1>
           <p className="home-description">
-            Ark of Bones brings together domino culture, competitive play, recorded media, education, official merch, publishing, and community connection. The app now represents only confirmed public offerings and does not advertise table sales or customization services.
+            Dominoes have always been more than a game. Ark of Bones celebrates the players, traditions, rivalries, and stories that make the table a gathering place. Explore the games, discover the stories, and shop the collection.
           </p>
           <div className="hero-actions">
             <Link className="button button--gold" to="/around-the-table">
@@ -108,12 +108,12 @@ export default function HomePage() {
           />
         </div>
         <div className="table-home-feature-copy">
-          <h2>What the site should promote</h2>
+          <h2>More Than a Game</h2>
           <p>
-            The correct focus is not custom furniture. The stronger public offer is Ark of Bones as a premium domino culture and media platform: games, events, watchable play, merch, education, and publishing.
+            From neighborhood gatherings to competitive play, Ark of Bones documents the games and the people who give them meaning.
           </p>
           <p>
-            Every page should direct visitors toward confirmed public actions: watch, learn, shop, follow, read, or contact.
+            Discover original storytelling, guides to the games, and designs inspired by the culture of play.
           </p>
           <Link className="button button--gold" to="/about">
             Read the Story<ArrowRight aria-hidden="true" />
@@ -124,8 +124,8 @@ export default function HomePage() {
       <section className="content-band home-shop-edit">
         <div className="home-shop-heading">
           <div>
-            <h2>Core Platform</h2>
-            <p>Actual site pillars, stripped of invented services and aligned with the Ark of Bones brand system.</p>
+            <h2>Explore Ark of Bones</h2>
+            <p>The games, stories, merchandise, and community behind the name.</p>
           </div>
         </div>
         <div className="product-grid">
