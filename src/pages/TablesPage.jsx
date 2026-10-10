@@ -8,16 +8,16 @@ export default function TablesPage() {
   return (
     <>
       <SEO
-        title="Ark of Bones Platform"
-        description="Ark of Bones does not advertise custom table builds on this app. Explore live play, game education, official merch, publishing, and community content."
+        title="Explore Ark of Bones"
+        description="Discover Ark of Bones video, game guides, merchandise, publishing, and community."
         path="/tables"
         image={ASSETS.hero}
       />
 
       <header className="editorial-mast table-mast">
-        <h1>No Table Sales or Custom Builds</h1>
+        <h1>The Culture of the Table</h1>
         <p className="table-mast-copy">
-          This app has been corrected. Ark of Bones is not represented here as a custom domino table sales or furniture customization service.
+          Discover the games, people, and stories behind Ark of Bones. Explore videos, game guides, and official merchandise.
         </p>
         <div className="editorial-rule" aria-hidden="true"><span /></div>
       </header>
@@ -31,15 +31,15 @@ export default function TablesPage() {
           height="900"
         />
         <p className="editorial-caption">
-          Correct positioning: domino culture, live and recorded play, events, game education, official merch, publishing, and community connection.
+          Ark of Bones celebrates the social and competitive traditions of dominoes and table games.
         </p>
       </section>
 
       <section className="editorial-band editorial-band--quiet">
         <div className="editorial-section-heading">
-          <h2>Use these actual public paths instead.</h2>
+          <h2>Explore the Collection</h2>
           <p>
-            The former configurator and quote language has been removed because it implied services that should not be advertised on arkofbones.app.
+            Start with the stories, learn the games, or browse official Ark of Bones designs.
           </p>
         </div>
         <div className="feature-card-grid">
