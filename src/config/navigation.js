@@ -1,14 +1,15 @@
 export const primaryNavigation = [
-  { label: 'Tables', to: '/tables' },
+  { label: 'Watch', to: '/around-the-table' },
   { label: 'Shop', to: '/shop' },
+  { label: 'Library', to: '/library' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ];
 
 export const resourceNavigation = [
   { label: 'Brands', to: '/brands' },
-  { label: 'Library', to: '/library' },
+  { label: 'Game Education', to: '/library' },
   { label: 'Around the Table', to: '/around-the-table' },
   { label: 'FAQ', to: '/faq' },
-  { label: 'Projects', to: '/coming-soon' },
+  { label: 'Coming Soon', to: '/coming-soon' },
 ];
