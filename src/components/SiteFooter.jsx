@@ -3,9 +3,9 @@ import { ASSETS, BRAND } from '../config/brand';
 import { CONTACT } from '../config/contact';
 
 const exploreLinks = [
-  ['Tables', '/tables'],
+  ['Watch', '/around-the-table'],
   ['Shop', '/shop'],
-  ['Projects', '/coming-soon'],
+  ['Library', '/library'],
 ];
 
 const companyLinks = [
@@ -16,8 +16,7 @@ const companyLinks = [
 
 const resourceLinks = [
   ['FAQ', '/faq'],
-  ['Library', '/library'],
-  ['Around the Table', '/around-the-table'],
+  ['Coming Soon', '/coming-soon'],
 ];
 
 export default function SiteFooter() {
@@ -29,10 +28,9 @@ export default function SiteFooter() {
             <img src={ASSETS.mark} alt="" width="384" height="284" />
             {BRAND.name}
           </Link>
-          <p>Custom domino tables, apparel, and publishing.</p>
+          <p>Domino culture, live and recorded play, game education, official merch, publishing, and community connection.</p>
           <p className="footer-contact">
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a><br />
-            <a href={`mailto:${CONTACT.tablesEmail}`}>{CONTACT.tablesEmail}</a><br />
             <a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a>
           </p>
         </div>
