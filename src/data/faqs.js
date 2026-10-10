@@ -1,51 +1,45 @@
 import { CONTACT } from '../config/contact';
 
 export const faqCategories = [
-  'Tables',
+  'Identity',
+  'Watch',
   'Shop',
   'Contact',
 ];
 
 export const faqs = [
   {
-    category: 'Tables',
-    question: 'How do I request a custom table?',
+    category: 'Identity',
+    question: 'What is Ark of Bones?',
     answer:
-      'Configure the table online and submit the specification to Anthony Covington. Pricing, production timing, and delivery are confirmed in the written quote.',
-    link: { label: 'Open the table configurator', to: '/tables#build-studio' },
+      'Ark of Bones is a domino culture platform centered on live and recorded play, events, game education, official merchandise, publishing, and community connection.',
+    link: { label: 'Learn about Ark of Bones', to: '/about' },
   },
   {
-    category: 'Tables',
-    question: 'What can I customize?',
+    category: 'Identity',
+    question: 'Does Ark of Bones sell or customize domino tables?',
     answer:
-      'Current options include intended use, felt color, engraving, requested dimensions, and project notes. Additional construction details are confirmed during review.',
-    link: { label: 'Review table options', to: '/tables#build-studio' },
+      'No. This app does not advertise custom table builds, table orders, table financing, engraving packages, or made-to-order furniture. It only represents current confirmed public offerings.',
+    link: { label: 'View the current site focus', to: '/' },
   },
   {
-    category: 'Tables',
-    question: 'How are tables priced?',
+    category: 'Watch',
+    question: 'Where can I watch Ark of Bones content?',
     answer:
-      'Each table is quoted individually according to dimensions, materials, customization, destination, and installation requirements.',
-    link: { label: 'Request a quote', to: '/tables#build-studio' },
-  },
-  {
-    category: 'Tables',
-    question: 'Is payment required to submit a table request?',
-    answer:
-      'No payment is required to submit a table specification for review.',
-    link: { label: 'Design a table', to: '/tables#build-studio' },
+      'Use the Around the Table section and official social channels for live play, recorded matches, highlights, and community media.',
+    link: { label: 'Open Around the Table', to: '/around-the-table' },
   },
   {
     category: 'Shop',
     question: 'Where do I purchase merchandise?',
     answer:
-      'Available products are listed in the Ark of Bones Shop and link to the secure checkout page for product options and payment.',
+      'Available products are listed in the Ark of Bones Shop and link to secure checkout pages for official apparel and accessories.',
     link: { label: 'Open the shop', to: '/shop' },
   },
   {
     category: 'Contact',
     question: 'How do I contact Ark of Bones?',
-    answer: `General inquiries: ${CONTACT.email}. Table inquiries: ${CONTACT.tablesEmail}. Telephone: ${CONTACT.phoneDisplay}.`,
+    answer: `General inquiries: ${CONTACT.email}. Telephone: ${CONTACT.phoneDisplay}.`,
     link: { label: 'Open contact', to: '/contact' },
   },
 ];
