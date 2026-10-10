@@ -1,6 +1,5 @@
 export const CONTACT = {
   email: 'info@arkofbones.com',
-  tablesEmail: 'anthony@arkofbones.com',
   phoneDisplay: '(951) 599-0214',
   phoneHref: 'tel:+19515990214',
   social: {
@@ -13,10 +12,9 @@ export const CONTACT = {
 
 export const INQUIRY_TYPES = [
   'General Question',
-  'Private / Home Table',
-  'Venue / Commercial Table',
-  'Custom Table Build',
   'Merchandise',
-  'Brand Collaboration',
+  'Event / Community',
   'Media / Press',
+  'Brand Collaboration',
+  'Publishing / Book',
 ];
