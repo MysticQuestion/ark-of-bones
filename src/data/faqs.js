@@ -17,10 +17,10 @@ export const faqs = [
   },
   {
     category: 'Identity',
-    question: 'Does Ark of Bones sell or customize domino tables?',
+    question: 'Can I order a custom domino table?',
     answer:
-      'No. This app does not advertise custom table builds, table orders, table financing, engraving packages, or made-to-order furniture. It only represents current confirmed public offerings.',
-    link: { label: 'View the current site focus', to: '/' },
+      'Custom domino tables are not offered through this website. Browse the shop for currently listed merchandise or contact Ark of Bones with general questions.',
+    link: { label: 'Explore Ark of Bones', to: '/' },
   },
   {
     category: 'Watch',
