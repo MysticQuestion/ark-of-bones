@@ -10,20 +10,19 @@ export default function ContactPage() {
     <>
       <SEO
         title="Contact"
-        description="Contact Ark of Bones about custom tables, merchandise, press, or other company work."
+        description="Contact Ark of Bones about merchandise, events, media, publishing, brand collaboration, or general company work."
         path="/contact"
       />
       <PageHero
         title="Contact Ark of Bones"
-        description="Questions about tables, merchandise, press, or other Ark of Bones work can be sent below."
-        image={ASSETS.table}
+        description="Questions about merchandise, events, media, publishing, collaboration, or other Ark of Bones work can be sent below."
+        image={ASSETS.hero}
         compact
       />
       <section className="contact-layout">
         <aside className="contact-details">
           <h2>Contact Information</h2>
           <a href={`mailto:${CONTACT.email}`}><Mail aria-hidden="true" /><span>General inquiries<strong>{CONTACT.email}</strong></span></a>
-          <a href={`mailto:${CONTACT.tablesEmail}`}><Mail aria-hidden="true" /><span>Custom tables<strong>{CONTACT.tablesEmail}</strong></span></a>
           <a href={CONTACT.phoneHref}><Phone aria-hidden="true" /><span>Telephone<strong>{CONTACT.phoneDisplay}</strong></span></a>
           <div className="contact-socials" aria-label="Official social channels">
             <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Ark of Bones on Facebook">FB</a>
