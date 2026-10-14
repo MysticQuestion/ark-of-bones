@@ -1,7 +1,4 @@
 import { ArrowRight, BookOpen, CalendarDays, PlayCircle, ShoppingBag } from 'lucide-react';
-import eventPhoto from '../assets/editorial/events-1.webp';
-import gamePhoto from '../assets/editorial/tables-2.webp';
-import tablePhoto from '../assets/editorial/tables-1.webp';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import SafeImage from '../components/SafeImage';
@@ -13,42 +10,30 @@ import { officialProducts } from '../data/products';
 const platformCards = [
   {
     title: 'Watch',
-    eyebrow: 'On the table',
-    text: 'Matches, memorable plays, and the personalities behind every hand.',
+    text: 'Recorded matches, highlights, and stories from around the table.',
     to: '/around-the-table',
-    action: 'Watch the play',
-    image: eventPhoto,
-    alt: 'Players gathered for an Ark of Bones game',
+    action: 'Watch',
     icon: PlayCircle,
   },
   {
     title: 'Events',
-    eyebrow: 'Around the table',
-    text: 'Gatherings, competition, and a community brought together through play.',
+    text: 'Gatherings, competition, and news from the Ark of Bones community.',
     to: '/events',
-    action: 'Explore events',
-    image: tablePhoto,
-    alt: 'An Ark of Bones gaming table',
+    action: 'See events',
     icon: CalendarDays,
   },
   {
-    title: 'How to Play',
-    eyebrow: 'Know the game',
-    text: 'Learn the rules and strategy behind dominoes and six favorite card and tile games.',
+    title: 'Game Education',
+    text: 'Learn dominoes, Big Six Bones, Spades, Euchre, Booray, Tonk, and Poker.',
     to: '/learn',
     action: 'Learn the games',
-    image: gamePhoto,
-    alt: 'Detail of the Ark of Bones game table',
     icon: BookOpen,
   },
   {
-    title: 'The Collection',
-    eyebrow: 'Ark of Bones originals',
+    title: 'Shop',
     text: 'Clothing and accessories from Ark of Bones, Big Six Bones, and Domino Mother Fucker.',
     to: '/shop',
-    action: 'Explore the shop',
-    image: officialProducts[0].image,
-    alt: 'Ark of Bones branded merchandise',
+    action: 'Visit the shop',
     icon: ShoppingBag,
   },
 ];
@@ -143,22 +128,20 @@ export default function HomePage() {
       <section className="content-band home-shop-edit home-destinations" aria-labelledby="home-destinations-title">
         <div className="home-shop-heading">
           <div>
-            <p className="eyebrow">The Ark of Bones experience</p>
-            <h2 id="home-destinations-title">The Game. The People. The Culture.</h2>
-            <p>Every hand has a history. Find your place at the table.</p>
+            <h2 id="home-destinations-title">Explore Ark of Bones</h2>
+            <p>The games, stories, merchandise, and community behind the name.</p>
           </div>
         </div>
         <div className="home-destination-grid">
-          {platformCards.map(({ title, eyebrow, text, to, action, image, alt, icon: Icon }) => (
-            <article className="home-destination-card" key={title}>
-              <div className="home-destination-card__media">
-                <SafeImage src={image} alt={alt} width="900" height="1060" loading="lazy" />
+          {platformCards.map(({ title, text, to, action, icon: Icon }) => (
+            <article className="product-card home-platform-card" key={title}>
+              <div className="product-card-image home-platform-card__icon" aria-hidden="true">
+                <Icon />
               </div>
-              <div className="home-destination-card__content">
-                <p className="home-destination-card__eyebrow"><Icon aria-hidden="true" />{eyebrow}</p>
+              <div className="product-card-body">
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <Link className="home-destination-card__link" to={to}>
+                <Link className="button button--dark" to={to}>
                   {action}<ArrowRight aria-hidden="true" />
                 </Link>
               </div>
