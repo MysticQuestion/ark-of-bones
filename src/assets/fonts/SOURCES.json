@@ -1,0 +1,18 @@
+[
+  {
+    "family": "Manrope-variable",
+    "source_version": "Version 4.505",
+    "sha256": "a43963128e4372488ef04944d0f601903718d5b599981ae468ae5c5f0354e603",
+    "license": "SIL Open Font License 1.1",
+    "source": "Google Fonts official github.com/google/fonts repository",
+    "source_ttf_sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+  },
+  {
+    "family": "DMSerifDisplay-Regular",
+    "source_version": "Version 5.200; ttfautohint (v1.8.3)",
+    "sha256": "29938dafb61f8af86df6fd266bbb2c3f513c9e3c0e28a7d88b609ffec5fedc3d",
+    "license": "SIL Open Font License 1.1",
+    "source": "Google Fonts official github.com/google/fonts repository",
+    "source_ttf_sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616"
+  }
+]
