@@ -12,15 +12,8 @@ export const faqs = [
     category: 'Identity',
     question: 'What is Ark of Bones?',
     answer:
-      'Ark of Bones is a domino culture platform centered on live and recorded play, events, game education, official merchandise, publishing, and community connection.',
+      'Ark of Bones celebrates dominoes, spirited competition, and the people who make every game worth remembering. Explore recorded play, game guides, original merchandise, and writing by founder Anthony Covington.',
     link: { label: 'Learn about Ark of Bones', to: '/about' },
-  },
-  {
-    category: 'Identity',
-    question: 'Can I order a custom domino table?',
-    answer:
-      'Custom domino tables are not offered through this website. Browse the shop for currently listed merchandise or contact Ark of Bones with general questions.',
-    link: { label: 'Explore Ark of Bones', to: '/' },
   },
   {
     category: 'Watch',
