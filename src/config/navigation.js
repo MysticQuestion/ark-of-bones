@@ -1,18 +1,17 @@
 export const primaryNavigation = [
-  { label: 'Events', to: '/events' },
-  { label: 'Watch', to: '/watch' },
+  { label: 'Watch', to: '/around-the-table' },
   { label: 'Media', to: '/media' },
-  { label: 'Official Play', to: '/official-play' },
-  { label: 'Tables', to: '/tables' },
   { label: 'Shop', to: '/shop' },
-  { label: 'Work With Us', to: '/contact' },
+  { label: 'Library', to: '/library' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
 ];
 
 export const resourceNavigation = [
-  { label: 'About', to: '/about' },
-  { label: 'Around the Table', to: '/around-the-table' },
   { label: 'Brands', to: '/brands' },
-  { label: 'Partnerships', to: '/partnerships' },
-  { label: 'Learn', to: '/learn' },
+  { label: 'How to Play', to: '/learn' },
+  { label: 'Events', to: '/events' },
+  { label: 'Around the Table', to: '/around-the-table' },
   { label: 'FAQ', to: '/faq' },
+  { label: 'Coming Soon', to: '/coming-soon' },
 ];

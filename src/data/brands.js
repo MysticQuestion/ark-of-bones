@@ -4,21 +4,21 @@ export const brands = [
   {
     ...SUBSIDIARY_BRANDS.dominoMotherFucker,
     displayName: brandDisplayName(SUBSIDIARY_BRANDS.dominoMotherFucker),
-    category: 'Culture, media and merchandise',
-    proposition: 'Victory with a point of view.',
+    category: 'Apparel and merchandise',
+    proposition: 'Domino Mother Fucker',
     description:
-      'Attitude, humor, storytelling, media, and merchandise connected to the table.',
-    image: ASSETS.event,
-    tone: 'red',
+      'The irreverent apparel and merchandise label within Ark of Bones.',
+    image: ASSETS.table,
+    tone: 'gold',
   },
   {
     ...SUBSIDIARY_BRANDS.bigSixBones,
     displayName: brandDisplayName(SUBSIDIARY_BRANDS.bigSixBones),
-    category: 'Competition, events and education',
-    proposition: 'Fast rounds. Big plays. Community competition.',
+    category: 'American domino play and merchandise',
+    proposition: 'Big Six Bones',
     description:
-      'American domino play, events, education, and tournament energy from Ark of Bones.',
-    image: ASSETS.players,
+      'The Ark of Bones label centered on American domino play and related merchandise.',
+    image: ASSETS.table,
     tone: 'gold',
   },
 ];

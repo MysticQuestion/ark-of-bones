@@ -1,0 +1,16 @@
+/* Existing brand typefaces, served locally with their SIL OFL licenses. */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../assets/fonts/Manrope-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DM Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/DMSerifDisplay-Regular.woff2") format("woff2");
+}

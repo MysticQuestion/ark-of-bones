@@ -12,19 +12,10 @@ export const CONTACT = {
 
 export const INQUIRY_TYPES = [
   'General Question',
-  'General Partnership',
-  'Private / Home Table',
-  'Events / Player Participation',
-  'Host an Event',
-  'Official Play / Sanctioning',
-  'Rules / Referee Certification',
-  'Tables / Venue Partnership',
-  'Military MWR / Institutional Program',
-  'Campus / Divine Nine Program',
-  'Senior / Community Program',
-  'Around the Table Legacy Session',
-  'Sponsorship',
-  'Media / Press',
   'Merchandise',
+  'Event / Community',
+  'Media / Press',
   'Brand Collaboration',
+  'Publishing / Book',
+  'Around the Table Legacy Session',
 ];

@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import InquiryForm from '../components/InquiryForm';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
@@ -9,25 +9,21 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Work With Us"
-        description="Work with Ark of Bones on official play, events, venue programs, institutional partnerships, legacy sessions, sponsorships, media, and merchandise."
+        title="Contact"
+        description="Contact Ark of Bones about merchandise, events, media, publishing, brand collaboration, or general company work."
         path="/contact"
       />
       <PageHero
-        eyebrow="Partnerships, pilots, and bookings"
-        title="Work with Ark of Bones."
-        description="Tell us the setting, audience, city, and outcome you have in mind. We will route the conversation from there."
-        image={ASSETS.event}
+        title="Contact Ark of Bones"
+        description="Questions about merchandise, events, media, publishing, collaboration, or other Ark of Bones work can be sent below."
+        image={ASSETS.hero}
         compact
       />
       <section className="contact-layout">
         <aside className="contact-details">
-          <p className="eyebrow">Direct contact</p>
-          <h2>Start with the real opportunity.</h2>
-          <p>Official-play pilots, venues, military MWR, campuses, community programs, Around the Table sessions, sponsorships, and media can all begin through the same intake.</p>
-          <a href={`mailto:${CONTACT.email}`}><Mail aria-hidden="true" /><span>Email<strong>{CONTACT.email}</strong></span></a>
+          <h2>Contact Information</h2>
+          <a href={`mailto:${CONTACT.email}`}><Mail aria-hidden="true" /><span>General inquiries<strong>{CONTACT.email}</strong></span></a>
           <a href={CONTACT.phoneHref}><Phone aria-hidden="true" /><span>Telephone<strong>{CONTACT.phoneDisplay}</strong></span></a>
-          <div><MapPin aria-hidden="true" /><span>Location<strong>Include your city and venue or organization</strong></span></div>
           <div className="contact-socials" aria-label="Official social channels">
             <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Ark of Bones on Facebook">FB</a>
             <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Ark of Bones on Instagram">IG</a>
@@ -36,8 +32,7 @@ export default function ContactPage() {
           </div>
         </aside>
         <div className="contact-form-wrap">
-          <p className="eyebrow">Start the conversation</p>
-          <h2>Give us enough context to respond usefully.</h2>
+          <h2>Send an Inquiry</h2>
           <InquiryForm />
         </div>
       </section>

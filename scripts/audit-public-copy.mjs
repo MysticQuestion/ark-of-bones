@@ -3,7 +3,13 @@ import { extname, join } from 'node:path';
 
 const root = process.argv[2] || 'dist';
 const bannedPhrases = [
+  'the app now represents only',
+  'does not advertise table sales or customization services',
   'public staging preview',
+  'what the site should promote',
+  'the correct focus is not custom furniture',
+  'every page should direct visitors toward confirmed public actions',
+  'actual site pillars, stripped of invented services',
   'noindex active',
   'production site untouched',
   'concept checkout disabled',
@@ -34,7 +40,28 @@ const bannedPhrases = [
   'appears here',
   'production plan',
   'approved experience',
+  'the site now',
+  'the public site now',
+  'now live together',
+  'has its own place now',
+  'future systems have their own place',
+  'do not treat a plan as a service',
+  'operating proof first',
+  'waiting on real dates',
+  'pilot concept',
+  'cadence required',
+  'manual pilots should determine',
+  'move it from this page',
+  'bring watch forward',
+  'details should earn the premium',
+  'victory, stitched in gold',
+  'short rounds. immediate stakes. no hiding.',
 ];
+
+const approvedPublicEmails = new Set([
+  'info@arkofbones.com',
+  'anthony@arkofbones.com',
+]);
 
 async function collectFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -57,7 +84,7 @@ for (const file of files) {
   }
 
   const brandedEmails = rawContent.match(/[\w.+-]+@arkofbones\.com/gi) || [];
-  if (brandedEmails.some((email) => email.toLowerCase() !== 'info@arkofbones.com')) {
+  if (brandedEmails.some((email) => !approvedPublicEmails.has(email.toLowerCase()))) {
     findings.push(`${file}: non-public Ark of Bones email address`);
   }
 }
