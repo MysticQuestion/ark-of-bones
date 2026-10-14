@@ -1,4 +1,7 @@
-import { ArrowRight, BookOpen, CalendarDays, PlayCircle, ShoppingBag, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, CalendarDays, PlayCircle, ShoppingBag } from 'lucide-react';
+import eventPhoto from '../assets/editorial/events-1.webp';
+import gamePhoto from '../assets/editorial/tables-2.webp';
+import tablePhoto from '../assets/editorial/tables-1.webp';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import SafeImage from '../components/SafeImage';
@@ -10,26 +13,42 @@ import { officialProducts } from '../data/products';
 const platformCards = [
   {
     title: 'Watch',
-    text: 'Live and recorded domino action, replays, highlights, and culture around the table.',
+    eyebrow: 'On the table',
+    text: 'Matches, memorable plays, and the personalities behind every hand.',
     to: '/around-the-table',
+    action: 'Watch the play',
+    image: eventPhoto,
+    alt: 'Players gathered for an Ark of Bones game',
     icon: PlayCircle,
   },
   {
     title: 'Events',
-    text: 'Community updates, gatherings, and news from the world of Ark of Bones.',
-    to: '/coming-soon',
+    eyebrow: 'Around the table',
+    text: 'Gatherings, competition, and a community brought together through play.',
+    to: '/events',
+    action: 'Explore events',
+    image: tablePhoto,
+    alt: 'An Ark of Bones gaming table',
     icon: CalendarDays,
   },
   {
-    title: 'Game Education',
-    text: 'Rules, setup, scoring, etiquette, and primers for Dominoes, Big Six Bones, Spades, Euchre, Booray, Tonk, and Poker.',
-    to: '/library',
+    title: 'How to Play',
+    eyebrow: 'Know the game',
+    text: 'Learn the rules and strategy behind dominoes and six favorite card and tile games.',
+    to: '/learn',
+    action: 'Learn the games',
+    image: gamePhoto,
+    alt: 'Detail of the Ark of Bones game table',
     icon: BookOpen,
   },
   {
-    title: 'Shop',
-    text: 'Apparel and accessories from Ark of Bones, Big Six Bones, and Domino Mother Fucker.',
+    title: 'The Collection',
+    eyebrow: 'Ark of Bones originals',
+    text: 'Clothing and accessories from Ark of Bones, Big Six Bones, and Domino Mother Fucker.',
     to: '/shop',
+    action: 'Explore the shop',
+    image: officialProducts[0].image,
+    alt: 'Ark of Bones branded merchandise',
     icon: ShoppingBag,
   },
 ];
@@ -121,24 +140,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="content-band home-shop-edit">
+      <section className="content-band home-shop-edit home-destinations" aria-labelledby="home-destinations-title">
         <div className="home-shop-heading">
           <div>
-            <h2>Explore Ark of Bones</h2>
-            <p>The games, stories, merchandise, and community behind the name.</p>
+            <p className="eyebrow">The Ark of Bones experience</p>
+            <h2 id="home-destinations-title">The Game. The People. The Culture.</h2>
+            <p>Every hand has a history. Find your place at the table.</p>
           </div>
         </div>
-        <div className="product-grid">
-          {platformCards.map(({ title, text, to, icon: Icon }) => (
-            <article className="product-card" key={title}>
-              <div className="product-card__image product-card__image--placeholder">
-                <Icon aria-hidden="true" />
+        <div className="home-destination-grid">
+          {platformCards.map(({ title, eyebrow, text, to, action, image, alt, icon: Icon }) => (
+            <article className="home-destination-card" key={title}>
+              <div className="home-destination-card__media">
+                <SafeImage src={image} alt={alt} width="900" height="1060" loading="lazy" />
               </div>
-              <div className="product-card__body">
-                <p className="eyebrow"><Users aria-hidden="true" /> Ark of Bones</p>
+              <div className="home-destination-card__content">
+                <p className="home-destination-card__eyebrow"><Icon aria-hidden="true" />{eyebrow}</p>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <Link className="button button--outline" to={to}>Open {title}<ArrowRight aria-hidden="true" /></Link>
+                <Link className="home-destination-card__link" to={to}>
+                  {action}<ArrowRight aria-hidden="true" />
+                </Link>
               </div>
             </article>
           ))}
