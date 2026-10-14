@@ -28,5 +28,8 @@ jobs:
       - name: Check public-copy regression
         run: node scripts/check-public-copy-audit.mjs
 
+      - name: Check inquiry link types
+        run: node scripts/check-inquiry-links.mjs
+
       - name: Build production bundle
         run: npm run build
