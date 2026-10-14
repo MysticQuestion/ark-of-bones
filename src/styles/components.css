@@ -1559,7 +1559,7 @@
 }
 
 .founder-video-copy .eyebrow {
-  color: var(--red);
+  color: #695329;
 }
 
 .founder-video-copy h2 {
@@ -1573,7 +1573,7 @@
 }
 
 .founder-video-copy .text-link {
-  color: var(--red);
+  color: #695329;
   margin-top: 1rem;
 }
 
@@ -1624,7 +1624,7 @@
 }
 
 .founder-video-caption span {
-  color: #766c5e;
+  color: #6a6053;
   font-size: 0.6rem;
   font-weight: 800;
   text-transform: uppercase;
