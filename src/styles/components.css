@@ -1559,7 +1559,7 @@
 }
 
 .founder-video-copy .eyebrow {
-  color: var(--red);
+  color: #695329;
 }
 
 .founder-video-copy h2 {
@@ -1573,7 +1573,7 @@
 }
 
 .founder-video-copy .text-link {
-  color: var(--red);
+  color: #695329;
   margin-top: 1rem;
 }
 
@@ -1624,7 +1624,7 @@
 }
 
 .founder-video-caption span {
-  color: #766c5e;
+  color: #6a6053;
   font-size: 0.6rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -2071,7 +2071,7 @@
 }
 
 .product-card-body .eyebrow {
-  color: var(--red);
+  color: #695329;
 }
 
 .product-card-kicker {
@@ -2082,7 +2082,7 @@
 }
 
 .product-card-kicker > span {
-  color: #766c5e;
+  color: #6a6053;
   font-size: 0.6rem;
   font-weight: 800;
   text-align: right;
@@ -2157,7 +2157,7 @@
 }
 
 .product-status {
-  color: #766c5e;
+  color: #6a6053;
   font-size: 0.64rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -2556,7 +2556,7 @@
 }
 
 .inquiry-form .optional {
-  color: #746e65;
+  color: #665f55;
   font-size: 0.62rem;
   font-weight: 600;
 }
@@ -3580,3 +3580,11 @@
   .guide-sections details > * { display: block; }
   .guide-sections summary svg { display: none; }
 }
+
+/* Light story panels need their own readable list and action colors. */
+.image-story-copy li { color: #504a41; }
+.mission-vision-grid .text-link { color: #695329; }
+.mission-vision-grid .text-link:hover { color: #302719; }
+
+/* Long project headings must fit narrow phones without scrolling sideways. */
+.coming-soon-hero h1 { overflow-wrap: anywhere; }

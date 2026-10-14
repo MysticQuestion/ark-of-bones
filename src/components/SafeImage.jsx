@@ -16,7 +16,7 @@ export default function SafeImage({ src, alt, fallbackAlt, onError, ...props }) 
     <img
       {...props}
       src={currentSrc}
-      alt={usingFallback ? (fallbackAlt || alt) : alt}
+      alt={usingFallback ? (fallbackAlt || 'Ark of Bones logo') : alt}
       onError={handleError}
     />
   );

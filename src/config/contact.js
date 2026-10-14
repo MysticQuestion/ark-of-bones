@@ -17,4 +17,5 @@ export const INQUIRY_TYPES = [
   'Media / Press',
   'Brand Collaboration',
   'Publishing / Book',
+  'Around the Table Legacy Session',
 ];

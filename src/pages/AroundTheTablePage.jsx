@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import SafeImage from '../components/SafeImage';
 import SEO from '../components/SEO';
+import FounderVideo from '../components/FounderVideo';
+import SectionHeader from '../components/SectionHeader';
+import VideoCard from '../components/VideoCard';
 import { ASSETS } from '../config/brand';
+import { featuredVideo, founderVideo, videos } from '../data/videos';
 
 const occasions = [
   'Family reunions and milestone birthdays',
@@ -56,6 +60,15 @@ export default function AroundTheTablePage() {
           <p>Any public use of family footage requires separate permission.</p>
         </div>
       </section>
+
+      <section className="content-band" aria-labelledby="table-media-title">
+        <SectionHeader title="From the Ark" description="Introductions and table stories from the Ark of Bones channel." />
+        <h2 id="table-media-title" className="sr-only">Ark of Bones videos</h2>
+        <div className="video-grid">
+          {[featuredVideo, ...videos].filter(Boolean).map((video) => <VideoCard key={video.id} video={video} />)}
+        </div>
+      </section>
+      <FounderVideo video={founderVideo} />
     </>
   );
 }
