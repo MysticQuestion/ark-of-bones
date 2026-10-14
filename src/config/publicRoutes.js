@@ -10,6 +10,8 @@ export const canonicalRoutes = [
   { path: '/around-the-table', priority: '0.9' },
   { path: '/shop', priority: '0.9' },
   { path: '/library', priority: '0.8' },
+  { path: '/learn', priority: '0.8' },
+  { path: '/events', priority: '0.6' },
   { path: '/about', priority: '0.7' },
   { path: '/contact', priority: '0.6' },
   { path: '/faq', priority: '0.5' },
@@ -21,10 +23,8 @@ export const canonicalRoutes = [
 ];
 
 export const legacyRedirects = [
-  { path: '/events', to: '/coming-soon#events' },
   { path: '/watch', to: '/around-the-table' },
   { path: '/official-play', to: '/coming-soon#circuit' },
-  { path: '/learn', to: '/library' },
   { path: '/partnerships', to: '/coming-soon#venue-programs' },
   { path: '/play', to: '/coming-soon#digital-game' },
   { path: '/shop/archive', to: '/shop#archive' },

@@ -13,6 +13,8 @@ const ContactPage = lazy(() => import('../pages/ContactPage'));
 const DominoMotherFuckerPage = lazy(() => import('../pages/DominoMotherFuckerPage'));
 const FAQPage = lazy(() => import('../pages/FAQPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
+const EventsPage = lazy(() => import('../pages/EventsPage'));
+const LearnPage = lazy(() => import('../pages/LearnPage'));
 const LibraryPage = lazy(() => import('../pages/LibraryPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 const ShopPage = lazy(() => import('../pages/ShopPage'));
@@ -33,6 +35,8 @@ export default function AppRoutes() {
       <Route path="/brands/big-six-bones" element={<BigSixBonesPage />} />
       <Route path="/around-the-table" element={<AroundTheTablePage />} />
       <Route path="/library" element={<LibraryPage />} />
+      <Route path="/learn" element={<LearnPage />} />
+      <Route path="/events" element={<EventsPage />} />
 
       {legacyRedirects.map((route) => (
         <Route key={route.path} path={route.path} element={<Navigate to={route.to} replace />} />

@@ -8,7 +8,8 @@ export const primaryNavigation = [
 
 export const resourceNavigation = [
   { label: 'Brands', to: '/brands' },
-  { label: 'Game Education', to: '/library' },
+  { label: 'How to Play', to: '/learn' },
+  { label: 'Events', to: '/events' },
   { label: 'Around the Table', to: '/around-the-table' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Coming Soon', to: '/coming-soon' },

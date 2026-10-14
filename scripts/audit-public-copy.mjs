@@ -4,6 +4,10 @@ import { extname, join } from 'node:path';
 const root = process.argv[2] || 'dist';
 const bannedPhrases = [
   'public staging preview',
+  'what the site should promote',
+  'the correct focus is not custom furniture',
+  'every page should direct visitors toward confirmed public actions',
+  'actual site pillars, stripped of invented services',
   'noindex active',
   'production site untouched',
   'concept checkout disabled',
