@@ -1,9 +1,8 @@
 import heroLogo from '../assets/brand/aob-logo-1440.webp';
 import mark from '../assets/brand/aob-mark-384.webp';
+import heroImage from '../assets/editorial/tables-1.webp';
 
 export const SITE_URL = 'https://www.arkofbones.com';
-
-const heroImage = 'https://images.squarespace-cdn.com/content/v1/6734f898cdf3986b5838dda2/3395c4cf-2c85-4047-afee-12412bba1003/AOB-55.jpg?format=2500w';
 
 export const ASSETS = {
   logo: mark,
