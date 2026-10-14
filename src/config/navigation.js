@@ -1,5 +1,6 @@
 export const primaryNavigation = [
   { label: 'Watch', to: '/around-the-table' },
+  { label: 'Media', to: '/media' },
   { label: 'Shop', to: '/shop' },
   { label: 'Library', to: '/library' },
   { label: 'About', to: '/about' },

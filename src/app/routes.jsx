@@ -16,6 +16,7 @@ const HomePage = lazy(() => import('../pages/HomePage'));
 const EventsPage = lazy(() => import('../pages/EventsPage'));
 const LearnPage = lazy(() => import('../pages/LearnPage'));
 const LibraryPage = lazy(() => import('../pages/LibraryPage'));
+const MediaPage = lazy(() => import('../pages/MediaPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 const ShopPage = lazy(() => import('../pages/ShopPage'));
 const TablesPage = lazy(() => import('../pages/TablesPage'));
@@ -24,6 +25,7 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/media" element={<MediaPage />} />
       <Route path="/tables" element={<TablesPage />} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/coming-soon" element={<ComingSoonPage />} />
