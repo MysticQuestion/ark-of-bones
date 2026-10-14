@@ -6,6 +6,7 @@ import App from './app/App';
 import './styles/tokens.css';
 import './styles/global.css';
 import './styles/components.css';
+import './styles/home-destinations.css';
 import './styles/conversion.css';
 import './styles/partnerships.css';
 
