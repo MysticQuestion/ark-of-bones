@@ -1,6 +1,6 @@
 import heroLogo from '../assets/brand/aob-logo-1440.webp';
 import mark from '../assets/brand/aob-mark-384.webp';
-import heroImage from '../assets/editorial/tables-1.webp';
+import heroImage from '../assets/editorial/aob-table-hero.webp';
 
 export const SITE_URL = 'https://www.arkofbones.com';
 

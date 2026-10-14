@@ -3,6 +3,8 @@ import { extname, join } from 'node:path';
 
 const root = process.argv[2] || 'dist';
 const bannedPhrases = [
+  'the app now represents only',
+  'does not advertise table sales or customization services',
   'public staging preview',
   'what the site should promote',
   'the correct focus is not custom furniture',
