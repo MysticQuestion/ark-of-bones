@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
 import App from './app/App';
+import GameNightRibbon from './components/GameNightRibbon';
 import './styles/fonts.css';
 import './styles/tokens.css';
 import './styles/global.css';
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
       <BrowserRouter basename={routerBase}>
+        <GameNightRibbon />
         <App />
       </BrowserRouter>
     </HelmetProvider>
