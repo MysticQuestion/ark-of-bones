@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ark of Bones//Game Night//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sneakers-jersey-20261121@arkofbones.com
+DTSTAMP:20261117T040000Z
+DTSTART:20261121T230000Z
+DTEND:20261122T050000Z
+SUMMARY:Sneakers & Jersey Game Night
+LOCATION:Temecula Sports Lounge\, 27911 Jefferson Ave #104\, Temecula CA 
+ 92590
+DESCRIPTION:Hosted by Omega Mu Nu Chapter. Ark of Bones is sponsoring and
+  attending. Scholarship fundraiser. Food and drinks sold separately.
+URL:https://buytickets.at/omegamunuchapter/2490424
+END:VEVENT
+END:VCALENDAR

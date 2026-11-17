@@ -1,3 +1,4 @@
+import GameNightFeature from '../components/GameNightFeature';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
@@ -9,6 +10,7 @@ export default function EventsPage() {
   return (
     <>
       <SEO title="Events" description="The gatherings, games, and community around Ark of Bones." path="/events" image={eventHero} />
+      <GameNightFeature headingLevel={2} />
       <header className="editorial-mast">
         <p className="eyebrow">Ark of Bones / Events</p>
         <h1>The Table Brings Us Together.</h1>
@@ -26,7 +28,7 @@ export default function EventsPage() {
         </div>
         <div className="editorial-copy">
           <p>Ark of Bones celebrates the competition, conversation, and shared memories that begin when people sit down to play.</p>
-          <p>Check back here for event news and announcements. No upcoming public dates have been announced.</p>
+          <p>Follow Ark of Bones for upcoming gatherings, event announcements, and news from the community.</p>
           <div className="hero-actions">
             <Link className="button button--gold" to="/around-the-table">Watch Ark of Bones<ArrowRight aria-hidden="true" /></Link>
             <Link className="button button--outline" to="/contact">Get in touch<ArrowRight aria-hidden="true" /></Link>

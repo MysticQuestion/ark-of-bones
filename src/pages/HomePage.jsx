@@ -1,3 +1,5 @@
+import GameNightFeature from '../components/GameNightFeature';
+import useGameNight from '../hooks/useGameNight';
 import { ArrowRight, BookOpen, CalendarDays, PlayCircle, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
@@ -39,6 +41,7 @@ const platformCards = [
 ];
 
 export default function HomePage() {
+  const { phase } = useGameNight();
   const schema = [
     {
       '@context': 'https://schema.org',
@@ -67,7 +70,7 @@ export default function HomePage() {
         schema={schema}
       />
 
-      <section
+      {phase !== 'ended' ? <GameNightFeature /> : <section
         className="home-hero home-hero--logo table-first-hero"
         style={{ '--home-hero-image': `url("${ASSETS.hero}")` }}
       >
@@ -98,7 +101,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section>}
 
       <section className="content-band table-home-feature">
         <div className="table-home-feature-media">

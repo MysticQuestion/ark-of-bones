@@ -1,3 +1,4 @@
+import { GameNightRibbon } from '../components/GameNightFeature';
 import { Suspense, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import DominoLoader from '../components/DominoLoader';
@@ -38,6 +39,7 @@ export default function App() {
     <div className="site-shell">
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <SiteHeader />
+      <GameNightRibbon />
       <RouteFocus />
       <main id="main-content" className="page-shell" tabIndex="-1">
         <RouteContent />
